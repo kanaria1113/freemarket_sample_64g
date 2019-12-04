@@ -10,11 +10,6 @@
 |birth_year|string|null: false|
 |birth_month|string|null: false|
 |birth_day|string|null: false|
-|postal_code|string|null: false|
-|prefectures|string|null: false|
-|city|string|null: false|
-|adderess|string|null: false|
-|building_name|text||
 |nickname|text|null: false|
 |profile|text||
 |card_id|references||
@@ -23,13 +18,27 @@
 |delete_flg|boolean|null: false|
 |image|string||
 ### Association
-- has_many :item
-- has_many :comment
+- has_many :items
+- has_many :comments
 - belongs_to :like
-- has_many :to_do_list
+- has_many :to_do_lists
 - belongs_to :evaluation
-- has_many :notification, through: :users_notification
+- has_many :notifications, through: :users_notification
 - has_one :card
+- has_one :address
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|foreign_key: true|
+|postal_code|string|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|adderess|string|null: false|
+|building_name|text||
+### Association
+- belongs_to :user
+
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -58,8 +67,8 @@
 - belongs_to :user
 - belongs_to :comment
 - belongs_to :like
-- has_many :image
-- has_many :category, through: items_categorys
+- has_many :images
+- has_many :categorys, through: items_categorys
 - belongs_to :brand
 - has_one :seller_evaluation
 - has_one :buyer_evaluation
@@ -71,7 +80,7 @@
 |name|string|null: false|
 |ancestry|string||
 ### Association
-- has_many :item, through: items_categorys
+- has_many :items, through: items_categorys
 
 ## items_categorysテーブル
 |Column|Type|Options|
@@ -90,20 +99,20 @@
 |name|string|null: false|
 |ancestry|integer|null: false|
 ### Association
-- has_many :item
-- has_many :brand, through: genre_brand
+- has_many :items
+- has_many :brands, through: genres_brands
 
-## brandテーブル
+## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
 |item_id|references|null: false|
 |name|string|null: false|
 ### Association
-- has_many :item
-- has_many :genre, through: genre_brand
+- has_many :items
+- has_many :genres, through: genres_brands
 
-## genre_brandテーブル
+## genres_brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |gnere_id|references|null: false, foreign_key: true|
@@ -156,9 +165,9 @@
 |notification|text|null: false|
 |user_id|references|null: false|
 ### Association
-- has_many :users, through: :users_notification
+- has_many :users, through: :users_notifications
 
-## users_notificationテーブル
+## users_notificationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false|
@@ -175,7 +184,7 @@
 |user_id|references|null: false|
 
 ### Association
-- has_many :user
+- has_many :users
 
 
 ## cardテーブル

@@ -59,7 +59,7 @@
 - belongs_to :comment
 - belongs_to :like
 - has_many :image
-- has_many :category
+- has_many :category, through: items_categorys
 - belongs_to :brand
 - has_one :seller_evaluation
 - has_one :buyer_evaluation
@@ -71,7 +71,7 @@
 |name|string|null: false|
 |ancestry|string||
 ### Association
-- has_many :item
+- has_many :item, through: items_categorys
 
 ## items_categorysテーブル
 |Column|Type|Options|

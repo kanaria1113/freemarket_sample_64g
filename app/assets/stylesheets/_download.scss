@@ -25,9 +25,16 @@
     &__apple{
       padding-right: 20px;
       padding-top: 30px;
+      &:hover{
+        opacity: 0.5;
+      }
+
     }
     &__google{
       padding-top: 30px;
+      &:hover{
+        opacity: 0.5;
+      }
     }
   }
   background-image: url(https://www.pakutaso.com/shared/img/thumb/YAT923_1_TP_V.jpg);

@@ -74,3 +74,7 @@ gem 'haml-rails'
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem "omniauth-google-oauth2"

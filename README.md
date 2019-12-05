@@ -43,13 +43,12 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
 |category_id|references|null: false|
 |brand_id|references||
 |genre_id|references|null: false|
 |image_id|references|null: false|
-|like_id|references||
-|name|text|null: false|
+|name|string|null: false|
 |status|string|null: false|
 |size|string|null: false|
 |price|integer|null: false|
@@ -65,7 +64,7 @@
 |seler_id|references|null: false, foreign_key: { to_table: :users }|
 ### Association
 - belongs_to :user
-- belongs_to :comment, dependent: :destroy
+- has_many :comments, dependent: :destroy
 - has_many :likes
 - has_many :images, dependent: :destroy
 - has_many :categorys, through: items_categorys
@@ -138,7 +137,6 @@
 |checked|boolean|null: false, default: false|
 ### Association
 - belongs_to :user
-
 
 ## likesテーブル
 |Column|Type|Options|

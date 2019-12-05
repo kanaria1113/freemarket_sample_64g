@@ -18,14 +18,14 @@
 |delete_flg|boolean|null: false|
 |image|string||
 ### Association
-- has_many :items
-- has_many :comments
-- has_many :likes
-- has_many :to_do_lists
-- belongs_to :evaluation
+- has_many :items, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :to_do_lists, dependent: :destroy
+- belongs_to :evaluation, dependent: :destroy
 - has_many :notifications, through: :users_notification
-- has_one :card
-- has_one :address
+- has_one :card, dependent: :destroy
+- has_one :address, dependent: :destroy
 
 ## addressテーブル
 |Column|Type|Options|
@@ -65,9 +65,9 @@
 |seler_id|references|null: false, foreign_key: { to_table: :users }|
 ### Association
 - belongs_to :user
-- belongs_to :comment
+- belongs_to :comment, dependent: :destroy
 - has_many :likes
-- has_many :images
+- has_many :images, dependent: :destroy
 - has_many :categorys, through: items_categorys
 - belongs_to :brand
 - has_one :seller_evaluation

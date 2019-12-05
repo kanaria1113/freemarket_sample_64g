@@ -10,9 +10,8 @@
 |birth_year|string|null: false|
 |birth_month|string|null: false|
 |birth_day|string|null: false|
-|nickname|text|null: false|
+|nickname|string|null: false|
 |profile|text||
-|card_id|references||
 |created_at|datetime|null: false|
 |updated_at|timestamp|null: false|
 |delete_flg|boolean|null: false|
@@ -22,20 +21,21 @@
 - has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :to_do_lists, dependent: :destroy
-- belongs_to :evaluation, dependent: :destroy
-- has_many :notifications, through: :users_notification
+- has_many :evaluations, dependent: :destroy
+- has_many :notices, through: :users_notice
 - has_one :card, dependent: :destroy
 - has_one :address, dependent: :destroy
+- has_many :notifications, dependent: :destroy
 
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
+|user_id|references|foreign_key: true,null: false|
 |postal_code|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
 |adderess|string|null: false|
-|building_name|text||
+|building_name|string||
 ### Association
 - belongs_to :user
 
@@ -127,6 +127,19 @@
 ### Association
 - belongs_to :item
 
+## notificationsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|visitor_id|references|null: false, foreign_key: { to_table: :users }|
+|visited_id|references|null: false, foreign_key: { to_table: :users }|
+|item_id|references|null: false, foreign_key: { to_table: :items }|
+|comment_id|references|null: false, foreign_key: { to_table: :comments }|
+|action|string|null: false|
+|checked|boolean|null: false, default: false|
+### Association
+- belongs_to :user
+
+
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -134,13 +147,13 @@
 |item_id|references|null: false|
 
 ### Association
-- has_many :users
-- has_many :items
+- belongs_to :user
+- belongs_to :item
 
 ## to_do_listテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
 |list|text|null: false|
 
 ### Association
@@ -157,32 +170,33 @@
 - belongs_to :user
 - belongs_to :item
 
-## notificationテーブル
+## noticesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|notification|text|null: false|
+|notice|text|null: false|
 |user_id|references|null: false|
-### Association
-- has_many :users, through: :users_notifications
 
-## users_notificationsテーブル
+
+### Association
+- has_many :users, through: :users_notices
+
+## users_noticesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false|
-|notification_id|references|null: false|
+|notice_id|references|null: false|
 ### Association
 - belongs_to :user
-- belongs_to :notification
+- belongs_to :notice
 
 ## evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |evaluation|integer|null: false|
 |comment|text||
-|user_id|references|null: false|
 
 ### Association
-- has_many :users
+- belongs_to :user
 
 
 ## cardテーブル
@@ -192,6 +206,7 @@
 |expiration|integer|null: false|
 |name|string|null: false|
 |cvc|integer|null: false|
+|user_id|references|null: false|
 
 ### Association
 - belongs_to :user

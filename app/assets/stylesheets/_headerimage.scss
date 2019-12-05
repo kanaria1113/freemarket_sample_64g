@@ -1,0 +1,36 @@
+.headerimage{
+  &__text{
+    padding-left: 250px;
+    padding-top: 30px;
+    color: #000;
+    &__upper{
+      font-size: 60px;
+    }
+    &__bottom{
+      font-size: 18px;
+    }
+  }
+  &__image{
+    padding-left: 250px;
+    display: flex;
+    &__apple{
+      padding-right: 20px;
+      padding-top: 30px;
+    }
+    &__google{
+      padding-top: 30px;
+    }
+  }
+  background-image: url(https://d1f5hsy4d47upe.cloudfront.net/91/91ecc1acdc2c4fa37b178b98a8786438_t.jpeg);
+  background-size: cover;
+  background-position: center;
+
+  width: 100vw;
+  height: 390px;
+
+}
+
+.headlink{
+  width: 50px;
+  height: 170px;
+}

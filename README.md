@@ -20,7 +20,7 @@
 ### Association
 - has_many :items
 - has_many :comments
-- belongs_to :like
+- has_many :likes
 - has_many :to_do_lists
 - belongs_to :evaluation
 - has_many :notifications, through: :users_notification
@@ -66,7 +66,7 @@
 ### Association
 - belongs_to :user
 - belongs_to :comment
-- belongs_to :like
+- has_many :likes
 - has_many :images
 - has_many :categorys, through: items_categorys
 - belongs_to :brand
@@ -76,7 +76,6 @@
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|foreign_key: true|
 |name|string|null: false|
 |ancestry|string||
 ### Association
@@ -106,7 +105,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|item_id|references|null: false|
 |name|string|null: false|
 ### Association
 - has_many :items

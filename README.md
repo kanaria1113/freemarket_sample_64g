@@ -30,7 +30,7 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true,null: false|
+|user_id|references|null: false,foreign_key: true|
 |postal_code|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
@@ -44,10 +44,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|category_id|references|null: false|
-|brand_id|references||
-|genre_id|references|null: false|
-|image_id|references|null: false|
+|category_id|references|null: false, foreign_key: true|
+|brand_id|references|foreign_key: true|
+|genre_id|references|null: false, foreign_key: true|
+|image_id|references|null: false, foreign_key: true|
 |name|string|null: false|
 |status|string|null: false|
 |size|string|null: false|
@@ -83,8 +83,8 @@
 ## items_categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false|
-|category_id|references|null: false|
+|item_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
 - belongs_to :category
@@ -141,8 +141,8 @@
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
-|item_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -161,8 +161,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
-|user_id|references|null: false foreign_key: true|
-|item_id|references|null: false foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -172,7 +172,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |notice|text|null: false|
-|user_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -181,8 +181,8 @@
 ## users_noticesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
-|notice_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
+|notice_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :notice
@@ -204,7 +204,7 @@
 |expiration|integer|null: false|
 |name|string|null: false|
 |cvc|integer|null: false|
-|user_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user

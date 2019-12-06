@@ -1,5 +1,7 @@
 %section#mypage__user-icon
   = link_to "#", class: "mypage_link" do
+    %figure
+      %img.mypageicon{src: "/assets/member.png"}
     %h9 name
   .mypage__number
     %div
@@ -14,3 +16,5 @@
   %li
     メッセージはありません
   %li#mypage-go-list
+    = link_to "#", class: "summary" do
+      一覧を見る

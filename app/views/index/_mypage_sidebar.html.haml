@@ -1,7 +1,8 @@
 .mypage_side
   %ul#mypage_side__list
-    %li#mypage_side__list__item.active
-      マイページ
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        マイページ
     %li
       = link_to "#",class: "mypage_side__list__item" do
         お知らせ
@@ -41,3 +42,37 @@
     %li
       = link_to "#",class: "mypage_side__list__item" do
         お問い合わせ
+  .mypage_side__title
+    フリペイ
+  %ul#mypage_side__list
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        売上・振込申請
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        ポイント
+  .mypage_side__title
+    設定
+  %ul#mypage_side__list
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        プロフィール
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        発送元・お届け先住所変更
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        支払い方法
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        メール/パスワード
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        本人情報
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        電話番号の確認
+    %li
+      = link_to "#",class: "mypage_side__list__item" do
+        ログアウト
+

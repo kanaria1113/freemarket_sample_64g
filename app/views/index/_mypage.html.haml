@@ -1,2 +1,16 @@
 %section#mypage__user-icon
-  
+  = link_to "#", class: "mypage_link" do
+    %h9 name
+  .mypage__number
+    %div
+      評価 0
+    %div
+      出品数 0
+%selection#mypage-tab-container-notification-todo
+  %ul#mypage_tabs
+    %li お知らせ
+    %li やることリスト
+%ul#mypage-todo
+  %li
+    メッセージはありません
+  %li#mypage-go-list

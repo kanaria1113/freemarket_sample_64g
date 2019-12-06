@@ -2,11 +2,16 @@
   width: 280px;
   height: 1252px;
   background-color: whitesmoke;
+  background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
   &__title{
     margin: 40px 0 0;
   }
   &__list{
     list-style: none;
+    width: 280px;
+    height: 1252px;  
     &__item{
       position: relative;
       display: block;

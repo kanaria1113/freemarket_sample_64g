@@ -1,5 +1,4 @@
 server '18.176.84.42', user: 'ec2-user', roles: %w{app db web}
-# config.require_master_key = true
 
 # server-based syntax
 # ======================
@@ -62,4 +61,3 @@ server '18.176.84.42', user: 'ec2-user', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-

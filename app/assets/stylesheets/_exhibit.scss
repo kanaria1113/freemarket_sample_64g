@@ -1,0 +1,26 @@
+.footer-exhibit{
+  position: fixed;
+  bottom: -14px;
+  right: -14px;
+  z-index: 1000;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ea352d;
+  color: #fff;
+  text-align: center;
+  bottom: 32px;
+  font-size: 22px;
+  height: 160px;
+  right: 32px;
+  width: 160px;
+  text-decoration: none;
+}
+
+#exhibit-text{
+  margin: 28px 0 0;
+}
+.fa-camera{
+  margin: 8px 0 0;
+  font-size: 58px;
+}

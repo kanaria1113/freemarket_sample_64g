@@ -40,8 +40,7 @@ set :default_env, {
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
 
-set :linked_files, %w{ config/credentials.yml.enc }
-
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
@@ -59,6 +58,6 @@ namespace :deploy do
   #     upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
   #   end
   # end
-  before :starting, 'deploy:upload'
+  before :starting, 'deploy:updated'
   after :finishing, 'deploy:cleanup'
 end

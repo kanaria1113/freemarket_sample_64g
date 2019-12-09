@@ -50,15 +50,15 @@ namespace :deploy do
     invoke 'unicorn:start'
   end
 
-  # desc 'upload credentials.yml.enc'
-  # task :upload do
-  #   on roles(:app) do |host|
-  #     if test "[ ! -d #{shared_path}/config ]"
-  #       execute "mkdir -p #{shared_path}/config"
-  #     end
-  #     upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
-  #   end
-  # end
+  desc 'upload credentials.yml.enc'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
+    end
+  end
   before :starting, 'deploy:updated'
   after :finishing, 'deploy:cleanup'
 end

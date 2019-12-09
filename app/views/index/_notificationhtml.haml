@@ -3,9 +3,16 @@
     %li#my_list
       = link_to "#", class: "my-notice" do
         お知らせ
-    %li#my_list
+      #mypage-message
+        = link_to "#", class: "my_message" do
+          ログインのお知らせ
+    %li:active#my_list
       = link_to "#", class: "my-notice" do
         やることリスト
+      #mypage-message
+        = link_to "#", class: "my_message" do
+          ログインのお知らせ
+
 %ul#mypage-todo
   %li#mypage-message
     = link_to "#", class: "my_message" do

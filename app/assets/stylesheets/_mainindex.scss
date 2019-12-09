@@ -1,0 +1,151 @@
+.main-category {
+  background-color: rgb(255, 255, 255);
+  left: 50%;
+  margin-left: -50vw;
+  position: relative;
+  top: 0px;
+  width: 100vw;
+  padding: 56px 0px 30px;
+  .main-category-top {
+    margin-bottom: 16px;
+    text-align: center;
+    font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.4em;
+  }
+  .main-category-bottom {
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    .category-items {
+      margin: -10px 0px 0px -10px;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      .category-item-btn {
+        margin: 10px 0px 0px 10px;
+        .category-item-name {
+          background-color: rgb(239, 239, 239);
+          cursor: pointer;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 15px;
+          padding: 8px 16px;
+        }
+      }
+    }
+  }
+}
+.main-items {
+  width: 1020px;
+  margin: 0 auto;
+  padding: 42px 0px 100px;
+  font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+  font-size: 24px;
+  .main-items-show{
+    vertical-align: baseline;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    font: inherit;
+    &-header{
+      margin-bottom: 16px;
+      align-items: flex-end;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      .main-items-show-header-left　{
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .main-items-show-header-right {
+        font-size: 14px;
+        padding: 5px 16px 5px 5px;
+      }
+    }
+    &-bottom {
+      .list-items{
+        margin: -10px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+        .list-item{
+          width: 20%;
+          padding: 10px;
+          display: list-item;
+          .main.items-all {
+            width: 100%;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            vertical-align: top;
+            .main-items-all-figure {
+              font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+              width: 100%;
+              background-color: #fff;
+              -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.18);
+              box-shadow: 0 2px 4px rgba(0,0,0,.18);
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: reverse;
+              -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse;
+              margin: 0;
+              overflow: hidden;
+              z-index: 0;
+              .main-items-all-figure-i {
+                box-sizing: border-box;
+                color: #222;
+                font-size: 14px;
+                height: 64px;
+                line-height: 1.4em;
+                padding: 0 12px;
+                white-space: normal;
+                word-break: break-word;
+                .main-items-all-span {
+                  text-align: center;
+                  
+                  height: 2.8em;
+                  overflow: hidden;
+                  position: relative;
+                }
+              }
+            }
+              .main-items-all-bottom {
+                height: 0;
+                overflow: hidden;
+                padding: 0 0 100%;
+                .aria-label {
+                  -webkit-box-align: center;
+                  align-items: center;
+                  background: rgba(0,0,0,.4);
+                  border-radius: 0 14px 14px 0;
+                  bottom: 8px;
+                  box-sizing: border-box;
+                  color: #fff;
+                  display: inline-flex;
+                  font-size: 17px;
+                  height: 32px;
+                  height: 28px;
+                  letter-spacing: .02em;
+                  margin: 0;
+                  padding: 0 12px;
+                  position: absolute;
+                  z-index: 2;
+                }
+                .img-main-item {
+                  width: 20%;
+                }
+              }
+            }
+          }
+
+        }
+    }
+        
+  }

@@ -1,20 +1,11 @@
 %section#mypage__user-icon
   = link_to "#", class: "mypage_link" do
-    %figure
+    %figure#figureimg
       %img.mypageicon{src: "/assets/member.png"}
-    %h9 name
+    %div#mypageicon-name
+      name
   .mypage__number
+    %div#my-evaluate
+      評価　0
     %div
-      評価 0
-    %div
-      出品数 0
-%selection#mypage-tab-container-notification-todo
-  %ul#mypage_tabs
-    %li お知らせ
-    %li やることリスト
-%ul#mypage-todo
-  %li
-    メッセージはありません
-  %li#mypage-go-list
-    = link_to "#", class: "summary" do
-      一覧を見る
+      出品数　0

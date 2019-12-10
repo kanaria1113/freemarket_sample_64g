@@ -3,19 +3,21 @@
   height: 1252px;
   background-color: whitesmoke;
   background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
+  margin-right: 40px;
   &__title{
     margin: 40px 0 0;
+  }
+  &__menu{
+    height: 48px;
+    width: 280px;
   }
   &__list{
     list-style: none;
     width: 280px;
-    height: 1252px;  
+    height: 685px;  
     &__item{
       position: relative;
       display: block;
-      min-height: 48px;
       padding: 16px;
       background: #fff;
       font-size: 14px;

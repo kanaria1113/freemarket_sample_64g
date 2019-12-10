@@ -1,3 +1,8 @@
 .mypage
-  = render "mypage_sidebar"
-  
+  .mypage__left
+    = render "mypage_sidebar"
+  .mypage__right
+    = render "mypage"
+    = render "notification"
+    .mypage-tab-container
+      = render "past_transactions"

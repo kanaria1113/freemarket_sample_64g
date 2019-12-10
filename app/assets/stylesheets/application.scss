@@ -1,1 +1,20 @@
 @import "./reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "./headerimage";
+@import "./headerimage2";
+@import "./slick-theme.scss"; 
+@import "slick";
+@import "carousel";
+@import "./download";
+@import "./exhibit";
+@import "./footer";
+@import "./header";
+@import "./mainindex";
+// @import "./loginheader";
+@import "./carousel";
+@import "./slick-theme.scss";
+::-webkit-scrollbar {
+  display: none;
+  -webkit-appearance: none;
+}

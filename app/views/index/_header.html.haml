@@ -2,7 +2,8 @@
   .main-header
     .main-header__top
       .main-header__top__logo
-        %img{src:"/assets/fmarket_logo_red.svg"}
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg"
       .main-header__top__search
         %input.main-header__top__search__box{placeholder: "何かお探しですか？", type: "text", value: ""}
         %button.main-header__top__search__button

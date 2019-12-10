@@ -3,13 +3,13 @@
   width: 100vw;
   height: 389px;
   
-  .mainfooter__contents{
+  &__contents{
     width: 1020px;
     height: 296px;
     display: flex;
     color: #fff;
     margin: 0 auto;
-    .mainfooter__contents__link__title{
+    &__link__title{
       font-size:16px;
       font-family: Arial;
       font-weight: 600;
@@ -17,106 +17,95 @@
       margin: 0;
       padding: 0;
     }
-    ul {
+    &__list{
       line-height: 1.4em;
       height: 240px;
       width: 100%;
       margin-top: 16px;
     }
-    
-    a {
-      text-decoration: none;
-      color: rgb(255, 255, 255);
-      font-size: 12px;
-      font-family: Arial;
-      margin: 16px 0px 0px;
-      
-    }
-    .link-link{
-      opacity: 0.7;
-      height: 100%;
-      &:hover{
-        text-decoration: underline;
-        opacity: 0.7;
-      }
-    }
-    
-    
-    
-    .mainfooter__contents__link__link {
+    &__link {
       line-height:1.4rem;
       margin: 7px 0px 0px;
     }
-    .mainfooter__contents__link__first{
+    &__first{
       width: 207px;
       height: 100%;
       padding: 0px 40px 0px 0px;
       margin: 18px 0px 0px;
-      .mainfooter__contents__link__icon{
-        display: flex;
-        margin: 16px 0 0;
-        .link-icon{
-          width: 47px;
-          height: 42px;
-          font-size: 33px;
-        }
-      }
-      
     }
-    .mainfooter__contents__link__second{
+    &__icon{
+      display: flex;
+      margin: 16px 0 0;
+    }
+    &__second{
       width: 230px;
       height: 100%;
       padding: 0px 40px 0px 0px;
       margin: 18px 0px 0px;
     }
-    .mainfooter__contents__link__third{
+    &__third{
       width: 43%;
       padding: 0px 40px 0px 0px;
       margin: 18px 0px 0px;
-      .mainfooter__contents__link__top{
-        display: flex;
-      }
-        .mainfooter__contents__link__left{
-          padding: 0px 10px 0px 0px;
-        }
-        .mainfooter__contents__link__right{
-          padding: 0px 0px 0px 10px;
-          width: 199px;
-        }
     }
-    .mainfooter__contents__link__last{
+    &__top{
+      display: flex;
+    }
+    &__left{
+      padding: 0px 10px 0px 0px;
+    }
+    &__right{
+      padding: 0px 0px 0px 10px;
+      width: 199px;
+    }
+    &__last{
       width: 100px;
       padding: 0px 40px 0px 0px;
       margin: 18px 0px 0px;
     }
-  }
-  .footer__log{
-    width: 660px;
+  } 
+}
+.footer-log{
+  width: 660px;
+  height: 31px;
+  margin: 30px auto 20px;
+  color: #fff;
+  display: flex;
+  &__first{
+    width: 124px;
     height: 31px;
-    margin: 30px 310px 20px;
-    color: #fff;
-    display: flex;
-    .footer__log__first{
-      width: 124px;
-      height: 31px;
-      font-size: 25px;
-    }
-    img:hover {
-      opacity: 0.6;
-    }
-    .footer__log__copy{
-      font-size: 14px;
-      text-align: center;
-      padding-left: 25px;
-      width: 75%;
-      height: 14px;
-    }
+    font-size: 25px;
+  }
+  &__img:hover {
+    opacity: 0.6;
+  }
+  &__copy{
+    font-size: 14px;
+    text-align: center;
+    padding-left: 150px;
+    height: 14px;
   }
 }
 
 
-
-
-
-
-
+.link-icon{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  margin: 16px 0px 0px;
+  width: 47px;
+  height: 42px;
+  font-size: 33px;
+}
+.link-link{
+  opacity: 0.7;
+  height: 100%;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-family: Arial;
+  margin: 16px 0px 0px;
+  &:hover{
+    text-decoration: underline;
+    opacity: 0.7;
+  }
+}

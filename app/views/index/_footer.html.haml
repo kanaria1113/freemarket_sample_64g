@@ -1,106 +1,105 @@
 .mainfooter
   .mainfooter__contents
-    .mainfooter__contents__link__first
-      %h4.mainfooter__contents__link__title メルカリについて
-      %ul
-        %li.mainfooter__contents__link__link
+    .mainfooter__contents__first
+      %h4.mainfooter__contents__title メルカリについて
+      %ul.mainfooter__contents__list
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             会社概要（運営会社）
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             採用情報
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             プレスリリース
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             公式ブログ
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             メルカリ利用ガイドライン
-        .mainfooter__contents__link__icon
+        .mainfooter__contents__icon
           = link_to '#', class: "link-icon" do
-            = fa_icon 'twitter', class: 'icon'
+            = fa_icon 'twitter', class: 'footer-icon'
           = link_to '#', class: "link-icon" do
-            = fa_icon 'facebook-square', class: 'icon'
+            = fa_icon 'facebook-square', class: 'footer-icon'
         
     
-    .mainfooter__contents__link__second
-      .mainfooter__contents__link__title 
+    .mainfooter__contents__second
+      .mainfooter__contents__title 
         ヘルプ&ガイド
-      %ul
+      %ul.mainfooter__contents__list
         %li.mainfooter__contents__link__link
           = link_to '#', class: "link-link" do
             メルカリガイド
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             らくらくメルカリ便
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             ゆうゆうメルカリ便
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             大型メルカリ便
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             車体取引ガイド
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             メルカリあんしん・あんぜん宣言！
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             偽ブランド品撲滅への取り組み
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             メルカリボックス
 
-    .mainfooter__contents__link__third
-      %h4.mainfooter__contents__link__title プライバシーと利用規約
-      .mainfooter__contents__link__top
-        .mainfooter__contents__link__left
-          %ul
-            %li.mainfooter__contents__link__link
+    .mainfooter__contents__third
+      %h4.mainfooter__contents__title プライバシーと利用規約
+      .mainfooter__contents__top
+        .mainfooter__contents__left
+          %ul.mainfooter__contents__list
+            %li.mainfooter__contents__link
               = link_to '#', class: "link-link" do
                 プライバシーポリシー
-            %li.mainfooter__contents__link__link
+            %li.mainfooter__contents__link
               = link_to '#', class: "link-link" do
                 メルカリ利用規約
-            %li.mainfooter__contents__link__link
+            %li.mainfooter__contents__link
               = link_to '#', class: "link-link" do
                 安心スマホサポート制度に関する利用特約
-            %li.mainfooter__contents__link__link
+            %li.mainfooter__contents__link
               = link_to '#', class: "link-link" do
                 コンプライアンスポリシー
               
         
-        .mainfooter__contents__link__right
-          %ul
-            %li.mainfooter__contents__link__link
+        .mainfooter__contents__right
+          %ul.mainfooter__contents__list
+            %li.mainfooter__contents__link
               = link_to '#', class: "link-link" do
                 個人データの安全に管理に係る基本方針
-            %li.mainfooter__contents__link__link
+            %li.mainfooter__contents__link
               = link_to '#', class: "link-link" do
                 特定商取引に関する表記
-            %li.mainfooter__contents__link__link
+            %li.mainfooter__contents__link
               = link_to '#', class: "link-link" do
                 資産決済方に基づく表示
-            %li.mainfooter__contents__link__link
+            %li.mainfooter__contents__link
               = link_to '#', class: "link-link" do
                 法令順守と犯罪抑止のために
     
-    .mainfooter__contents__link__last
-      %h4.mainfooter__contents__link__title 国
-      %ul
-        %li.mainfooter__contents__link__link
+    .mainfooter__contents__last
+      %h4.mainfooter__contents__title 国
+      %ul.mainfooter__contents__ul
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             日本
-        %li.mainfooter__contents__link__link
+        %li.mainfooter__contents__link
           = link_to '#', class: "link-link" do
             United States
 
-  .footer__log
-    =link_to "", class: "footer__log__first" do
-      %img{src: "/assets/fmarket_logo_white.svg"}
-    .footer__log__copy
+  .footer-log
+    =link_to "", class: "footer-log__first" do
+      = image_tag 'fmarket_logo_white', class: "footer-logo__img"
+    .footer-log__copy
       %small © Mercari, Inc.
-      

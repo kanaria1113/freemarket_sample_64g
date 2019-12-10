@@ -25,10 +25,11 @@
   bottom: 25px;
   li button{
     &::before{
-      height: 15px;
-      width: 15px;
+      height: 5px;
+      width: 5px;
       background-color: rgb(116, 116, 116);
       border-radius: 50%;
+      position: relative;
     }
   }
 }

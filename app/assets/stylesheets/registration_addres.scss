@@ -1,44 +1,73 @@
-.select {
+.confirm {
+  width: 100vw;
   background: whitesmoke;
   margin: 0;
   text-align: center;
 }
 
-.select-content {
+.confirm_phone_number{
   width: 700px;
   background-color: white;
   margin: auto;
 }
 
-.select-content__tilte {
+.confirm_phone_number__title {
   font-size: 22px;
   font-weight: bold;
   height: 50px;
   border-bottom: whitesmoke solid 1px;
-  padding: 32px;
+  padding: 0 auto;
+
 }
 
-.select-content__contenter {
-  padding: 40px 40px 50px;
+.confirm_phone_number__content {
+  font-weight: bold;
+  display: inline-block;
+  text-align: left;
 }
 
-.sns_btn {
+.confirm_phone_number__content__inpit {
+  font-weight: lighter;
+  padding-top: 20px;
+  margin: 0 auto;
+  display: flex;
+  width: 343px;
+  height: 50px;
+  
+}
+
+.confirm_phone_number__content__btn {
   display: flex;
   width: 343px;
   height: 50px;
   color: #fff;
-  background-color: #385185;
+  background-color: #ea352d;
   border-radius: 4px;
-  margin: 16px auto 0;
+  margin: 40px auto 0;
   font-size: 24px;
   line-height: 50px;
   text-decoration: none;
 }
-#btn {
+.sns_btn {
+  text-decoration: none;
+  color: #fff;
   font-size: 14px;
-  padding-left: 70px;
+  margin: auto;
 }
-.fa-facebook-square{
-  line-height: 50px;
-  padding-left: 18px;
+
+
+.confirm_phone_number__content__text {
+  font-weight: lighter;
+  font-size: 14px;
+  display: inline-block;
+  text-align: left;
+}
+
+.confirm_phone_number__conten__reason {
+  display: inline-block;
+
+}
+
+.reason {
+  color: lightblue;
 }

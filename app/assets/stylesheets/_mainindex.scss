@@ -44,15 +44,10 @@
   padding: 42px 0px 100px;
   font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
   font-size: 24px;
+  background-color: rgb(245, 245, 245);
   .main-items-show{
+    width: 100%;
     vertical-align: baseline;
-    margin: 0px;
-    padding: 0px;
-    border-width: 0px;
-    border-style: initial;
-    border-color: initial;
-    border-image: initial;
-    font: inherit;
     &-header{
       margin-bottom: 16px;
       align-items: flex-end;
@@ -66,6 +61,8 @@
       .main-items-show-header-right {
         font-size: 14px;
         padding: 5px 16px 5px 5px;
+        color: rgb(0, 149, 238);
+        text-decoration: none;
       }
     }
     &-bottom {
@@ -73,79 +70,96 @@
         margin: -10px;
         display: flex;
         flex-wrap: wrap;
-      }
-        .list-item{
-          width: 20%;
-          padding: 10px;
-          display: list-item;
-          .main.items-all {
-            width: 100%;
-            cursor: pointer;
-            display: inline-block;
-            position: relative;
-            text-decoration: none;
-            vertical-align: top;
-            .main-items-all-figure {
-              font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-              width: 100%;
-              background-color: #fff;
-              -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.18);
-              box-shadow: 0 2px 4px rgba(0,0,0,.18);
-              -webkit-box-orient: vertical;
-              -webkit-box-direction: reverse;
-              -ms-flex-direction: column-reverse;
-              flex-direction: column-reverse;
-              margin: 0;
-              overflow: hidden;
-              z-index: 0;
-              .main-items-all-figure-i {
-                box-sizing: border-box;
-                color: #222;
-                font-size: 14px;
-                height: 64px;
-                line-height: 1.4em;
-                padding: 0 12px;
-                white-space: normal;
-                word-break: break-word;
-                .main-items-all-span {
-                  text-align: center;
-                  
-                  height: 2.8em;
+          .list-item {
+            width: 18%;
+            padding: 10px;
+            .list-item-all {
+              visibility: visible;
+              transition: all 0.5s ease 0s;
+              opacity: 1;
+              border: 1px solid transparent;
+              filter: drop-shadow(2px 2px 2px rgba(51, 51, 51, 0.6));
+              &:hover {
+                border-color: blue;
+              }
+              &:focus:after{
+                background-color: blue;
+              }
+
+              .main-items-all {
+                width: 100%;
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                text-decoration: none;
+                vertical-align: top;
+                .main-items-all-figure {
+                  font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+                  background-color: #fff;
+                  flex-direction: column-reverse;
+                  margin: 0;
                   overflow: hidden;
-                  position: relative;
+                  z-index: 0;
+                  .main-items-all-figure-i {
+                    box-sizing: border-box;
+                    color: #222;
+                    font-size: 14px;
+                    height: 64px;
+                    line-height: 1.4em;
+                    padding: 0 12px;
+                    white-space: normal;
+                    word-break: break-word;
+                    .main-items-all-span {
+                      display: inline-block;
+                      height: 2.8em;
+                      overflow: hidden;
+                      position: relative;
+                      margin-top: 10px;
+                    }
+                  }
                 }
               }
-            }
-              .main-items-all-bottom {
-                height: 0;
-                overflow: hidden;
-                padding: 0 0 100%;
-                .aria-label {
-                  -webkit-box-align: center;
-                  align-items: center;
-                  background: rgba(0,0,0,.4);
-                  border-radius: 0 14px 14px 0;
-                  bottom: 8px;
-                  box-sizing: border-box;
-                  color: #fff;
-                  display: inline-flex;
-                  font-size: 17px;
-                  height: 32px;
-                  height: 28px;
-                  letter-spacing: .02em;
-                  margin: 0;
-                  padding: 0 12px;
-                  position: absolute;
-                  z-index: 2;
-                }
-                .img-main-item {
-                  width: 20%;
+                .img-main-item1 {
+                  overflow: hidden;
+                  padding: 0 0 100%;
+                  display: flex;
+                  position: relative;
+                  .aria-label {
+                    display: inline-flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    background: rgba(0,0,0,.4);
+                    border-radius: 0 14px 14px 0;
+                    bottom: 8px;
+                    -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+                    color: #fff;
+                    font-size: 17px;
+                    height: 32px;
+                    height: 28px;
+                    letter-spacing: .02em;
+                    margin: 0;
+                    padding: 0 12px;
+                    position: absolute;
+                    z-index: 2;
+                  }
+                  .img-main-item {
+                    height: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    vertical-align: top;
+                    width: 100%;
+                    z-index: 1;
+                    bottom: 0;
+                    position: absolute;
+                    top: 0;
+                  }
                 }
               }
             }
           }
-
         }
-    }
-        
-  }
+      }
+    } 
+

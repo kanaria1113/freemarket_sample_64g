@@ -1,0 +1,40 @@
+.exhibing-all{
+  height: 700px;
+  width: 668px;
+  &__title{
+    padding: 0 16px;
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 72px;
+  }
+}
+
+
+.list-tabs{
+  border: 0;
+  background: #eee;
+  font-size: 0; 
+  display: flex;
+}
+.list-tab{
+  width: 33.3%;
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  text-align: center;
+}
+
+.exhibt-list{
+  text-decoration: none;
+  color: #333;
+  display: block;
+  &:hover{
+    opacity: .7;
+  }
+  &:active{
+    border-top: 2px solid #ea352d;
+    background-color: #fff;
+  }
+}

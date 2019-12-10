@@ -1,7 +1,17 @@
-.exhibing_all
+.exhibing-all
+  .exhibing-all__title
+    出品した商品
   %ul.list-tabs
-    %li
-    出品中
-.like_list
-  %ul.mypage-item-list
-    %li#mypage-item-none いいね！がありません
+    %li.list-tab
+      = link_to "#",class: "exhibt-list" do
+        出品中
+    %li.list-tab
+      = link_to "#",class: "exhibt-list" do
+        取引中
+    %li.list-tab
+      = link_to "#",class: "exhibt-list" do
+        売却済み
+  .like_list
+    %ul.mypage-item-list
+      %li#mypage-item-none 
+        出品中の商品がありません

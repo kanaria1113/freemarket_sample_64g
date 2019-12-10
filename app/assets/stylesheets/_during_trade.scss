@@ -1,0 +1,19 @@
+.during_trade-list{
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  text-align: center;
+  text-decoration: none;
+  &:hover{
+    opacity: .7;
+  }
+  &:active{
+    border-top: 2px solid #ea352d;
+    background-color: #fff;
+  }
+}
+.during_trade-tab{
+  width: 50%;
+}

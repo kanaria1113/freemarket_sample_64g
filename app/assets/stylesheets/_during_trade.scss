@@ -6,12 +6,19 @@
   line-height: 72px;
   text-align: center;
   text-decoration: none;
-  &:hover{
-    opacity: .7;
-  }
-  &:active{
+  &__active{
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+    text-align: center;
+    text-decoration: none;  
     border-top: 2px solid #ea352d;
     background-color: #fff;
+  }
+  &:hover{
+    opacity: .7;
   }
 }
 .during_trade-tab{

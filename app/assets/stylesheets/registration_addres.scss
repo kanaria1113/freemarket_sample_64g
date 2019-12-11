@@ -1,73 +1,94 @@
-.confirm {
+.address-input {
   width: 100vw;
   background: whitesmoke;
   margin: 0;
   text-align: center;
 }
-
-.confirm_phone_number{
+.address-input__container {
   width: 700px;
-  background-color: white;
+  background-color: #fff;
   margin: auto;
+  padding-bottom: 30px;
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: whitesmoke solid 1px;
+  }
+  &__form {
+    font-weight: bold;
+    padding-top: 5px;
+  }
 }
-
-.confirm_phone_number__title {
-  font-size: 22px;
-  font-weight: bold;
-  height: 50px;
-  border-bottom: whitesmoke solid 1px;
-  padding: 0 auto;
-
-}
-
-.confirm_phone_number__content {
-  font-weight: bold;
-  display: inline-block;
-  text-align: left;
-}
-
-.confirm_phone_number__content__inpit {
+#address-input {
+  width: 300px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 7px;
   font-weight: lighter;
-  padding-top: 20px;
-  margin: 0 auto;
-  display: flex;
-  width: 343px;
-  height: 50px;
   
 }
-
-.confirm_phone_number__content__btn {
-  display: flex;
-  width: 343px;
-  height: 50px;
+#prefectures {
+  display: block;
+  &__detail {
+    -webkit-appearance: none;
+    padding: 7px 30px 7px 10px;
+    font-size: 93%;
+    line-height: 1.1em;
+    border-radius: 5px;
+    background-image: url(/assets/chevron-down-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 10px 30px;
+    background-position: right 10px center;
+    width: 300px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-weight: lighter;
+  }
+  
+}
+.next_btn {
+  width: 300px;
+  font-size: 14px;
   color: #fff;
   background-color: #ea352d;
   border-radius: 4px;
-  margin: 40px auto 0;
-  font-size: 24px;
+  border: 1px solid #ccc;
+  margin: 0px auto 0;
   line-height: 50px;
   text-decoration: none;
+  display: flex;
+  display: block;
+  margin-top: 30px;
 }
-.sns_btn {
-  text-decoration: none;
-  color: #fff;
-  font-size: 14px;
-  margin: auto;
-}
-
-
-.confirm_phone_number__content__text {
-  font-weight: lighter;
-  font-size: 14px;
+.address-input__container__form-name{
+  width: 300px;
+  padding-top: 40px;
   display: inline-block;
   text-align: left;
+  font-weight: bold;
 }
-
-.confirm_phone_number__conten__reason {
-  display: inline-block;
-
+.required {
+  height: 22px;
+  width: 40px;
+  margin-left: 10px;
+  display:inline-block;
+  background-color: #ea352d;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
 }
-
-.reason {
-  color: lightblue;
+.any {
+  height: 22px;
+  width: 40px;
+  margin-left: 10px;
+  display:inline-block;
+  background-color: grey;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
 }

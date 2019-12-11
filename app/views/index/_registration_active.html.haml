@@ -1,0 +1,28 @@
+.confirm
+  = render 'registration_header'
+  .confirm-phone-number
+    .confirm-phone-number__title
+      電話番号の確認
+    .confirm_phone_number__content
+      .confirm-phone-number__content__input__title
+        携帯電話の番号
+      .confirm-phone-number__content__input__namber
+        %form{:action => "/form.php", :method => "post"}
+        %label{:for => "number"}
+        %input#number{:name => "number", :type => "text", placeholder: '    携帯電話の番号を入力'}
+
+      .confirm-phone-number__content__text
+        本人確認のため、携帯電話のSMS(ショートメッセ
+        ージサービス)を利用して認証を行います。
+      .confirm-phone-number__content__send-btn
+        =link_to "#",class: "sms_btn" do
+          SMSを送信する
+      .confirm-phone-number__content__text
+        *電話番号は本人確認や不正利用防止のために利用
+        します。他のユーザーに公開されることはありま
+        せん。   
+      .confirm_phone_number__reason
+        =link_to "#",class: "reason" do
+          電話番号の確認が必要な理由>
+
+  = render 'user_footer'

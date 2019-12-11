@@ -10,7 +10,6 @@
         %form{:action => "/form.php", :method => "post"}
         %label{:for => "number"}
         %input#number{:name => "number", :type => "text", placeholder: '    携帯電話の番号を入力'}
-
       .confirm-phone-number__content__text
         本人確認のため、携帯電話のSMS(ショートメッセ
         ージサービス)を利用して認証を行います。
@@ -24,5 +23,4 @@
       .confirm_phone_number__reason
         =link_to "#",class: "reason" do
           電話番号の確認が必要な理由>
-
   = render 'user_footer'

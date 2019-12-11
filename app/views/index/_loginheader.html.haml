@@ -2,7 +2,7 @@
   .main-header
     .main-header-top
       .main-header-logo
-        = image_tag "fmarket_logo_red.svg"
+        = image_tag "/assets/fmarket_logo_red.svg"
       .mainheader-logo-search
         %input.mainheader-logo-search-box{placeholder: "何かお探しですか？", type: "text", value: ""}
         %button.mainheader-logo-search-button
@@ -34,5 +34,5 @@
               %span.header-bottom-icon やることリスト
           .headermypage1
             = link_to "#" , class: "headermypage" do
-              = image_tag "member", class: "header-mypageicon"
+              = image_tag "/assets/member", class: "header-mypageicon"
               %a.header-bottom-icon(href="#") マイページ

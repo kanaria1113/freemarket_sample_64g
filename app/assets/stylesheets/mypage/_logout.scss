@@ -1,9 +1,19 @@
+.logout-body{
+  background-color: whitesmoke;
+  display: flex;
+  padding-top: 40px;
+  padding-left: 100px;
+}
 .logout{
   width: 700px;
   height: 179px;
   text-align: center;
+  display: flex;
   &__inner{
+    background-color: #fff;
     padding: 64px;
+    width: 572px;
+    height: 50px;
   }
 }
 .logout-btn{
@@ -15,4 +25,5 @@
   line-height: 48px;
   font-size: 14px;
   display: inline-block;
+  text-decoration: none;
 }

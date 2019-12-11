@@ -1,7 +1,7 @@
 %section#mypage__user-icon
   = link_to "#", class: "mypage_link" do
     %figure#figureimg
-      %img.mypageicon{src: "/assets/member.png"}
+      = image_tag "/assets/member.png", class: "mypageicon"
     %div#mypageicon-name
       name
   .mypage__number

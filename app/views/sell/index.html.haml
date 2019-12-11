@@ -1,5 +1,146 @@
 .sell
-  .sell__header
-    = render "shared/memberinfo"
-.sell__title
-  商品の情報を入力
+  .sel__header
+    = render "shared/user_header"
+  .sell__title
+    商品の情報を入力
+  .sell__file
+    .sell__file__text
+      出品画像
+      %span.required 必須
+    .sell-drop-box
+      %input.sell-upload-drop-file{multiple: "",name: "image1",style: "display: none;", type: "file"}/
+      ドラッグアンドドロップ
+      %br/
+      またはクリックしてください
+    .sell__file
+      .sell__label
+        商品名
+        %span.required 必須
+      %input.input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
+      .sell__label
+        商品の説明
+        %span.required 必須
+      %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+    .sell__head
+      商品の詳細
+      .sell__file
+        .sell__label
+          カテゴリー
+          %span.required 必須
+        %select.select-default
+          %option{value: ""} ---
+          %option{value: "#"} レディース
+          %option{value: "#"} メンズ
+          %option{value: "#"} ベビー・キッズ
+          %option{value: "#"} インテリア・住まい・小物
+          %option{value: "#"} 本・音楽・ゲーム
+          %option{value: "#"} おもちゃ・ホビー・グッズ
+          %option{value: "#"} コスメ・香水・美容
+          %option{value: "#"} 家電・スマホ・カメラ
+          %option{value: "#"} スポーツ・レジャー
+          %option{value: "#"} ハンドメイド
+          %option{value: "#"} チケット
+          %option{value: "#"} 自動車・オートバイ
+          %option{value: "#"} その他
+        .sell__label
+          カテゴリー
+          %span.required 必須
+        %select.select-default
+          %option{value: ""} ---
+          %option{value: "#"} 新品、未使用
+          %option{value: "#"} 未使用に近い
+          %option{value: "#"} 目立った傷や汚れなし
+          %option{value: "#"} やや傷や汚れあり
+          %option{value: "#"} 傷や汚れあり
+          %option{value: "#"} 全体的に状態が悪い
+    .sell__head
+      配送について
+      .sell__file
+        .sell__label
+          配送料の負担
+          %span.rquire 必須
+        %select.select-default
+          %option{value: ""} ---
+          %option{value: "#"} 送料込み(出品者負担)
+          %option{value: "#"} 着払い(購入者負担)
+      .sell__file
+        .sell__label
+          配送料の負担
+          %span.rquire 必須
+      %select.select-default
+        %option{value: "#"} ---
+        %option{value: "#"} 北海道
+        %option{value: "#"} 青森県
+        %option{value: "#"} 岩手県
+        %option{value: "#"} 宮城県
+        %option{value: "#"} 秋田県
+        %option{value: "#"} 山形県
+        %option{value: "#"} 福島県
+        %option{value: "#"} 茨城県
+        %option{value: "#"} 栃木県
+        %option{value: "#"} 群馬県
+        %option{value: "#"} 埼玉県
+        %option{value: "#"} 千葉県
+        %option{value: "#"} 東京都
+        %option{value: "#"} 神奈川県
+        %option{value: "#"} 新潟県
+        %option{value: "#"} 富山県
+        %option{value: "#"} 石川県
+        %option{value: "#"} 福井県
+        %option{value: "#"} 山梨県
+        %option{value: "#"} 長野県
+        %option{value: "#"} 岐阜県
+        %option{value: "#"} 静岡県
+        %option{value: "#"} 愛知県
+        %option{value: "#"} 三重県
+        %option{value: "#"} 滋賀県
+        %option{value: "#"} 京都府
+        %option{value: "#"} 大阪府
+        %option{value: "#"} 兵庫県
+        %option{value: "#"} 奈良県
+        %option{value: "#"} 和歌山県
+        %option{value: "#"} 鳥取県
+        %option{value: "#"} 島根県
+        %option{value: "#"} 岡山県
+        %option{value: "#"} 広島県
+        %option{value: "#"} 山口県
+        %option{value: "#"} 徳島県
+        %option{value: "#"} 香川県
+        %option{value: "#"} 愛媛県
+        %option{value: "#"} 高知県
+        %option{value: "#"} 福岡県
+        %option{value: "#"} 佐賀県
+        %option{value: "#"} 長崎県
+        %option{value: "#"} 熊本県
+        %option{value: "#"} 大分県
+        %option{value: "#"} 宮崎県
+        %option{value: "#"} 鹿児島県
+        %option{value: "#"} 沖縄県
+        %option{value: "#"} 未定
+      .sell__file
+        .sell__label
+          発送までの日数
+          %span.rquire 必須
+        %select.select-default
+          %option{:value => ""} ---
+          %option{:value => "1"} 1~2日で発送
+          %option{:value => "2"} 2~3日で発送
+          %option{:value => "3"} 4~7日で発送
+    .sell__head
+      販売価格(300〜9,999,999)
+      .sell__file
+        .sell__label
+          価格
+          %span.required 必須
+        %input.input-default{placeholder: "例）300", value: ""}/
+
+
+
+
+
+
+
+
+
+  .sell__footer
+    = render "shared/user_footer"

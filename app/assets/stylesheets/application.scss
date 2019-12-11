@@ -24,6 +24,8 @@
 @import "mypage/notification";
 @import "mypage/todo";
 @import "mypage/mypage.scss";
+@import "shared/user_header.scss";
+@import "shared/user_footer.scss";
 
 ::-webkit-scrollbar {
   display: none;

@@ -79,7 +79,6 @@ gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
-gem 'font-awesome-sass'
 gem 'font-awesome-rails'
 gem 'erb2haml'
 gem "omniauth-rails_csrf_protection"

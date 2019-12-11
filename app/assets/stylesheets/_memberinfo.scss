@@ -1,28 +1,163 @@
 .member{
-  background-color: gray;
-  .member-info{
-    width: 700px;
-    height: 1337px;
-    margin: 0 auto;
-    background-color: #fff;
-    font-family: sans-serif;
-    &__title{
-      font-size: 22px;
+  background-color:#f5f5f5;
+}
+.member-info{
+  width: 700px;
+  height: 1337px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #333;
+  &__field--required{
+    margin: 0 0 0 8px;
+    padding: 1.5px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    background: #ea352d;
+  }
+  &__name{
+    display: flex;
+  }
+  &__password{
+    margin: 8px 0 0;
+  }
+  &__title{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Source Sans Pro;
+    text-align: center;
+    padding: 32px;
+  }
+  &__field{
+    margin-top: 32px;
+    width: 100%;
+    .icon-box{
+      top: 50%;
+      left: 0;
+      z-index: 1;
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      background: #fff;
+      border: 1px solid #ccc;
+      font-size: 10px;
+      line-height: 17px;
       text-align: center;
-      padding: 32px;
+      color: #fff;
+      vertical-align: middle;
     }
-    &__form{
-      padding: 40px 40px 64px;
-      width: 620px;
-      height: 1135px;
-      border-top: 1px solid #f5f5f5;
+    &--input{
+      height: 28px;
+      padding: 6px 8px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 14px;
+      width: 330px;
+      margin: 8px 3px 0;
+    }
+    &--birthday{
+      margin: 6px 0 0;
+      background: #fff;
+      color:#333;
+      font-size: 14px;
+      .year{
+        height: 48px;
+        width: 76px;
+        background: #fff;
+      }
+      .month{
+        height: 48px;
+        width: 76px;
+        background: #fff;
+      }
+      .day{
+        height: 48px;
+        width: 76px;
+        background: #fff;
+      }
+    }
+    &--label{
+      font-weight: 600;
+      font-size: 13px;
+    }
+  }
+  &__box{
+    display: flex;;
+  }
+  &__form{
+    padding: 40px 40px 64px;
+    width: 620px;
+    height: 1135px;
+    border-top: 1px solid #f5f5f5;
+    &--top{
+      margin: 0 auto;
+      max-width: 343px;
+    }
+    &--bottom{
+      max-width: 343px;
+      margin: 0 auto;
       
-      &--top{
-        margin: 0 auto;
-        max-width: 343px;
-        &__field{
-          margin-top: 32px;
-        }
+    }
+    &--next{
+      margin-top:40px;
+    }
+  }
+  &__text--gray{
+    color: #888;
+    font-size: 14px;
+    margin: 8px 0 0;
+  }
+  &__field--chenge{
+    font-size: 14px;
+  }
+  &__field--human{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__form--go{
+    font-size:14px;
+    text-align: center;
+    .rule{
+      text-decoration: none;
+      color: #0099e8;
+    }
+  }
+  .button{
+    margin-top: 32px;
+    .nextbuttun{
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+    }
+    
+  }
+  &__field--right{
+    margin-top: 32px;
+    text-align: right;
+    font-size: 14px;
+    .right-rule{
+      text-decoration: none;
+      color: #0099e8;
+      text-align: right;
+    }
+  }
+  &__recaptcha{
+    font-size: 10px;
+    background-color: #f5f5f5;
+    margin-top: 32px;
+    padding: 10px 20px;
+    &--contents{
+      color: #888888;
+      .recaptha-link{
+        text-decoration: none;
+        color: #0099e8;
       }
     }
   }

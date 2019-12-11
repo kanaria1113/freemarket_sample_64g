@@ -1,0 +1,57 @@
+.mypage-tab-container-notification-todo{
+  width: 700px;
+}
+
+
+#mypage_tabs{
+  display: flex;
+}
+#mypage-go-list{
+  width: 668px;
+  height: 56px;
+  padding: 16px;
+}
+
+.summary{
+  display: block;
+  height: 56px;
+  margin: 0 auto;
+  background-color: #eee;
+  color: #333;
+  line-height: 56px;
+  text-align: center;
+  text-decoration: none;
+  &:hover{
+    background: #fafafa;
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+.my-notice{
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #eee;
+  &__active{
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+    text-align: center;
+    text-decoration: none;  
+    border-top: 2px solid #ea352d;
+    background-color: #fff;
+  }
+  &:hover{
+    opacity: .7;
+  }
+}
+#my_list{
+  width: 50%;
+}

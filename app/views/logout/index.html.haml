@@ -1,0 +1,12 @@
+.logout-header
+  = render "index/header"
+.logout-body
+  = render "mypage/mypage_sidebar"
+  .logout
+    .logout__inner
+      = link_to destroy_user_session_path, class: "logout-btn" do
+        ログアウト
+.logout-footer
+  = render "index/download"
+  = render "index/footer"
+  = render "index/exhibit"

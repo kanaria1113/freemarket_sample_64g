@@ -1,6 +1,9 @@
 .sell{
+  background-color: whitesmoke;
   &__body{
+    background-color: #FFF;
     vertical-align: baseline;
+    width: 700px;
     margin: 0 auto;
     border-width: 0px;
     border-style: initial;
@@ -8,11 +11,64 @@
     border-image: initial;
     font: inherit;
   }
+  &__label{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+  }
   box-sizing: border-box;
   &__title{
     padding: 40px;
   }
   &__file{
     padding: 40px;
+    border-bottom: 1px solid #efefef;
+    &__text{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+    }
   }
+}
+
+.required{
+  margin-left: 8px;
+  font-size: 12px;
+  padding: 1px 4px 0;
+  background-color: #ff0211;
+  color: #fff;
+  border-radius: 2px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+.sell-drop-box{
+  align-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+  transition: all 0.5s ease-out 0s;
+}
+.sell-upload-drop-file{
+  display: none;
+  -webkit-appearance: initial;
+  background-color: initial;
+  cursor: default;
+  align-items: baseline;
+  color: inherit;
+  text-align: start !important;
+  padding: initial;
+  border: initial;
 }

@@ -1,30 +1,30 @@
 .sell
   .sel__header
     = render "shared/user_header"
-  .sell__title
-    商品の情報を入力
-  .sell__file
-    .sell__file__text
-      出品画像
-      %span.required 必須
-    .sell-drop-box
-      %input.sell-upload-drop-file{multiple: "",name: "image1",style: "display: none;", type: "file"}/
-      ドラッグアンドドロップ
-      %br/
-      またはクリックしてください
+  .sell__body
     .sell__file
-      .sell__label
-        商品名
+      .sell__file__text
+        出品画像
         %span.required 必須
-      %input.input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
-      .sell__label
-        商品の説明
-        %span.required 必須
-      %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
-    .sell__head
-      商品の詳細
-      .sell__file
+      .sell-drop-box
+        %input.sell-upload-drop-file{multiple: "",name: "image1",style: "display: none;", type: "file"}/
+        ドラッグアンドドロップ
+        %br/
+        またはクリックしてください
+    .sell__file
+      .sell-form-group
         .sell__label
+          商品名
+          %span.required 必須
+        %input.input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
+        .sell-form-group
+          商品の説明
+          %span.required 必須
+        %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+    .sell__file
+      .sell__head
+        商品の詳細
+        .sell-form-group
           カテゴリー
           %span.required 必須
         %select.select-default
@@ -42,28 +42,30 @@
           %option{value: "#"} チケット
           %option{value: "#"} 自動車・オートバイ
           %option{value: "#"} その他
-        .sell__label
-          カテゴリー
-          %span.required 必須
-        %select.select-default
-          %option{value: ""} ---
-          %option{value: "#"} 新品、未使用
-          %option{value: "#"} 未使用に近い
-          %option{value: "#"} 目立った傷や汚れなし
-          %option{value: "#"} やや傷や汚れあり
-          %option{value: "#"} 傷や汚れあり
-          %option{value: "#"} 全体的に状態が悪い
-    .sell__head
-      配送について
-      .sell__file
-        .sell__label
-          配送料の負担
-          %span.rquire 必須
-        %select.select-default
-          %option{value: ""} ---
-          %option{value: "#"} 送料込み(出品者負担)
-          %option{value: "#"} 着払い(購入者負担)
-      .sell__file
+      .sell-form-group
+        カテゴリー
+        %span.required 必須
+      %select.select-default
+        %option{value: ""} ---
+        %option{value: "#"} 新品、未使用
+        %option{value: "#"} 未使用に近い
+        %option{value: "#"} 目立った傷や汚れなし
+        %option{value: "#"} やや傷や汚れあり
+        %option{value: "#"} 傷や汚れあり
+        %option{value: "#"} 全体的に状態が悪い
+    .sell__file
+      .sell__head
+        配送について
+        .sell-form-group
+          .sell__label
+            配送料の負担
+            %span.rquire 必須
+          %select.select-default
+            %option{value: ""} ---
+            %option{value: "#"} 送料込み(出品者負担)
+            %option{value: "#"} 着払い(購入者負担)
+    .sell__file
+      .sell-form-group
         .sell__label
           配送料の負担
           %span.rquire 必須
@@ -117,30 +119,50 @@
         %option{value: "#"} 鹿児島県
         %option{value: "#"} 沖縄県
         %option{value: "#"} 未定
+        .sell-form-group
+          .sell__label
+            発送までの日数
+            %span.rquire 必須
+          %select.select-default
+            %option{value: ""} ---
+            %option{value: "1"} 1~2日で発送
+            %option{value: "2"} 2~3日で発送
+            %option{value: "3"} 4~7日で発送
       .sell__file
-        .sell__label
-          発送までの日数
-          %span.rquire 必須
-        %select.select-default
-          %option{:value => ""} ---
-          %option{:value => "1"} 1~2日で発送
-          %option{:value => "2"} 2~3日で発送
-          %option{:value => "3"} 4~7日で発送
-    .sell__head
-      販売価格(300〜9,999,999)
-      .sell__file
-        .sell__label
-          価格
-          %span.required 必須
-        %input.input-default{placeholder: "例）300", value: ""}/
-
-
-
-
-
-
-
-
-
+        .sell__head
+          販売価格(300〜9,999,999)
+          .sell-form-group
+            %ul.sell-price
+              %li.form-group
+                .clearfix
+                  .l-left
+                    / react-text: 104
+                    価格
+                    / /react-text
+                    %span.form-require 必須
+                  .sell-right.sell-price-input
+                    / react-text: 107
+                    ¥
+                    / /react-text
+                    %div
+                      %input.input-default{placeholder: "例）300", value: ""}/
+                / react-empty: 110
+              %li.sell__fee
+                .sell-left
+                  / react-text: 199
+                  販売手数料 (10%)
+                  / /react-text
+                .l-right ー
+              %li.sell__profit
+                .sell-left--bold 販売利益
+                .sell-right--bold　ー
+            .sell__exhibit
+              =link_to "#", class: "sell-btn__red" do
+                出品する
+            .sell__back
+              =link_to root_path, class: "sell-btn__grey" do
+                戻る
+            .sell-text
+              禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
   .sell__footer
     = render "shared/user_footer"

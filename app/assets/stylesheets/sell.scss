@@ -1,3 +1,18 @@
-// Place all the styles related to the sell controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.sell{
+  &__body{
+    vertical-align: baseline;
+    margin: 0 auto;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    font: inherit;
+  }
+  box-sizing: border-box;
+  &__title{
+    padding: 40px;
+  }
+  &__file{
+    padding: 40px;
+  }
+}

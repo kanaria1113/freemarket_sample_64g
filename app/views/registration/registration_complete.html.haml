@@ -1,0 +1,14 @@
+= render "registration_header_complete"
+.registration-complete
+  .registration-complete__title
+    会員登録完了
+  .registration-complete__container
+    .registration-complete__container__text
+    ありがとうございます。
+    %br
+    会員登録が完了しました。
+    .registration-complete__container__start-btn
+    =link_to root_path,class: "start-btn" do
+      メルカリをはじめる
+  = render "index/download"
+  = render 'shared/user_footer'

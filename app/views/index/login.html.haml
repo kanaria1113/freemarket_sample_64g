@@ -1,4 +1,4 @@
-= render "user_header"
+= render "shared/user_header"
 .login-page
   .login-page__registration-new
     アカウントをお持ちでない方はこちら
@@ -17,18 +17,17 @@
           %div#login-google
             googleでログイン
     .login-page__container__form
-      %form{:action => "/form.php", :method => "post"}
-      %input#login-input{:name => "mail-address", :type => "text", placeholder: '  メールアドレス'}
-      %form{:action => "/form.php", :method => "post"}
-      %input#login-input{:name => "password", :type => "text", placeholder: '  パスワード'}
+      = form_with(model:@user) do |f|
+        = f.email_field :email, placeholder: "  メールアドレス", class: "login-input"
+        = f.password_field :password, placeholder: "  パスワード", class: "login-input"
     .login-page__container__robot
-    %script{:async => "", :defer => "", :src => "https://www.google.com/recaptcha/api.js"}
-    %form{:action => "./verify.php", :method => "POST"}
-    .g-recaptcha{"data-sitekey" => "サイトキー"}
-    %input{:type => "submit", :value => "Submit"}/
+      %script{async: "#", defer: "", src: "https://www.google.com/recaptcha/api.js"}
+      %form{action: "./verify.php", method: "POST"}
+      .g-recaptcha{"data-sitekey":"サイトキー"}
     .registration-complete__container__start-btn
       =link_to root_path,class: "start-btn" do
         ログイン
-
-
-= render "user_footer"
+    .login-page__container__forget
+      =link_to "#",class: "forget" do
+        パスワードをお忘れの方
+  = render 'shared/user_footer'

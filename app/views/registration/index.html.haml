@@ -1,11 +1,11 @@
 .select
-  = render 'user_header'
+  = render 'shared/user_header'
   .select-content
     .select-content__tilte
       新規会員登録
     .select-content__contenter
       .select-content__contenter__btn1
-        =link_to "#",class: "mail_btn" do
+        =link_to registration_information_registration_index_path, class: "mail_btn" do
           %i.far.fa-envelope
           %div#btn1
             メールアドレスで登録する
@@ -19,4 +19,4 @@
           = image_tag "/assets/google-search.svg", class: "google_svg"
           %div#btn3
             googleで登録する
-  = render 'user_footer'
+  = render 'shared/user_footer'

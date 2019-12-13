@@ -34,7 +34,7 @@
     }
   }
 }
-#payment-input {
+.payment-input-form {
   width: 300px;
   height: 40px;
   border-radius: 4px;
@@ -51,7 +51,7 @@
   text-align: right;
   padding-bottom: 30px;
 }
-#payment-expiration {
+#payment_expiration {
   display: inline-block;
   text-align: right;
   &__detail {

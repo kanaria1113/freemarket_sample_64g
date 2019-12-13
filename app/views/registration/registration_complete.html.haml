@@ -1,4 +1,4 @@
-= render "registration_header"
+= render "registration_header_complete"
 .registration-complete
   .registration-complete__title
     会員登録完了
@@ -10,5 +10,5 @@
     .registration-complete__container__start-btn
     =link_to root_path,class: "start-btn" do
       メルカリをはじめる
-  = render "download"
-  = render "user_footer"
+  = render "index/download"
+  = render 'shared/user_footer'

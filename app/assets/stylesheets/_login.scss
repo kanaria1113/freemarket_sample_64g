@@ -3,6 +3,16 @@
   background: whitesmoke;
   margin: 0;
   text-align: center;
+  &__container {
+    width: 456px;
+    background-color: #fff;
+    margin: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    &__form {
+
+    }
+  }
 }
 .login-page__registration-new {
   width: 456px;
@@ -11,7 +21,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 14px;
-  border-bottom: whitesmoke solid 1px;
+  border-bottom: whitesmoke solid 2px;
 }
 .registration-new_btn {
   display: flex;
@@ -24,12 +34,6 @@
   line-height: 50px;
   text-decoration: none;
   justify-content: center;
-}
-.login-page__container {
-  width: 456px;
-  background-color: #fff;
-  margin: auto;
-  padding-bottom: 30px;
 }
 .login-facebook_btn {
   display: flex;
@@ -53,7 +57,7 @@
   color: #333;
   background-color: #fff;
   border: #979797 solid 1px;
-  margin: 16px auto 0;
+  margin: 16px auto 50px;
   font-size: 24px;
   line-height: 50px;
   text-decoration: none;
@@ -67,4 +71,31 @@
   height: 50px;
   border-radius: 4px;
   border: #979797 solid 1px;
+  margin-bottom: 20px;
+}
+.g-recaptcha {
+  width: 343px;
+  margin: 16px auto 20px;
+}
+.forget {
+  width: 343px;
+  color: skyblue;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  text-align: left;
+  margin-top: 40px;
+  &:hover {
+  text-decoration: underline;
+  opacity: .7;
+  }
+}
+#email.login-input {
+  height: 50px;
+  width: 343px;
+}
+#password.login-input {
+  height: 50px;
+  width: 343px;
+  margin-top: 20px;
 }

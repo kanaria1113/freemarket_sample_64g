@@ -69,10 +69,15 @@
   display: inline-block;
   text-align: right;
   padding-bottom: 60px;
+  &:hover {
+    text-decoration: underline;
+    opacity: .7;
+  }
 }
 #number {
   height: 50px;
   width: 343px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  padding: 6px 8px 8px;
 }

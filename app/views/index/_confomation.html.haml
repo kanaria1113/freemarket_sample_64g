@@ -1,9 +1,42 @@
-.mainconfomation
-  .mainconfomation__head
-    %h2.mainconfomation__head--first
-      商品は既に売り切れています
-    .mainconfomation__head--second
-      .mainconfomation__head--contents
-        %a
-          = link_to '#', class: "contents-link" do
-            商品画面へ戻る
+.buycheck
+  .buycheck__main
+    %h2.buycheck__header
+      購入内容の確認
+    .buycheck__item
+      .buycheck__item--collector
+        .buycheck__item--box
+          %h3.buycheck__item--image
+            %img{alt: "購入した商品", src: "assets/back.jpg",class: "buy-image"}
+          .buycheck__item--detail
+            %p.buycheck__item--name
+              ブランド名 状態 カテゴリー 柄 番号 商品の名前
+            %p.buycheck__item--price
+              %span
+                ¥21,111
+              %span
+                (税込) 送料込み
+    .buycheck__pay
+      .buycheck__pay--content
+        = form_with model: @user, local: true, class:"buycheck__pay--form" do |f|
+          %ul.buycheck__pay--money
+            %li.buycheck__pay--row
+              .buycheck__pay--label
+                支払い金額
+              .buycheck-pay--cell
+                %span.buycheck-pay--date
+                  ¥21,100
+          %ul.buycheck__pay--check
+            %li.buycheck__pay--point
+              .buycheck__point--uses
+                -# input
+                %i.point--uses
+                -# label
+          .buycheck__pay--way
+            .buycheck__pay--inner
+              %h3.buycheck__pay--registration
+              %a{ href:'', class:"buycheck__pay--paylink"}
+                %p.buycheck__pay--text
+                  %i.buycheck__pay--circle
+                  %span.buycheck__pay--textinner
+          -# =f.label(:name, '支払い金額',class:"paymentmoney") 
+          -# =f.label(:name, '支払い金額',class:"paymentmoney") 

@@ -8,23 +8,24 @@
           出品画像
           %span.required 必須
         .sell-drop
-          = f.label :image, class: "sell-drop-box"
-            %i.fa.fa-camera
-              %p.sell-drop-box__text
-                ドラッグアンドドロップ
-                %br/
-                またはクリックしてください
+          = f.label :image, class: 'sell-drop__box' do
+            %i.fa.fa-camera.sell-drop__camera
+            %p.sell-drop__box__text
+            ドラッグアンドドロップ
+            %br/
+            またはクリックしてください
+            = f.file_field :image, class: 'sell-drop__box__file'
       .sell__file
         .sell-form-group
           .sell__label
             商品名
             %span.required 必須
-          = f.text :text, class: 'input-default',placeholder: "商品名（必須 40文字まで)", value: ""
+          = f.text_field :select_default, class: 'input-default',placeholder: "商品名（必須 40文字まで)", value: ""
           .sell-form-group
             .sell__label
               商品の説明
               %span.required 必須
-            = f.textarea placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+            = f.text_area :sell_detail, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
       .sell__file
         .sell__head
           商品の詳細
@@ -32,33 +33,12 @@
             .sell__label
               カテゴリー
               %span.required 必須
-            = f.select class: "select-default"
-              %option{value: ""} ---
-              %option{value: "#"} レディース
-              %option{value: "#"} メンズ
-              %option{value: "#"} ベビー・キッズ
-              %option{value: "#"} インテリア・住まい・小物
-              %option{value: "#"} 本・音楽・ゲーム
-              %option{value: "#"} おもちゃ・ホビー・グッズ
-              %option{value: "#"} コスメ・香水・美容
-              %option{value: "#"} 家電・スマホ・カメラ
-              %option{value: "#"} スポーツ・レジャー
-              %option{value: "#"} ハンドメイド
-              %option{value: "#"} チケット
-              %option{value: "#"} 自動車・オートバイ
-              %option{value: "#"} その他
+            = f.select :select_default , レディース: "", メンズ: "", ベビー・キッズ: "", インテリア・住まい・小物: "", 本・音楽・ゲーム: "", おもちゃ・ホビー・グッズ: "", コスメ・香水・美容: "", 家電・スマホ・カメラ: "", スポーツ・レジャー: "", ハンドメイド: "", チケット: "", 自動車・オートバイ: "", その他: ""
           .sell-form-group
             .sell__label
               商品の状態
               %span.required 必須
-            = f.select class: "select-default"
-              %option{value: ""} ---
-              %option{value: "#"} 新品、未使用
-              %option{value: "#"} 未使用に近い
-              %option{value: "#"} 目立った傷や汚れなし
-              %option{value: "#"} やや傷や汚れあり
-              %option{value: "#"} 傷や汚れあり
-              %option{value: "#"} 全体的に状態が悪い
+            = f.select :select_default ,新品、未使用: "",未使用に近い: "",目立った傷や汚れなし: "",やや傷や汚れあり: "",傷や汚れあり: "",全体的に状態が悪い: ""
       .sell__file
         .sell__head
           配送について
@@ -66,92 +46,32 @@
             .sell__label
               配送料の負担
               %span.required 必須
-            = f.select class: "select-default"
-              %option{value: ""} ---
-              %option{value: "#"} 送料込み(出品者負担)
-              %option{value: "#"} 着払い(購入者負担)
-      .sell__file
+            = f.select :select_default, 送料込み（出品者負担）: "", 着払い（購入者負担）: ""
         .sell-form-group
           .sell__label
-            配送料の負担
+            発送元の地域
             %span.required 必須
-          = f.select class: "select-default"
-            %option{value: "#"} ---
-            %option{value: "#"} 北海道
-            %option{value: "#"} 青森県
-            %option{value: "#"} 岩手県
-            %option{value: "#"} 宮城県
-            %option{value: "#"} 秋田県
-            %option{value: "#"} 山形県
-            %option{value: "#"} 福島県
-            %option{value: "#"} 茨城県
-            %option{value: "#"} 栃木県
-            %option{value: "#"} 群馬県
-            %option{value: "#"} 埼玉県
-            %option{value: "#"} 千葉県
-            %option{value: "#"} 東京都
-            %option{value: "#"} 神奈川県
-            %option{value: "#"} 新潟県
-            %option{value: "#"} 富山県
-            %option{value: "#"} 石川県
-            %option{value: "#"} 福井県
-            %option{value: "#"} 山梨県
-            %option{value: "#"} 長野県
-            %option{value: "#"} 岐阜県
-            %option{value: "#"} 静岡県
-            %option{value: "#"} 愛知県
-            %option{value: "#"} 三重県
-            %option{value: "#"} 滋賀県
-            %option{value: "#"} 京都府
-            %option{value: "#"} 大阪府
-            %option{value: "#"} 兵庫県
-            %option{value: "#"} 奈良県
-            %option{value: "#"} 和歌山県
-            %option{value: "#"} 鳥取県
-            %option{value: "#"} 島根県
-            %option{value: "#"} 岡山県
-            %option{value: "#"} 広島県
-            %option{value: "#"} 山口県
-            %option{value: "#"} 徳島県
-            %option{value: "#"} 香川県
-            %option{value: "#"} 愛媛県
-            %option{value: "#"} 高知県
-            %option{value: "#"} 福岡県
-            %option{value: "#"} 佐賀県
-            %option{value: "#"} 長崎県
-            %option{value: "#"} 熊本県
-            %option{value: "#"} 大分県
-            %option{value: "#"} 宮崎県
-            %option{value: "#"} 鹿児島県
-            %option{value: "#"} 沖縄県
-            %option{value: "#"} 未定
+          = f.select :select_default ,北海道: "",青森県: "",岩手県: "",宮城県: "",秋田県: "",山形県: "",福島県: "",茨城県: "",栃木県: "",群馬県: "",埼玉県: "",千葉県: "",東京都: "",神奈川県: "",新潟県: "",富山県: "",石川県: "",福井県: "",山梨県: "",長野県: "",岐阜県: "",静岡県: "",愛知県: "",三重県: "",滋賀県: "",京都府: "",大阪府: "",兵庫県: "",奈良県: "",和歌山県: "",鳥取県: "",島根県: "",岡山県: "",広島県: "",山口県: "",徳島県: "",香川県: "",愛媛県: "",高知県: "",福岡県: "",佐賀県: "",長崎県: "",熊本県: "",大分県: "",宮崎県: "",鹿児島県: "",沖縄県: ""
         .sell-form-group
           .sell__label
             発送までの日数
             %span.required 必須
-          = f.select class: "select-default"
-            %option{value: ""} ---
-            %option{value: "1"} 1~2日で発送
-            %option{value: "2"} 2~3日で発送
-            %option{value: "3"} 4~7日で発送
+          = f.select :select_default ,１〜２日で発送: "",２〜３日で発送: "",４〜７日で発送: ""
       .sell__file
         .sell__head
           販売価格(300〜9,999,999)
           .sell-form-group
             %ul.sell-price
               %li.form-group
-                .clearfix
-                  .l-left
-                    / react-text: 104
-                    価格
-                    / /react-text
-                    %span.require 必須
+                .sell__price
+                  .sell__label
+                    商品の説明
+                    %span.required 必須
                   .sell-right.sell-price-input
-                    / react-text: 107
-                    ¥
-                    / /react-text
+                    .sell-yen
+                      ¥
                     %div
-                      = f.text class: "input-default", placeholder: "例）300", value: ""
+                      = f.text_area class: "input-default", placeholder: "例）300", value: ""
                 / react-empty: 110
               %li.sell__fee
                 .sell-left
@@ -159,11 +79,11 @@
                   販売手数料 (10%)
                   / /react-text
                 .l-right ー
-              %li.sell__profit
+              %li.sell__fee
                 .sell-left--bold 販売利益
                 .sell-right--bold ー
             .sell__exhibit
-              = f.submit "出品する"
+              = f.submit :出品する, class: "sell-btn__red"
             .sell__back
               = link_to root_path, class: "sell-btn__grey" do
                 戻る

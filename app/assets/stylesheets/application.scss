@@ -13,3 +13,34 @@
 @import "./login";
 @import "./login_forget";
 @import "./registration_information";
+@import "./headerimage";
+@import "./headerimage2";
+@import "./slick-theme.scss"; 
+@import "slick";
+@import "carousel";
+@import "./download";
+@import "./exhibit";
+@import "./footer";
+// @import "./header";
+@import "./mainindex";
+@import "./loginheader";
+@import "./carousel";
+@import "./slick-theme.scss";
+@import "mypage/during_trade";
+@import "mypage/exhibiting";
+@import "mypage/like_all";
+@import "mypage/logout";
+@import "mypage/mypage_item_list";
+@import "mypage/mypage_link";
+@import "mypage/mypage_sidebar";
+@import "mypage/notification";
+@import "mypage/todo";
+@import "mypage/mypage.scss";
+@import "shared/user_header.scss";
+@import "shared/user_footer.scss";
+@import "./sell.scss";
+
+::-webkit-scrollbar {
+  display: none;
+  -webkit-appearance: none;
+}

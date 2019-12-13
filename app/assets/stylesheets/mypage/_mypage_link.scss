@@ -1,0 +1,40 @@
+#mypage__user-icon{
+  width: 660px;
+  height: 200px;
+  font-size: 14px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEr3NzZGbr2i5RCkYUWvUdWcgPW3nQqYP40vCICClgJ0fOWlLh&s);
+  background-size: cover;
+  position: relative;
+  height: 155px;
+  padding: 20px;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.mypageicon{
+  border-style: solid;
+  border-width: 0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.mypage__number{
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 0;
+  font-weight: 600;
+  color: #fff;
+
+}
+#my-evaluate{
+  margin-right: 16px;
+}
+.mypage_link{
+  color: #fff;
+  padding: 30px;
+  margin: 8px 0 0;
+  text-align: center;
+  text-decoration: none;
+}
+

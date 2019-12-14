@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     end
   end
   root to: 'index#index'
-  resources :mypage, only: [:index]
+  resources :mypage, only: [:index] do
+    get "profile"
+  end
   resources :logout, only: [:index]
   resources :sell, only: [:index]
 end

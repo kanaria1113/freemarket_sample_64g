@@ -28,15 +28,40 @@
           %ul.buycheck__pay--check
             %li.buycheck__pay--point
               .buycheck__point--uses
-                -# input
-                %i.point--uses
-                -# label
+                =f.check_box(:type, class:"checkicon")
+                =f.label(:name, 'ポイントを使用 (所持ポイント: P0)',class:"point-display")
           .buycheck__pay--way
             .buycheck__pay--inner
               %h3.buycheck__pay--registration
+                支払い方法
               %a{ href:'', class:"buycheck__pay--paylink"}
                 %p.buycheck__pay--text
-                  %i.buycheck__pay--circle
+                  %i.fa.fa-dot-circle-o.sava
                   %span.buycheck__pay--textinner
-          -# =f.label(:name, '支払い金額',class:"paymentmoney") 
-          -# =f.label(:name, '支払い金額',class:"paymentmoney") 
+                    登録してください
+          .buycheck__pay--address
+            .buycheck__address--content
+              %h3.address-place
+                配送先
+              %a{ href:'', class:"address-link"}
+                %span.change-link
+                  変更する
+            .buycheck__address--inner
+              %p
+                〒郵便番号
+              %p
+                北海道
+              %p
+                名前
+          .buycheck__pay--error
+            %p.buycheck__error--message
+              この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+            =f.submit("購入する",class:"buy-botton")
+            %p.buycheck__install--messege
+              アプリをお持ちでない方は以下よりインストールしてご利用いただ毛ます。
+            %br
+            .buycheck__pay--store
+              %a{ href:'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8', class:"apple-link"}
+                %img{alt: "apple", src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?82960919"}
+              %a{ href:'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class:"google-link"}
+                %img{alt: "mwrukari", src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?82960919"}

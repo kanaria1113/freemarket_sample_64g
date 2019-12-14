@@ -6,7 +6,7 @@
       .buycheck__item--collector
         .buycheck__item--box
           %h3.buycheck__item--image
-            %img{alt: "購入した商品", src: "assets/back.jpg",class: "buy-image"}
+            = image_tag "/assets/back", class:"buy-image", alt:"購入した商品"
           .buycheck__item--detail
             %p.buycheck__item--name
               ブランド名 状態 カテゴリー 柄 番号 商品の名前
@@ -34,7 +34,7 @@
             .buycheck__pay--inner
               %h3.buycheck__pay--registration
                 支払い方法
-              %a{ href:'', class:"buycheck__pay--paylink"}
+              = link_to '/', class: "buycheck__pay--paylink" do
                 %p.buycheck__pay--text
                   %i.fa.fa-dot-circle-o.sava
                   %span.buycheck__pay--textinner
@@ -43,7 +43,7 @@
             .buycheck__address--content
               %h3.address-place
                 配送先
-              %a{ href:'', class:"address-link"}
+              = link_to '/', class: "address-link" do
                 %span.buycheck__pay--changelink
                   変更する
             .buycheck__address--inner
@@ -61,7 +61,7 @@
               アプリをお持ちでない方は以下よりインストールしてご利用いただ毛ます。
             %br
             .buycheck__pay--store
-              %a{ href:'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8', class:"apple-link"}
-                %img{alt: "apple", src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?82960919"}
-              %a{ href:'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class:"google-link"}
-                %img{alt: "mwrukari", src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?82960919"}
+              = link_to 'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8', class: "apple-link" do
+                =image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?82960919'
+              = link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "google-link" do
+                =image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?82960919'

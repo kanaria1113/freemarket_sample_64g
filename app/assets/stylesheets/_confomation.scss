@@ -1,18 +1,18 @@
 .buycheck{
   background: rgb(245, 245, 245);
   color: #333;
-}
-.buycheck__main{
-  width: 700px;
-  margin: 0 auto;
-  background: #fff;
-}
-.buycheck__header{
-  font-size: 22px;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
-  padding: 32px;
+  &__main{
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+  }
+  &__header{
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    padding: 32px;
+  }
 }
 .buycheck__item{
   padding:32px 16px;
@@ -109,7 +109,6 @@
   &--textinner:hover:before{
     width: 100%;
   }
-  
   &--textinner{
     position: relative;
     display: inline-block;
@@ -192,7 +191,6 @@
     }
   }
 }
-
 .checkicon{
   left: 0;
   border-radius: 2px;
@@ -210,15 +208,3 @@ input[type="checkbox"]{
 input[type="checkbox"]:checked{
   background:#ccc;
 }
-
-
-
-
-
-  
-  
- 
-  
-  
-
-

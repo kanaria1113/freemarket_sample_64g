@@ -23,8 +23,5 @@ Rails.application.routes.draw do
       get 'mypage_card_input'
     end
   end
-
-  get "login" => "index#login"
-
   resources :pribate, only: [:index]
 end

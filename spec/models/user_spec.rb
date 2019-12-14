@@ -159,6 +159,6 @@ describe User do
       user.valid?
       expect(user.errors[:nickname]).to include("is too long (maximum is 20 characters)")
     end
-
+    
   end
 end

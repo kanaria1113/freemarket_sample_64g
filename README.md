@@ -208,3 +208,4 @@
 
 ### Association
 - belongs_to :user
+i

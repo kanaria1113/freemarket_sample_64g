@@ -1,0 +1,36 @@
+.single-footer  {
+  background: whitesmoke;
+  height: 220px;
+  text-align: center;
+  margin: 0 auto;
+  width: 100vw;
+  &__content {
+    font-size: 12px;
+    padding-top: 40px;
+    display: inline-flex;
+    &__1 {
+      padding: 0 10px;
+      
+    }
+    &__2 {
+      padding: 0 10px;
+    }
+    &__3{
+      padding: 0 10px;
+    }
+  }
+  &__image {
+    padding-top: 40px;
+  }
+  &__copyright {
+    font-size: 13px
+  }
+  .content {
+    color: #333;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      opacity: .7;
+    }
+  }
+}

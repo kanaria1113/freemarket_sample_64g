@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   height: 100px;
+  background-color: #fff;
 }
 .main-header {
   background-color: #fff;
@@ -67,7 +68,7 @@
   height: 44px;
   display: flex;
   justify-content: space-between;
-  .main-header-bottom-left {
+  &-left {
     background-color: #fff;
     width: 308.45px;
     .main-header-bottom-leftbox {
@@ -93,7 +94,7 @@
         }
     }
   }
-  .main-header-bottom-right {
+  &-right {
     display:flex;
     }
     .headerlike1, .headernotice1, .headerlist1, .headermypage1{
@@ -101,7 +102,7 @@
       padding: 0px 14px;
     }
 } 
-.fa.fa-heart, .fa.fa-bell, .fa.fa-list{
+.fa.fa-heart-o, .fa.fa-bell-o, .fa.fa-check{
   max-width: 100%;
   height: auto;
   max-height: 100%;
@@ -114,7 +115,7 @@
   -webkit-box-align: center;
   align-items: center;
   display: flex;
-  font-size: 14px;
+  font-size: 20px;
   height: 32px;
   transform: scale(1);
   transition: all 0.3s ease-out 0s;
@@ -156,3 +157,23 @@
 }
 
 
+.a-category {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  white-space: nowrap;
+}
+.a-brand {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  white-space: nowrap;
+}
+.a-category, .a-brand{
+  text-decoration: none;
+  &:hover {
+    color: blue;
+  }
+}

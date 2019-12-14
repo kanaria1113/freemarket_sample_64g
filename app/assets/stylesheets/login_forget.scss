@@ -1,0 +1,52 @@
+.login_forget {
+  width: 100vw;
+  background: whitesmoke;
+  margin: 0;
+  text-align: center;
+  &__container {
+    width: 700px;
+    background-color: #fff;
+    margin: auto;
+    padding-bottom: 50px;
+    &__title {
+      font-weight: bold;
+      font-size: 24px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-bottom: whitesmoke solid 1px;
+    }
+    &__mail_address {
+      width: 345px;
+      padding-top: 40px;
+      display: inline-block;
+      text-align: left;
+      font-weight: bold;
+    }
+    &__mail_address_text {
+      display: inline-block;
+      text-align: left;
+      word-wrap: normal;
+      width: 345px;
+      font-size: 13px;
+      margin-bottom: 30px;
+      color: gray;
+    }
+  }
+}
+#email.mail_address {
+  width: 345px;
+  height: 50px;
+}
+.send-btn {
+  width: 345px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ea352d;
+  border: 1px solid #ccc;
+  margin: 0px auto 0;
+  line-height: 50px;
+  text-decoration: none;
+  display: flex;
+  display: block;
+  margin-top: 30px;
+}

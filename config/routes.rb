@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     get "profile"
   end
   resources :logout, only: [:index]
+  resources :items, only: [:index]
   resources :sell, only: [:index]
 end

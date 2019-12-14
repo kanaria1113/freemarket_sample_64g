@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'registration#index'
+  root to: 'index#index'
   
   resources :registration, only: [:index] do
     collection do
@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index]
   resources :logout, only: [:index]
   resources :sell, only: [:index]
+
+  get "login" => "index#login"
+
 end

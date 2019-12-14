@@ -1,0 +1,18 @@
+.mypage_payment
+  .mypage_payment__title
+    支払い方法
+  .mypage_payment__content
+    .mypage_payment__content__title
+      クレジットカード一覧
+    .mypage_payment__content__add
+      -# - if card_add_in?
+      -# カードの登録がある場合
+      -# - else
+      .mypage_payment__content__add_btn
+        =link_to "#",class: "add_btn" do
+          %i.card-icon.fa-credit-card
+          %div#add_btn
+            クレジットカードを追加する
+      .mypage_payment__content__about
+        =link_to "#",class: "payment_method_about" do
+          支払い方法について>

@@ -21,7 +21,7 @@
 @import "./download";
 @import "./exhibit";
 @import "./footer";
-// @import "./header";
+@import "./header";
 @import "./mainindex";
 @import "./loginheader";
 @import "./carousel";
@@ -36,6 +36,7 @@
 @import "mypage/notification";
 @import "mypage/todo";
 @import "mypage/mypage.scss";
+@import "mypage/mypage_card_add.scss";
 @import "shared/user_header.scss";
 @import "shared/user_footer.scss";
 @import "./sell.scss";

@@ -15,4 +15,5 @@ class User < ApplicationRecord
   validates :last_name_kana, presence: true, format: { with: VALID_KATAKANA, message: 'はカタカナで入力して下さい'}
   validates :fast_name_kana, presence: true, format: { with: VALID_KATAKANA, message: 'はカタカナで入力して下さい'}
   validates :nickname, presence: true, length: { maximum: 20 }
+  
 end

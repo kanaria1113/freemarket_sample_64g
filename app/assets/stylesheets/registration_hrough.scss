@@ -1,0 +1,91 @@
+.select {
+  background: whitesmoke;
+  margin: 0 auto;
+  text-align: center;
+  width: 100vw;
+}
+
+.select-content {
+  width: 700px;
+  background-color: white;
+  margin: auto;
+}
+
+.select-content__tilte {
+  font-size: 22px;
+  font-weight: bold;
+  height: 33px;
+  border-bottom: whitesmoke solid 1px;
+  padding: 32px;
+}
+
+.select-content__contenter {
+  padding: 40px 40px 50px;
+}
+
+.mail_btn {
+  display: flex;
+  width: 343px;
+  height: 50px;
+  color: #fff;
+  background-color: red;
+  border-radius: 4px;
+  margin: auto;
+  font-size: 26px;
+  line-height: 50px;
+  text-decoration: none;
+}
+#btn1 {
+  font-size: 14px;
+  padding-left: 50px;
+}
+.fa-envelope{
+  line-height: 50px;
+  padding-left: 18px;
+}
+
+.facebook_btn {
+  display: flex;
+  width: 343px;
+  height: 50px;
+  color: #fff;
+  background-color: #385185;
+  border-radius: 4px;
+  margin: 16px auto 0;
+  font-size: 24px;
+  line-height: 50px;
+  text-decoration: none;
+}
+#btn2 {
+  font-size: 14px;
+  padding-left: 70px;
+}
+.fa-facebook-square{
+  line-height: 50px;
+  padding-left: 18px;
+}
+
+.google_btn {
+  display: flex;
+  width: 343px;
+  height: 50px;
+  color: #333;
+  background-color: #fff;
+  border: #979797 solid 1px;
+  border-radius: 4px;
+  margin: 16px auto 0;
+  font-size: 24px;
+  line-height: 50px;
+  text-decoration: none;
+}
+#btn3 {
+font-size: 14px;
+padding-left: 80px;
+
+}
+.google_svg{
+height: 23px;
+width: 23px;
+padding-left: 16px;
+padding-top: 13px;
+}

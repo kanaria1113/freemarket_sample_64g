@@ -22,8 +22,8 @@
             %li.buycheck__pay--row
               .buycheck__pay--label
                 支払い金額
-              .buycheck-pay--cell
-                %span.buycheck-pay--date
+              .buycheck__pay--cell
+                %span.buychec__pay--date
                   ¥21,100
           %ul.buycheck__pay--check
             %li.buycheck__pay--point
@@ -44,7 +44,7 @@
               %h3.address-place
                 配送先
               %a{ href:'', class:"address-link"}
-                %span.change-link
+                %span.buycheck__pay--changelink
                   変更する
             .buycheck__address--inner
               %p
@@ -54,10 +54,10 @@
               %p
                 名前
           .buycheck__pay--error
-            %p.buycheck__error--message
+            %p.buycheck__pay--message
               この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-            =f.submit("購入する",class:"buy-botton")
-            %p.buycheck__install--messege
+            =f.submit("購入する",class:"buycheck__pay--buybotton")
+            %p.buycheck__pay--install
               アプリをお持ちでない方は以下よりインストールしてご利用いただ毛ます。
             %br
             .buycheck__pay--store

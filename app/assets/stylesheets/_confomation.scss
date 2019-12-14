@@ -32,12 +32,13 @@
     display: flex;
     align-items: center;
   }
-  &--detail{
-    margin-left: 16px;
-  }
   .buy-image{
     width: 80px;
   }
+  &--detail{
+    margin-left: 16px;
+  }
+
   &--name{
     font-size: 14px;
     margin: 0;
@@ -65,23 +66,138 @@
     justify-content:space-between;
     font-weight: bold;
   }
+  &--row{
+    display: flex;
+    justify-content: space-between;
+  }
+  &--label{
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  &--cell{
+    font-size:27px;
+  }
   &--check{
     margin: 24px 0 32px;
     color: #888;
     font-size:14px;
     position: relative;
   }
+  &--way{
+    padding: 32px 0;
+    border-top: 1px solid #f5f5f5;
+  }
+  &--registration{
+    font-size:14px;
+    font-weight: bold;
+  }
+  &--paylink{
+    text-decoration: none;
+    color: #0099e8;
+  }
+  &--textinner:before{
+    position: absolute;
+    top: 1.3em;
+    left: 0;
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 1px;
+    background: #0099e8;
+    transition: 0,6;
+  }
+  &--textinner:hover:before{
+    width: 100%;
+  }
+  
+  &--textinner{
+    position: relative;
+    display: inline-block;
+  }
+  &--address{
+    padding: 32px 0;
+    border-top: 1px solid #f5f5f5;
+    font-size:14px;
+    .address-place{
+      font-weight: bold;
+    }
+    .address-link{
+      text-decoration: none;
+      color: #0099e8;
+    }
+    .buycheck__address--content{
+      max-width: 343px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .buycheck__address--inner{
+      margin-top:8px;
+    }
+  }
+  &--changelink{
+    position: relative;
+    display: inline-block;
+  }
+  &--changelink:before{
+    position: absolute;
+    top: 1.3em;
+    left: 0;
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 1px;
+    background: #0099e8;
+    transition: 0,6;
+  }
+  &--changelink:hover:before{
+    width: 100%;
+  }
+  &--error{
+    padding: 24px 0 0;
+    border-top: 1px solid #f5f5f5;
+  }
+  &--message{
+    padding-bottom: 24px;
+    color: #ea352d;
+    font-size: 14px;
+  }
+  &--buybotton{
+    border: 1px solid #888;
+    background: #888;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    transition: all ease-out .3s;
+    text-align: center;
+  }
+  &--install{
+    margin-top: 40px;
+    font-size:14px;
+  }
+  &--store{
+    text-align: center;
+    .apple-link{
+      margin-right: 24px;
+      text-decoration: none;
+    }
+    .apple-link:hover{
+      opacity: 0.6;
+    }
+    .google-link:hover{
+      opacity: 0.6;
+    }
+  }
 }
-.buycheck__pay--row{
-  display: flex;
-  justify-content: space-between;
-}
-.buycheck__pay--label{
-  font-size: 18px;
-  margin-top: 5px;
-}
-.buycheck-pay--cell{
-  font-size: 27px;
+
+.checkicon{
+  left: 0;
+  border-radius: 2px;
+  line-height: 17px;
+  background-color:#ccc;
 }
 input[type="checkbox"]{
   -webkit-appearance: none;
@@ -94,117 +210,15 @@ input[type="checkbox"]{
 input[type="checkbox"]:checked{
   background:#ccc;
 }
-.buycheck__pay--way{
-  padding: 32px 0;
-  border-top: 1px solid #f5f5f5;
-}
-.buycheck__pay--registration{
-  font-size:14px;
-  font-weight: bold;
-}
-.buycheck__pay--textinner{
-  position: relative;
-  display: inline-block;
-}
-.buycheck__pay--textinner:before{
-  position: absolute;
-  top: 1.3em;
-  left: 0;
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 1px;
-  background: #0099e8;
-  transition: 0,6;
-}
-.buycheck__pay--textinner:hover:before{
-  width: 100%;
-}
-.buycheck__pay--address{
-  padding: 32px 0;
-  border-top: 1px solid #f5f5f5;
-  font-size:14px;
-  .address-place{
-    font-weight: bold;
-  }
-  .address-link{
-    text-decoration: none;
-    color: #0099e8;
-  }
-  .buycheck__address--content{
-    max-width: 343px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-  }
-  .buycheck__address--inner{
-    margin-top:8px;
-  }
+
+
+
+
+
   
-}
-.change-link{
-  position: relative;
-  display: inline-block;
-}
-.change-link:before{
-  position: absolute;
-  top: 1.3em;
-  left: 0;
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 1px;
-  background: #0099e8;
-  transition: 0,6;
-}
-.change-link:hover:before{
-  width: 100%;
-}
-.buycheck__pay--paylink{
-  text-decoration: none;
-  color: #0099e8;
-}
-.checkicon{
-  left: 0;
-  border-radius: 2px;
-  line-height: 17px;
-  background-color:#ccc;
-}
-.buycheck__pay--error{
-  padding: 24px 0 0;
-  border-top: 1px solid #f5f5f5;
-  .buycheck__error--message{
-    padding-bottom: 24px;
-    color: #ea352d;
-    font-size: 14px;
-  }
-  .buy-botton{
-    border: 1px solid #888;
-    background: #888;
-    color: #fff;
-    display: block;
-    width: 100%;
-    line-height: 48px;
-    font-size: 14px;
-    border: 1px solid transparent;
-    transition: all ease-out .3s;
-    text-align: center;
-  }
-  .buycheck__install--messege{
-    margin-top: 40px;
-    font-size:14px;
-  }
-  .buycheck__pay--store{
-    text-align: center;
-    .apple-link{
-      margin-right: 24px;
-      text-decoration: none;
-    }
-  }
-}
-.apple-link:hover{
-  opacity: 0.6;
-}
-.google-link:hover{
-  opacity: 0.6;
-}
+  
+ 
+  
+  
+
+

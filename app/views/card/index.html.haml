@@ -1,0 +1,13 @@
+.mypage-header
+  = render "index/header"
+  .mypage
+    .mypage__left
+      = render "mypage/mypage_sidebar"
+    .mypage__right
+      = render "card/mypage_card_add"
+      -# 後ほどの条件分岐用にコメントアウト 
+      -# = render "mypage_card_delete"
+.mypage-footer
+  = render "index/download"
+  = render "index/footer"
+  = render "index/exhibit"

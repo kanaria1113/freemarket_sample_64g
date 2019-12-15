@@ -12,16 +12,38 @@
       .main-header__bottom__left__category
         .main-header__bottom__left__category__left
           .a-category
-            %i.fa.fa-bars.headericon
-            %a.a-category カテゴリーから探す
+            = link_to "#" , class: "a-category" do
+              %i.fa.fa-bars.headericon
+              カテゴリーから探す
         .main-header__bottom__left__category__right
           .a-brand
-            %i.fa.fa-tags.headericon
-            %a.a-brand ブランドから探す
+            = link_to "", class: "a-brand" do
+              %i.fa.fa-tags.headericon
+              ブランドから探す
       .main-header__bottom__left__brand
         .main-header__bottom__left-brand-n
-      .main-header__bottom__right
-        .main-header__bottom__right__signup
-          = link_to '新規会員登録', 'http://google.co.jp', class: "a-signup"
-        .main-header__bottom__right__login
-          = link_to 'ログイン', 'http://google.co.jp', class: "a-login"
+      - if user_signed_in?
+        .main-header-bottom-right
+          %ul.main-header-bottom-right
+            .headerlike1
+              = link_to "#", class: "headerlike"
+                %i.fa.fa-heart-o
+                %span.header-bottom-icon いいね一覧
+            .headernotice1
+              = link_to "#", class: "headerlike" do
+                %i.fa.fa-bell-o
+                %span.header-bottom-icon お知らせ
+            .headerlist1
+              = link_to "#", class: "headerlike" do
+                %i.fa.fa-check
+                %span.header-bottom-icon やることリスト
+            .headermypage1
+              = link_to mypage_index_path , class: "headermypage" do
+                = image_tag "/assets/member", class: "header-mypageicon"
+                マイページ
+      - else
+        .main-header__bottom__right
+          .main-header__bottom__right__signup
+            = link_to '新規会員登録', registration_index_path, method: :get, class: "a-signup"
+          .main-header__bottom__right__login
+            = link_to 'ログイン', new_user_session_path, class: "a-login"

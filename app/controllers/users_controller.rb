@@ -5,4 +5,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new
   end
+
+  def registration_index
+  end
+
+  def login
+  end
 end

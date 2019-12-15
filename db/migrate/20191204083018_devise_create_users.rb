@@ -19,6 +19,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.timestamp :updated_at,	    null: false
      	t.boolean :delete_flg,     null: false
       t.string :image
+      
 
 
       ## Recoverable

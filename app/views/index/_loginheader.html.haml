@@ -12,27 +12,28 @@
         .main-header-bottom-leftbox
           .main-header-bottom-leftbox-category-left
             .a-category
+              = link_to "#", class: "a-category" do
               %i.fa.fa-bars.headericon
-              %a.a-category カテゴリーから探す
+              カテゴリーから探す
           .main-header-bottom-leftbox-category-right
-            .a-brand
+            = link_to "", class: "a-brand" do
               %i.fa.fa-tags.headericon
-              %a.a-brand ブランドから探す
+              ブランドから探す
       .main-header-bottom-right
         %ul.main-header-bottom-right
-          .headerlike1
-            %a.headerlike{href:"#"}
-              %i.fa.fa-heart-o
-              %span.header-bottom-icon いいね一覧
-          .headernotice1
-            %a.headerlike{href:"#"}
-              %i.fa.fa-bell-o
-              %span.header-bottom-icon お知らせ
-          .headerlist1
-            %a.headerlike{href:"#"}
-              %i.fa.fa-check
-              %span.header-bottom-icon やることリスト
-          .headermypage1
-            = link_to mypage_index_path , class: "headermypage" do
-              = image_tag "/assets/member", class: "header-mypageicon"
-              マイページ
+            .headerlike1
+              = link_to "#", class: "headerlike"
+                %i.fa.fa-heart-o
+                %span.header-bottom-icon いいね一覧
+            .headernotice1
+              = link_to "#", class: "headerlike" do
+                %i.fa.fa-bell-o
+                %span.header-bottom-icon お知らせ
+            .headerlist1
+              = link_to "#", class: "headerlike" do
+                %i.fa.fa-check
+                %span.header-bottom-icon やることリスト
+            .headermypage1
+              = link_to mypage_index_path , class: "headermypage" do
+                = image_tag "/assets/member", class: "header-mypageicon"
+                マイページ

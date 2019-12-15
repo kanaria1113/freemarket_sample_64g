@@ -1,27 +1,26 @@
 .header
   .main-header
-    .main-header__top
-      .main-header__top__logo
+    .main-header-top
+      .main-header-logo
         = link_to root_path do
           = image_tag "/assets/fmarket_logo_red.svg"
-      .main-header__top__search
-        %input.main-header__top__search__box{placeholder: "何かお探しですか？", type: "text", value: ""}
-        %button.main-header__top__search__button
+      .mainheader-logo-search
+        %input.mainheader-logo-search-box{placeholder: "何かお探しですか？", type: "text", value: ""}
+        %button.mainheader-logo-search-button
           %i.fa.fa-search
-    .main-header__bottom
-      .main-header__bottom__left__category
-        .main-header__bottom__left__category__left
-          .a-category
-            %i.fa.fa-bars.headericon
-            %a.a-category カテゴリーから探す
-        .main-header__bottom__left__category__right
-          .a-brand
-            %i.fa.fa-tags.headericon
-            %a.a-brand ブランドから探す
-      .main-header__bottom__left__brand
-        .main-header__bottom__left-brand-n
-      .main-header__bottom__right
-        .main-header__bottom__right__signup
+    .main-header-bottom
+      .main-header-bottom__left 
+        .main-header-bottom-leftbox
+          .main-header-bottom-leftbox-category-left
+            .a-category
+              %i.fa.fa-bars.headericon
+              %a.a-category カテゴリーから探す
+          .main-header-bottom-leftbox-category-right
+            .a-brand
+              %i.fa.fa-tags.headericon
+              %a.a-brand ブランドから探す
+      .main-header-bottom__right1
+        .main-header-bottom__right1-signup
           = link_to '新規会員登録', 'http://google.co.jp', class: "a-signup"
-        .main-header__bottom__right__login
+        .main-header-bottom__right1-login
           = link_to 'ログイン', 'http://google.co.jp', class: "a-login"

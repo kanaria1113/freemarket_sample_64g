@@ -10,9 +10,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :fast_name,          null: false
       t.string :last_name_kana,		  null: false
       t.string :fast_name_kana,    null: false
-      t.string :birth_year,	        null: false
-      t.string :birth_month,	      null: false
-      t.string :birth_day,	        null: false
+      t.integer :birth_year,	        null: false
+      t.integer :birth_month,	      null: false
+      t.integer :birth_day,	        null: false
+      t.integer :phone_number,       null: false
       t.string :nickname,		        null: false,unique: true
       t.text :profile
       t.datetime :created_at,	      null: false
@@ -20,6 +21,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
      	t.boolean :delete_flg,     null: false
       t.string :image
       
+
 
 
       ## Recoverable

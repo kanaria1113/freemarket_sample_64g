@@ -1,5 +1,7 @@
 .mypage-header
   = render "index/loginheader"
+  - breadcrumb :mypage
+  = render "index/bread-crumbs"
   .mypage
     .mypage__left
       = render "mypage_sidebar"

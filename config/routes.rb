@@ -24,4 +24,6 @@ Rails.application.routes.draw do
     end
   end
   resources :pribate, only: [:index]
+  resources :confomation, only: [:index]
+
 end

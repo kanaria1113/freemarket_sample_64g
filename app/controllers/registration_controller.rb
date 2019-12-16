@@ -31,6 +31,7 @@ class RegistrationController < ApplicationController
   def registration_active
     session[:phone_numbaer] = user_paramus[:phone_numbaer]
     @user = User.new
+
   end
 
   def registration_address

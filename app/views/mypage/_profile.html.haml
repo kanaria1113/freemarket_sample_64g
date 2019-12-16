@@ -1,0 +1,14 @@
+.profile
+  = form_with(model: @user, local: true) do |f|
+    .profile__title
+      プロフィール
+    .profile__logo
+      .profile__image
+        = image_tag "/assets/member.png", class: "profile-icon"
+      .profile__name
+        = f.text_field :profile_namearea
+    .profile__text
+      .profile__text__form
+        = f.text_area  :profile_text_area, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+      .profile__submit
+        = f.submit :変更する, class: "profile__btn"

@@ -1,14 +1,16 @@
 .mypage-header
-  = render "index/header"
+  = render "index/loginheader"
   .mypage
     .mypage__left
       = render "mypage_sidebar"
     .mypage__right
-      = render "mypage"
-      .mypage-tab-center
-        = render "notification"
-      .mypage-tab-container
-        = render "past_transactions"
+      = render "profile"
+    -# 本来のmypage-indexの記述
+    -#   = render "mypage"
+    -#   .mypage-tab-center
+    -#     = render "notification"
+    -#   .mypage-tab-container
+    -#     = render "past_transactions"
 .mypage-footer
   = render "index/download"
   = render "index/footer"

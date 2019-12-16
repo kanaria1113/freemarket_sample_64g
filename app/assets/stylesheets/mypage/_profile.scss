@@ -1,0 +1,77 @@
+.profile{
+  width: 700px;
+  height: 500px;
+  background-color: #fff;
+  &__title{
+    text-align: center;
+    font-size: 24px;
+    padding: 8px 24px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    font-weight: 800;
+  }
+  &__logo{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 72px 16px 24px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEr3NzZGbr2i5RCkYUWvUdWcgPW3nQqYP40vCICClgJ0fOWlLh&s);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: 0;
+  }
+  &__name{
+    width: 220px;
+    margin: 0 0 0 8px;
+    vertical-align: middle;
+    height: 48px;
+  }
+  &__text{
+    padding: 40px 16px;
+  }
+  &__btn{
+    margin-top: 16px;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
+#profile_namearea{
+  height: 28px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.profile-icon{
+  border-style: solid;
+  border-width: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+#profile_text_area{
+  height: 140px;
+  display: block;
+  width: 97%;
+  min-height: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}

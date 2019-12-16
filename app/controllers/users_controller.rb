@@ -6,9 +6,4 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def registration_index
-  end
-
-  def login
-  end
 end

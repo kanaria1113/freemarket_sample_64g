@@ -17,7 +17,7 @@
           %div#login-google
             googleでログイン
     .login-page__container__form
-      = form_with(model:@user) do |f|
+      = form_with(model:@user, url: new_user_session_path) do |f|
         = f.email_field :email, placeholder: "  メールアドレス", class: "login-input"
         = f.password_field :password, placeholder: "  パスワード", class: "login-input"
     .login-page__container__robot

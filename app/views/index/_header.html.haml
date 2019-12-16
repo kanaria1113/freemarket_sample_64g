@@ -14,11 +14,13 @@
           .main-header-bottom-leftbox-category-left
             .a-category
               %i.fa.fa-bars.headericon
-              %a.a-category カテゴリーから探す
+              = link_to "/",class:"a-category" do
+                カテゴリーから探す
           .main-header-bottom-leftbox-category-right
             .a-brand
               %i.fa.fa-tags.headericon
-              %a.a-brand ブランドから探す
+              = link_to "/",class:"a-brand" do
+                ブランドから探す
       .main-header-bottom__right1
         .main-header-bottom__right1-signup
           = link_to '新規会員登録', 'http://google.co.jp', class: "a-signup"

@@ -25,7 +25,7 @@
 @import "./mainindex";
 @import "./confomation";
 @import "./notconfomation";
-@import "./loginheader";
+// @import "./loginheader";
 @import "./carousel";
 @import "./slick-theme.scss";
 @import "mypage/during_trade";
@@ -49,4 +49,8 @@
 ::-webkit-scrollbar {
   display: none;
   -webkit-appearance: none;
+}
+
+a{
+  color: #000000;
 }

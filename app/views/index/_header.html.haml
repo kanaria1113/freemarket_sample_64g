@@ -26,7 +26,7 @@
         .main-header-bottom-right
           %ul.main-header-bottom-right
             .headerlike1
-              = link_to "#", class: "headerlike"
+              = link_to "#", class: "headerlike" do
                 %i.fa.fa-heart-o
                 %span.header-bottom-icon いいね一覧
             .headernotice1
@@ -44,6 +44,8 @@
       - else
         .main-header__bottom__right
           .main-header__bottom__right__signup
-            = link_to '新規会員登録', registration_index_path, method: :get, class: "a-signup"
+            = link_to registration_index_path, method: :get, class: "a-signup" do
+              新規登録
           .main-header__bottom__right__login
-            = link_to 'ログイン', new_user_session_path, class: "a-login"
+            = link_to new_user_session_path, class: "a-login" do
+              ログイン

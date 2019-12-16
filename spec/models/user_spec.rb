@@ -159,6 +159,22 @@ describe User do
       user.valid?
       expect(user.errors[:nickname]).to include("is too long (maximum is 20 characters)")
     end
-
+    
+#phone_numberが10~11桁か
+    it "電話番号が10桁か" do
+      user = build(:user)
+      user.valid?
+      expect(user).to be_valid
+    end
+    it "電話番号が11桁か " do
+      user = build(:user, phone_number: "12345678903")
+      user.valid?
+      expect(user).to be_valid
+    end
+    it "電話番号が9桁以下 " do
+      user = build(:user, phone_number: "1111111")
+      user.valid?
+      expect(user.errors[:phone_number]).to include("の入力が正しくありません")
+    end
   end
 end

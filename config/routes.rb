@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'registration#index'
+  root to: 'index#index'
   
   resources :registration, only: [:index] do
     collection do

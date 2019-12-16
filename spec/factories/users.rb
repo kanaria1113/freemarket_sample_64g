@@ -10,5 +10,6 @@ FactoryBot.define do
     birth_month {12}
     birth_day {12}
     nickname {"g64"}
+    phone_number {"1111111111"} 
   end
 end

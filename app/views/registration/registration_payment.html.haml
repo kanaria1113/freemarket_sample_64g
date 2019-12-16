@@ -1,7 +1,7 @@
 .payment-input
   = render 'registration_header_payment'
   .payment-input__container
-    = form_with(model:@card, url: registration_complete_registration_index_path, method: :get, local: true) do |f|
+    = form_with(model:@card, url: registration_complete_registration_index_path, method: :post, local: true) do |f|
       .payment-input__container__title
         支払い方法
       .payment-input__container__form-name

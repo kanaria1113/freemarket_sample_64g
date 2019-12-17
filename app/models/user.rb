@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   has_one :card, dependent: :destroy
   has_one :address, dependent: :destroy
-
+  has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+  has_many :seling_items, -> { where("buyer_id is NULL") }, foreign_key: "seler_id", class_name: "Item"
+  has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seler_id", class_name: "Item"
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{6,128}\z/i

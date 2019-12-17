@@ -3,7 +3,7 @@
   .login-page__registration-new
     アカウントをお持ちでない方はこちら
     .login-page__registration-new__new-btn
-      =link_to "#",class: "registration-new_btn" do
+      =link_to registration_information_registration_index_path, method: :get, class: "registration-new_btn" do
         新規会員登録
   .login-page__container
     .login-page__container__login-facebook
@@ -13,7 +13,7 @@
           Facebookでログイン
       .login-page__container__login-google
         =link_to "/",class: "login-google_btn" do
-          = image_tag "/assets/google-search.svg", class: "google_svg"
+          = image_tag "google-search.svg", class: "google_svg"
           %div#login-google
             googleでログイン
     .login-page__container__form

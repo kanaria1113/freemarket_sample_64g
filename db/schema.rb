@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_110403) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+
     t.string "name", null: false
     t.integer "status", null: false
     t.string "size"
@@ -55,6 +56,10 @@ ActiveRecord::Schema.define(version: 2019_12_14_110403) do
     t.datetime "updated_at", null: false
     t.bigint "buyer_id"
     t.bigint "seler_id", null: false
+
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -64,9 +69,10 @@ ActiveRecord::Schema.define(version: 2019_12_14_110403) do
     t.string "fast_name", null: false
     t.string "last_name_kana", null: false
     t.string "fast_name_kana", null: false
-    t.string "birth_year", null: false
-    t.string "birth_month", null: false
-    t.string "birth_day", null: false
+    t.integer "birth_year", null: false
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
+    t.integer "phone_number", null: false
     t.string "nickname", null: false
     t.text "profile"
     t.datetime "created_at", null: false

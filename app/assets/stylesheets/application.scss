@@ -21,9 +21,11 @@
 @import "./download";
 @import "./exhibit";
 @import "./footer";
-// @import "./header";
+@import "./header";
 @import "./mainindex";
-@import "./loginheader";
+@import "./confomation";
+@import "./notconfomation";
+// @import "./loginheader";
 @import "./carousel";
 @import "./slick-theme.scss";
 @import "mypage/during_trade";
@@ -36,12 +38,24 @@
 @import "mypage/notification";
 @import "mypage/todo";
 @import "mypage/mypage.scss";
+@import "mypage/mypage_card_add.scss";
 @import "shared/user_header.scss";
 @import "shared/user_footer.scss";
 @import "./sell.scss";
 @import "mypage/profile";
+@import "mypage/pribate.scss";
+@import "items/product_show.scss";
+
 
 ::-webkit-scrollbar {
   display: none;
   -webkit-appearance: none;
+}
+
+a{
+  color: #000000;
+}
+
+li{
+  width: 60px;
 }

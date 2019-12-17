@@ -1,0 +1,67 @@
+.buycheck
+  .buycheck__main
+    %h2.buycheck__header
+      購入内容の確認
+    .buycheck__item
+      .buycheck__item--collector
+        .buycheck__item--box
+          %h3.buycheck__item--image
+            = image_tag "/assets/back", class:"buy-image", alt:"購入した商品"
+          .buycheck__item--detail
+            %p.buycheck__item--name
+              ブランド名 状態 カテゴリー 柄 番号 商品の名前
+            %p.buycheck__item--price
+              %span
+                ¥21,111
+              %span
+                (税込) 送料込み
+    .buycheck__pay
+      .buycheck__pay--content
+        = form_with model: @user, local: true, class:"buycheck__pay--form" do |f|
+          %ul.buycheck__pay--money
+            %li.buycheck__pay--row
+              .buycheck__pay--label
+                支払い金額
+              .buycheck__pay--cell
+                %span.buychec__pay--date
+                  ¥21,100
+          %ul.buycheck__pay--check
+            %li.buycheck__pay--point
+              .buycheck__point--uses
+                =f.check_box(:type, class:"checkicon")
+                =f.label(:name, 'ポイントを使用 (所持ポイント: P0)',class:"point-display")
+          .buycheck__pay--way
+            .buycheck__pay--inner
+              %h3.buycheck__pay--registration
+                支払い方法
+              = link_to '/', class: "buycheck__pay--paylink" do
+                %p.buycheck__pay--text
+                  %i.fa.fa-dot-circle-o.sava
+                  %span.buycheck__pay--textinner
+                    登録してください
+          .buycheck__pay--address
+            .buycheck__address--content
+              %h3.address-place
+                配送先
+              = link_to '/', class: "address-link" do
+                %span.buycheck__pay--changelink
+                  変更する
+            .buycheck__address--inner
+              %p
+                〒郵便番号
+              %p
+                北海道
+              %p
+                名前
+          .buycheck__pay--error
+            %p.buycheck__pay--message
+              この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+            =f.submit("購入する",class:"buycheck__pay--buybotton")
+            %p.buycheck__pay--install
+              アプリをお持ちでない方は以下よりインストールしてご利用いただ毛ます。
+            %br
+            .buycheck__pay--store
+              = link_to 'https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8', class: "apple-link" do
+                =image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?82960919'
+              = link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "google-link" do
+                =image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?82960919'

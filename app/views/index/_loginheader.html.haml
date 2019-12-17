@@ -2,37 +2,39 @@
   .main-header
     .main-header-top
       .main-header-logo
-        = image_tag "/assets/fmarket_logo_red.svg"
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg"
       .mainheader-logo-search
         %input.mainheader-logo-search-box{placeholder: "何かお探しですか？", type: "text", value: ""}
         %button.mainheader-logo-search-button
           %i.fa.fa-search
     .main-header-bottom
-      .main-header-bottom-left 
+      .main-header-bottom__left 
         .main-header-bottom-leftbox
           .main-header-bottom-leftbox-category-left
             .a-category
               %i.fa.fa-bars.headericon
-              %a.a-category カテゴリーから探す
+              = link_to "/",class:"a-category" do
+                カテゴリーから探す
           .main-header-bottom-leftbox-category-right
             .a-brand
               %i.fa.fa-tags.headericon
-              %a.a-brand ブランドから探す
-      .main-header-bottom-right
-        %ul.main-header-bottom-right
-          .headerlike1
-            %a.headerlike{href:"#"}
-              %i.fa.fa-heart-o
-              %span.header-bottom-icon いいね一覧
-          .headernotice1
-            %a.headerlike{href:"#"}
-              %i.fa.fa-bell-o
-              %span.header-bottom-icon お知らせ
-          .headerlist1
-            %a.headerlike{href:"#"}
-              %i.fa.fa-check
-              %span.header-bottom-icon やることリスト
-          .headermypage1
-            = link_to mypage_index_path , class: "headermypage" do
-              = image_tag "/assets/member", class: "header-mypageicon"
-              %a.header-bottom-icon(href="#") マイページ
+              = link_to "/",class:"a-brand" do
+                ブランドから探す
+      %ul.main-header-bottom__right2
+        .headerlike1
+          = link_to "/",class: "headerlike" do
+            %i.fa.fa-heart-o
+            %span.header-bottom-icon いいね一覧
+        .headernotice1
+          = link_to "/",class: "headerlike" do
+            %i.fa.fa-bell-o
+            %span.header-bottom-icon お知らせ
+        .headerlist1
+          = link_to "/",class: "headerlike" do
+            %i.fa.fa-check
+            %span.header-bottom-icon やることリスト
+        .headermypage1
+          = link_to mypage_index_path , class: "header-bottom-icon" do
+            = image_tag "member.png", class: "header-mypageicon"
+            マイページ

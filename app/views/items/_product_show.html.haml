@@ -3,17 +3,7 @@
     名前
   .itembuy-content__clearfix
     .itembuy-content__photo
-      .itembuy-content__auter
-        .itembuy-content__owl-stage-outer-main
-          = image_tag "member.png", class: 'owl-stage-outer', size: '300x300'
-      .itembuy-content__owl-stage-outer-b
-        = image_tag "testimage.jpg", class: 'owl-stage-outer-sub', size: '60x60'
-        = image_tag "member.png", class: 'owl-stage-outer-sub', size: '60x60'
-        = image_tag "testimage.jpg", class: 'owl-stage-outer-sub', size: '60x60'
-        = image_tag "testimage.jpg", class: 'owl-stage-outer-sub', size: '60x60'
-        = image_tag "testimage.jpg", class: 'owl-stage-outer-sub', size: '60x60'
-      .itembuy-content__owl-stage
-      .itembuy-content__owl-bots
+      = render "item_carusel"
     %table.itembuy-content__table
       %tbody
         %tr

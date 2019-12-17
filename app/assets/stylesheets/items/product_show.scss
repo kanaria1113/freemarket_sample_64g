@@ -8,7 +8,10 @@
   font-size: 14px;
   &__clearfix{
     margin-top: 16px;
-    display: flex;
+    height: 400px;
+    content: "";
+    display: block;
+    clear: both;
   }
   &__name{
     font-size: 24px;
@@ -21,6 +24,7 @@
     min-width: 300px;
     max-width: 300px;
     min-height: 375px;
+    float: left;
   }
   &__auter{
     height: 300px;
@@ -46,6 +50,7 @@
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #f5f5f5;
+    float: right;
     th.thcategory{
       border: 1px solid #f5f5f5;
       width: 39%;
@@ -65,7 +70,6 @@
       font-size: 16px;
       font-weight: 200;
     }
-    
   }
   &__bold{
     margin-right: 16px;
@@ -320,4 +324,7 @@
 a {
   color:#0099e8;
   text-decoration: none;
+}
+.item_carusel{
+  width: 60px;
 }

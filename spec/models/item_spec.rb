@@ -1,14 +1,13 @@
 require 'rails_helper'
-
-
-  
 describe '#item' do
+    let(:buyer) {create(:buyer)}
+    let(:seler) {create(:seler)}
     # 空では登録できない 
     it "is invalid without a name" do
-        item = build(:item, name: nil)
+        item = build(:item, name: nil, )
         item.valid?
         expect(item.errors[:name]).to include()
-      end
+    end
 
     it "is invalid without a price" do
         item = build(:item, price: nil)
@@ -57,15 +56,14 @@ describe '#item' do
         item.valid?
         expect(item.errors[:updated_at]).to include()
     end
-    # ユーザーidが空の場合、アイテムを持っている
-    it "is invalid without a buyer_id" do
+    #buyer_idが空の場合、アイテムはまだ売られている
+    it "is valid without a buyer_id" do
         item = build(:item, buyer_id: nil)
-        item.valid?
-        expect(item.errors[:buyer_id]).to include()
+        
     end
-    # ユーザーidが空じゃない場合、アイテムは持っていない
-    it "is invalid without a buyer_id" do
-        item = build(:item, buyer_id: true)
+    #buyer_idが空じゃない場合、アイテムは売られていない
+    it "is invalid with buyer_id" do
+        item = build(:item, buyer_id: nil)
         item.valid?
         expect(item.errors[:buyer_id]).to include()
     end
@@ -74,13 +72,12 @@ describe '#item' do
         item.valid?
         expect(item.errors[:seler_id]).to include()
     end
-    
+
     # nameが40文字以下か
         # 40文字
     it "is valid with a name that has less than 40 characters " do
-        item = build(:item, name: "book",buyer_id:"1" ,seler_id:"2")
-        item.valid?
-        expect(item).to be_valid
+        item = build(:item, name:"book")
+        expect(item[:name]).to include()
     end
     # 41文字
     it "is invalid with a name that has more than 40 characters" do
@@ -91,30 +88,29 @@ describe '#item' do
     # descriptionが１０００文字以下か
     #  1000文字
     it "is valid with a description that has less than 1000 characters" do
-        item = build(:item) 
-        expect(item).to be_valid
+        item = build(:item, description: "コーディングの本です") 
+        expect(item[:description]).to include()
     end
-    # priceが9999999円以上の場合
+    # priceが9.999.999円以上の場合
     it "is invalid price is too much maximum 9999999" do
         item = build(:item, price: 10000000)
         item.valid?
         expect(item.errors[:price]).to include()
     end
-     #priceが9999999円の場合
+        #priceが9999999円の場合
     it "is valid price is too much maximum 9999999" do
         item = build(:item, price: 9999999)
-        expect(item).to be_valid
+        expect(item)
     end
     #priceが300円以下の場合
     it "is invalid with a that has less than 300" do
         item = build(:item, price: 299)
         item.valid?
-        expect(item.errors[:price]).to include()
+        expect(item.errors[:price]).to include("is not included in the list")
     end
     #priceが300円の場合
     it "is valid with a that has less than 300" do
         item = build(:item, price: 300)
-        expect(item).to be_valid
+        expect(item[:price])
     end
 end
-

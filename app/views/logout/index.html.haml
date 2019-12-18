@@ -1,5 +1,7 @@
 .logout-header
   = render "index/header"
+  - breadcrumb :user_signout
+  = render "index/bread-crumbs"
 .logout-body
   = render "mypage/mypage_sidebar"
   .logout

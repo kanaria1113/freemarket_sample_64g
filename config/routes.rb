@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :logout, only: [:index]
   resources :items, only: [:index]
   resources :sell, only: [:index]
+  resources :profile, only: [:index]
   resources :card, only: [:index] do
     collection do
       get 'mypage_card_input'

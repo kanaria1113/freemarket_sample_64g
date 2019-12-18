@@ -4,13 +4,9 @@
   = render "index/bread-crumbs"
   .mypage
     .mypage__left
-      = render "mypage_sidebar"
+      = render "mypage/mypage_sidebar"
     .mypage__right
-      = render "mypage"
-      .mypage-tab-center
-        = render "notification"
-      .mypage-tab-container
-        = render "past_transactions"
+      = render "mypage/profile"
 .mypage-footer
   = render "index/download"
   = render "index/footer"

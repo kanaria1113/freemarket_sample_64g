@@ -21,11 +21,11 @@
 @import "./download";
 @import "./exhibit";
 @import "./footer";
-@import "./header";
+// @import "./header";
 @import "./mainindex";
 @import "./confomation";
 @import "./notconfomation";
-// @import "./loginheader";
+@import "./loginheader";
 @import "./carousel";
 @import "./slick-theme.scss";
 @import "mypage/during_trade";
@@ -56,6 +56,3 @@ a{
   color: #000000;
 }
 
-li{
-  width: 60px;
-}

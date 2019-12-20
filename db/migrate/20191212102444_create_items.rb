@@ -13,7 +13,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.datetime :created_at,        null: false
       t.datetime :updated_at,       null: false
       t.integer :buyer_id,        foreign_key: true
-      t.integer :seler_id,        null: false, foreign_key: true
+      # t.integer :seler_id,        null: false, foreign_key: true
       t.timestamps
     end
   end

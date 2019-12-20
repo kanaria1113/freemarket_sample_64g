@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   resources :logout, only: [:index]
   resources :items, only: [:index]
-  resources :sell, only: [:index]
+  resources :sell, only: [:index,:new, :create, :destroy]
   resources :profile, only: [:index]
   resources :card, only: [:index] do
     collection do

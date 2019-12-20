@@ -1,32 +1,17 @@
 class ItemsController < ApplicationController
-
+  before_action :item_params, only: [:show, :edit, :destroy]
   def index
     @items = Item.all
   end
   def show
-    @item = Item.find(params[:id])
     @category = Category.find(params[:id])
     @images = Image.all
     @brand = Brand.find(params[:id])
+    @item = Item.find(item_params[:id])
   end
   
   private
-
-  # def item_params
-  #   params.require(:item).permit(
-  #     :name,
-  #     :status,
-  #     :size,
-  #     :price,
-  #     :description,
-  #     :burden,
-  #     :send_method,
-  #     :region,
-  #     :date,
-  #     :created_at,
-  #     :updated_at,
-  #     :buyer_id,
-  #     :seler_id,
-  #   )
-  # end
+  def item_params
+    @item = Item.find(params[:id])
+  end
 end

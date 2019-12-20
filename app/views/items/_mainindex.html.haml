@@ -28,19 +28,4 @@
                     %span.aria-label ¥1,200
                   %figcaption.main-items-all-figure-i
                     %span.main-items-all-span テスト
-    -# .main-items-show-bottom
-    -#   .main-items-bottom-list
-    -#     %ul.list-items
-    -#       %li.list-item
-    -#         - @items.each do |item|
-    -#           .list-item-all
-    -#             = link_to items_path(item.id), class:"main-items-all" do
-    -#               %figure.main-items-all-figure
-    -#                 .img-main-item1
-    -#                   = image_tag item.images[0],class: "img-main-item"
-    -#                   %span.aria-label
-    -#                     = item.price
-    -#                 %figcaption.main-items-all-figure-i
-    -#                   %span.main-items-all-span
-    -#                     = item.name
         

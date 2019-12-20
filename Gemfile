@@ -88,3 +88,4 @@ gem "omniauth-google-oauth2"
 gem 'dotenv-rails'
 gem 'dropzonejs-rails', '~> 0.7.3'
 gem "gretel"
+gem "pry-rails"

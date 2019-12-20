@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   end
   
   def destroy
-    @items = Item.find(params[:id])
+    @item = Item.find(params[:id])
     @item.destroy
+      redirect_to mypage_index_path
   end
 end

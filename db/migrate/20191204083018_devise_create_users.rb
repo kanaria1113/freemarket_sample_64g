@@ -19,7 +19,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.datetime :created_at,	      null: false
       t.timestamp :updated_at,	    null: false
       t.string :image
-      
 
 
 

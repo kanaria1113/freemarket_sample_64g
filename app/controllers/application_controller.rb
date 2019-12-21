@@ -11,4 +11,7 @@ class ApplicationController < ActionController::Base
   #   registration_address_registration_index_path
   # end
 
+  #誰が作成したかわかるまで保留
+  protect_from_forgery
+
 end

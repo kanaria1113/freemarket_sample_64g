@@ -22,7 +22,7 @@
 @import "./exhibit";
 @import "./footer";
 @import "./header";
-@import "./mainindex";
+@import "items/mainindex";
 @import "./confomation";
 @import "./notconfomation";
 @import "./loginheader";
@@ -39,13 +39,14 @@
 @import "mypage/todo";
 @import "mypage/mypage.scss";
 @import "mypage/mypage_card_add.scss";
-@import "items/product_show.scss";
 @import "shared/user_header.scss";
 @import "shared/user_footer.scss";
 @import "./sell.scss";
 @import "mypage/profile";
 @import "mypage/pribate.scss";
-
+@import "bread-crumbs";
+@import "items/product_show.scss";
+@import "items/delete_item.scss";
 ::-webkit-scrollbar {
   display: none;
   -webkit-appearance: none;
@@ -54,3 +55,4 @@
 a{
   color: #000000;
 }
+

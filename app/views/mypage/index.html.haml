@@ -1,16 +1,16 @@
 .mypage-header
   = render "index/loginheader"
+  - breadcrumb :mypage
+  = render "index/bread-crumbs"
   .mypage
     .mypage__left
       = render "mypage_sidebar"
     .mypage__right
-      = render "profile"
-    -# 本来のmypage-indexの記述
-    -#   = render "mypage"
-    -#   .mypage-tab-center
-    -#     = render "notification"
-    -#   .mypage-tab-container
-    -#     = render "past_transactions"
+      = render "mypage"
+      .mypage-tab-center
+        = render "notification"
+      .mypage-tab-container
+        = render "past_transactions"
 .mypage-footer
   = render "index/download"
   = render "index/footer"

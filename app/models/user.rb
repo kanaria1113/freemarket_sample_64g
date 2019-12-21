@@ -9,9 +9,12 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :card
 
   has_one :address, dependent: :destroy
+
   accepts_nested_attributes_for :address
 
-
+  has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+  has_many :seling_items, -> { where("buyer_id is NULL") }, foreign_key: "seler_id", class_name: "Item"
+  has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seler_id", class_name: "Item"
 
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

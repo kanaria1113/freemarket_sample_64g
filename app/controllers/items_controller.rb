@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  def index
-    
+  def edit
+    @item = Item.find(1)
   end
   
   def destroy

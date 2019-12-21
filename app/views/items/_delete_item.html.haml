@@ -1,6 +1,6 @@
 %section.itembuy-content
   %h1.itembuy-content__name
-    名前
+    = @item.name
   .itembuy-content__clearfix
     .itembuy-content__photo
       = render "item_carusel"
@@ -41,34 +41,34 @@
         %tr
           %th.thcategory 商品の状態
           %td.tdcategory
-            状態
+            = @item.status
         %tr
           %th.thcategory 配送料の負担
           %td.tdcategory
-            配送料
+            = @item.burden
         %tr
           %th.thcategory 配送の方法
           %td.tdcategory
-            配送方法
+            = @item.send_method
         %tr
           %th.thcategory 配送元地域
           %td.tdcategory
             = link_to '/' do
-              埼玉
+              = @item.region
         %tr
           %th.thcategory 発送日の目安
           %td.tdcategory
-            1日
+            = @item.date
   .itembuy-content__price
     %span.itembuy-content__bold
-      ¥1,000円
+      = @item.price
     %span.itembuy-content__tax (税込)
     %span.itembuy-content__taxfee
       送料込み
 
   .itembuy-detail
     %p.itembuy-detail__coments
-      黒のペッカリーの美品のショルダーバッグです。希少価値のハンドバッグです
+      
 .itembuy-content__button
   .itembuy-content__push
     = link_to '/', class:"item-edit" do

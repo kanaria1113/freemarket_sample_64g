@@ -24,9 +24,9 @@
         %tr
           %th.thcategory カテゴリー
           %td.tdcategory
-            = link_to  '/' do
+            = link_to  '/' ,class: "link_color"do
               = @category.name
-            -#   子要素が作成された場合使う
+            -#   子要素が作成された場合使用
             -#   .itembuy-table-sub
             -#     %i.fa.fa-chevron-right
 
@@ -37,7 +37,7 @@
         %tr
           %th.thcategory  ブランド
           %td.tdcategory
-            = link_to '/' do
+            = link_to '/',class: "link_color" do
               = @brand.name
         %tr
           %th.thcategory 商品の状態
@@ -54,7 +54,7 @@
         %tr
           %th.thcategory 配送元地域
           %td.tdcategory
-            = link_to '/' do
+            = link_to '/' ,class: "link_color"do
               = @item.region
         %tr
           %th.thcategory 発送日の目安
@@ -83,7 +83,7 @@
         %i.fa.fa-flag
           %span 不適切な商品の報告
     .itembuy-button__right
-      = link_to '/' do
+      = link_to '/' ,class: "link_color"do
         %i.fa.fa-shopping-bag
           %span あんしん・あんぜんへの取り組み
 .itembuy-content-box
@@ -96,11 +96,11 @@
           %span コメントする
 %ul.itembuy-nav
   %li.itembuy-nav__left
-    = link_to '/' do
+    = link_to '/',class: "link_color" do
       %i.fa.fa-chevron-left
       左ブランド
   %li.itembuy-nav__right
-    = link_to '/' do
+    = link_to '/',class: "link_color" do
       右ブランド
       %i.fa.fa-chevron-right
 .itembuy-media-box

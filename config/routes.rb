@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'items#edit'
+  root to: 'index#index'
   
   resources :registration, only: [:index] do
     collection do
@@ -14,9 +14,8 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index] do
     get "profile"
   end
-  resources :items, only: [:index,:show]
   resources :logout, only: [:index]
-  resources :items, only: [:index,:edit,:destroy]
+  resources :items, only: [:index,:show,:edit,:destroy]
   resources :sell, only: [:index]
   resources :profile, only: [:index]
   resources :card, only: [:index] do

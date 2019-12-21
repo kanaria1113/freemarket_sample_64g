@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
+
   before_action :item_params, only: [:index, :show, :edit, :destroy]
+  def edit
+    @item = Item.find(1)
+  before_action :item_params, only: [:show, :edit, :destroy]
 
   def index
     @items = Item.find(item_params[:id]).limit(10).order('created_at DESC')
@@ -12,12 +16,22 @@ class ItemsController < ApplicationController
     @brand = Brand.find(params[:id])
     @items = Item.find(item_params[:id])
   end
+    
+   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+      redirect_to mypage_index_path
+  end
+
+
   
   private
   def item_params
     @item = Item.find(params[:id])
   end
+
   def image_params
     @image = Image.find(params[:id])
   end
 end
+  

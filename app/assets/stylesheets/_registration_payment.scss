@@ -34,7 +34,7 @@
     }
   }
 }
-.payment-input-form {
+.input-default {
   width: 300px;
   height: 40px;
   border-radius: 4px;
@@ -51,26 +51,43 @@
   text-align: right;
   padding-bottom: 30px;
 }
-#payment_expiration {
+#exp_month {
   display: inline-block;
   text-align: right;
-  &__detail {
-    -webkit-appearance: none;
-    padding: 7px 30px 7px 10px;
-    font-size: 93%;
-    line-height: 1.1em;
-    border-radius: 5px;
-    background-image: url(/assets/chevron-down-solid.svg);
-    background-repeat: no-repeat;
-    background-size: 10px 30px;
-    background-position: right 10px center;
-    width: 100px;
-    height: 45px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    font-weight: lighter;
-  }
+  -webkit-appearance: none;
+  padding: 7px 30px 7px 10px;
+  font-size: 93%;
+  line-height: 1.1em;
+  border-radius: 5px;
+  background-image: url(/assets/chevron-down-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+  width: 100px;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-weight: lighter;
+}
+#exp_year {
+  display: inline-block;
+  text-align: right;
+  -webkit-appearance: none;
+  padding: 7px 30px 7px 10px;
+  font-size: 93%;
+  line-height: 1.1em;
+  border-radius: 5px;
+  background-image: url(/assets/chevron-down-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+  width: 100px;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-weight: lighter;
 }
 .payment-next_btn {
   width: 343px;
@@ -91,6 +108,16 @@
   display: inline-block;
   text-align: left;
   font-weight: bold;
+}
+#cvc.cvc {
+  font-size: 93%;
+  border-radius: 5px;
+  width: 302px;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-weight: lighter;
 }
 .card-logo-svg {
   width: 36px;

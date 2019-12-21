@@ -1,11 +1,17 @@
 class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   has_one :card, dependent: :destroy
+  accepts_nested_attributes_for :card
+
   has_one :address, dependent: :destroy
+  accepts_nested_attributes_for :address
+
+
 
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

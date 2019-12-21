@@ -1,79 +1,162 @@
 class RegistrationController < ApplicationController
-  def index
-    @user = User.new
-  end
-
   def registration_information
-    session[:nickname] = user_paramus[:nickname]
-    session[:email] = user_paramus[:email]
-    session[:encrypted_password] = user_paramus[:encrypted_password]
-    session[:last_name] = user_paramus[:last_name]
-    session[:fast_name] = user_paramus[:fast_name]
-    session[:last_name_kana] = user_paramus[:last_name_kana]
-    session[:fast_name_kana] = user_paramus[:fast_name_kana]
-    session[:birth_year] = user_paramus[:birth_year]
-    session[:birth_month] = user_paramus[:birth_month]
-    session[:birth_day] = user_paramus[:birth_day]
     @user = User.new
-    # sessionに保存された値をインスタンスに渡す
-    nickname: session[:nickname],
-    email: session[:email],
-    password_confirmation: session[:password_confirmation],
-    last_name: session[:last_name],
-    first_name: session[:first_name],
-    last_name_kana: session[:last_name_kana],
-    first_name_kana: session[:first_name_kana],
-    birth_year: session[:birth_year],
-    birth_month: session[:birth_month],
-    birth_day: session[:birth_day],
   end
-
+  
   def registration_active
-    session[:phone_numbaer] = user_paramus[:phone_numbaer]
-    @user = User.new
-
-  end
-
-  def registration_address
-    session[:postal_code] = user_paramus[:postal_code]
-    session[:prefectures] = user_paramus[:prefectures]
-    session[:city] = user_paramus[:city]
-    session[:address] = user_paramus[:address]
-    session[:building_name] = user_paramus[:building_name]
     @user = User.new
   end
-
-  # def registration_payment
-  #   session[:] = user_paramus[:]カード番号
-  #   session[:] = user_paramus[:]有効期限_月
-  #   session[:] = user_paramus[:]有効期限_年
-  #   session[:cvc] = user_paramus[:cvc]cvc
-  #   @user = User.new
-  # end
-
-  def registration_complete
-  end
-
-  def create
-    @user = User.new(
-      nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
-      email: session[:email],
-      password_confirmation: session[:password_confirmation],
-      last_name: session[:last_name], 
-      first_name: session[:first_name], 
-      last_name_kana: session[:last_name_kana], 
-      first_name_kana: session[:first_name_kana], 
-
-    )
+  
+  def registration_active_create
+    set_user_with_session
+    @user[:phone_number] = user_params[:phone_number]
     if @user.save
-    # ログインするための情報を保管
-      session[:id] = @user.id
-      redirect_to registration_complete_registration_index
+      sign_in User.find(@user.id) unless user_signed_in?
+      delete_session
+      redirect_to registration_address_registration_index_path
     else
-      render '/registration/index'
+      render :registration_active
     end
   end
+  
+  def registration_address
+    @address = Address.new
+  end
+
+  def registration_address_add
+    @address = set_address(address_params)
+    @address.valid?
+    if @address.errors.messages.blank? && @address.errors.details.blank?
+      create_session_address(address_params)
+    else
+      render :registration_address
+    end
+    if @address.save
+      redirect_to registration_complete_registration_index_path
+    else
+      rnder :registration_address_add
+    end
+  end
+
+  def registration_payment
+    @card = Card.new
+  end
+
   def registration_complete
-    sign_in User.find(session[:id]) unless user_signed_in?
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(
+      :nickname,
+      :email,
+      :password_confirmation,
+      :last_name,
+      :fast_name,
+      :last_name_kana,
+      :fast_name_kana,
+      :birth_year,
+      :birth_month,
+      :birth_day,
+      :phone_number
+      )
+  end
+  
+  def set_user_when_email(user_params)
+    User.new(
+      nickname: user_params[:nickname],
+      email: user_params[:email],
+      password: user_params[:password_confirmation],
+      password_confirmation: user_params[:password_confirmation],
+      last_name: user_params[:last_name],
+      fast_name: user_params[:fast_name],
+      last_name_kana: user_params[:last_name_kana],
+      fast_name_kana: user_params[:fast_name_kana],
+      birth_year: user_params[:birth_year],
+      birth_month: user_params[:birth_month],
+      birth_day: user_params[:birth_day]
+    )
+  end
+
+  def set_user_with_session
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password_confirmation],
+      password_confirmation: session[:password_confirmation],
+      last_name: session[:last_name],
+      fast_name: session[:fast_name],
+      last_name_kana: user_params[:last_name_kana],
+      fast_name_kana: user_params[:fast_name_kana],
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      birth_day: session[:birth_day]
+    )
+  end
+
+  def create_session(user_params)
+    session[:nickname] = user_params[:nickname]
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password_confirmation]
+    session[:password_confirmation] = user_params[:password_confirmation]
+    session[:last_name] = user_params[:last_name]
+    session[:fast_name] = user_params[:fast_name]
+    session[:last_name_kana] = user_params[:last_name_kana]
+    session[:fast_name_kana] = user_params[:fast_name_kana]
+    session[:birth_year] = user_params[:birth_year]
+    session[:birth_month] = user_params[:birth_month]
+    session[:birth_day] = user_params[:birth_day]
+  end
+
+  def delete_session
+    session.delete(:nickname)
+    session.delete(:email)
+    session.delete(:password_confirmation)
+    session.delete(:last_name)
+    session.delete(:fast_name)
+    session.delete(:last_name_kana)
+    session.delete(:fast_name_kana)
+    session.delete(:birth_year)
+    session.delete(:birth_month)
+    session.delete(:birth_day)
+  end
+
+  def address_params
+    params.require(:address).permit(
+      :postal_code,
+      :prefectures,
+      :city,
+      :address,
+      :building_name
+    )
+  end
+
+  def set_address(address_params)
+    Address.new(
+      postal_code: address_params[:postal_code],
+      prefectures: address_params[:prefectures],
+      city: address_params[:city],
+      address: address_params[:address],
+      building_name: address_params[:building_name]
+    )
+  end
+
+  def create_session_address(addres_params)
+    session[:postal_code] = user_params[:postal_code]
+    session[:prefectures] = user_params[:prefectures]
+    session[:city] = user_params[:city]
+    session[:address] = user_params[:address]
+    session[:building_name] = user_params[:building_name]
+  end
+
+  def card_params
+    params.require(:card).permit(
+      :number,
+      :month,
+      :year,
+      :name,
+      :cvc
+    )    
   end
 end

@@ -165,3 +165,69 @@
 .registration {
   text-align: center;
 }
+.member-info__field_birthday{
+  display: flex;
+  line-height: 50px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+#user_birth_year{
+  display: flex;
+  text-align: right;
+  -webkit-appearance: none;
+  padding: 7px 30px 7px 10px;
+  font-size: 90%;
+  line-height: 1.1em;
+  border-radius: 5px;
+  background-image: url(/assets/chevron-down-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+  width: 90px;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-weight: lighter;
+}
+#user_birth_month{
+  display: flex;
+  text-align: right;
+  -webkit-appearance: none;
+  padding: 7px 30px 7px 10px;
+  font-size: 90%;
+  line-height: 1.1em;
+  border-radius: 5px;
+  background-image: url(/assets/chevron-down-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+  width: 90px;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-weight: lighter;
+}
+#user_birth_day{
+  display: flex;
+  text-align: right;
+  -webkit-appearance: none;
+  padding: 7px 30px 7px 10px;
+  font-size: 90%;
+  line-height: 1.1em;
+  border-radius: 5px;
+  background-image: url(/assets/chevron-down-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+  width: 90px;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-weight: lighter;
+}
+.birth_date {
+  margin: 0 5px;
+} 

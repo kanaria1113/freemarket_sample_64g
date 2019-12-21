@@ -4,37 +4,37 @@
     %h2.member-info__title
       会員情報入力
     .member-info__form
-      =form_with(model: @user,url: registration_active_registration_index_path, method: :get, local: true) do |f|
+      = form_for @user,url: registration_active_registration_index_path, method: :post do |f|
+        - required = '必須'
         .member-info__form--top
           .member-info__field--different
             .member-info__name
               .member-info__field--label
-                = f.label :name ,"ニックネーム"
-              %span.member-info__field--required
-                必須
+                ニックネーム
+                %span.member-info__field--required
+                  必須
             .member-info__field--placeholder
-              = f.text_field :name, autofocus: true, placeholder: "例）メルカリ太郎",class: "member-info__field--input"
+              = f.text_field :nickname, autofocus: true, placeholder: "例）メルカリ太郎",class: "member-info__field--input"
           .member-info__field
             .member-info__name
               .member-info__field--label
-                = f.label :email ,"メールアドレス"
-              %span.member-info__field--required
-                必須
+                メールアドレス
+                %span.member-info__field--required
+                  必須
             .member-info__field--placeholder
               = f.email_field :email, autofocus: true, placeholder: "PC・携帯どちらでも可",class: "member-info__field--input"
           .member-info__field
             .member-info__name
               .member-info__field--label
-                = f.label :password ,"パスワード"
-              %span.member-info__field--required
-                必須
+                パスワード
+                %span.member-info__field--required
+                  必須
             .member-info__field--placeholder
-              = f.password_field :password, autofocus: true, placeholder: "7文字以上の半角英数字",class: "member-info__field--input"
+              = f.password_field :password_confirmation, autofocus: true, placeholder: "7文字以上の半角英数字",class: "member-info__field--input"
               %p.member-info__text--gray
                 ※ 英字と数字の両方を含めて設定してください
             .member-info__password
-              = f.check_box :check_box, class:"icon-box"
-              = f.label :password ,"パスワードを表示する",class:"member-info__field--chenge"
+              = f.label :password_confirmation ,"パスワードを表示する",class:"member-info__field--chenge"
           .member-info__field  
             %h3.member-info__field--human
               本人確認
@@ -43,31 +43,39 @@
           .member-info__field
             .member-info__name
               .member-info__field--label
-                = f.label :name ,"お名前(全角)"
-              %span.member-info__field--required
-                必須
+                お名前(全角)
+                %span.member-info__field--required
+                  必須
             .member-info__field--placeholder
               .member-info__box
-                = f.text_field :name, autofocus: true, placeholder: "例）山田",class: "member-info__field--input"
-                = f.text_field :name, autofocus: true, placeholder: "例）彩",class: "member-info__field--input"
+                = f.text_field :last_name, autofocus: true, placeholder: "例）山田",class: "member-info__field--input"
+                = f.text_field :fast_name, autofocus: true, placeholder: "例）彩",class: "member-info__field--input"
           .member-info__field
             .member-info__name
               .member-info__field--label
-                = f.label :name ,"お名前カナ(全角)"
-              %span.member-info__field--required
-                必須
+                お名前カナ(全角)
+                %span.member-info__field--required
+                  必須
             .member-info__field--placeholder
               .member-info__box
-                = f.text_field :name, autofocus: true, placeholder: "例）ヤマダ",class: "member-info__field--input"
-                = f.text_field :name, autofocus: true, placeholder: "例）アヤ",class: "member-info__field--input"
+                = f.text_field :last_name_kana, autofocus: true, placeholder: "例）ヤマダ",class: "member-info__field--input"
+                = f.text_field :fast_name_kana, autofocus: true, placeholder: "例）アヤ",class: "member-info__field--input"
           .member-info__field
             .member-info__field--label
               .member-info__name
-                = f.label :birthday ,"生年月日"
+                生年月日
                 %span.member-info__field--required
                   必須
-            .member-info__field--birthday
-              != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+              .member-info__field_birthday
+                .member-info__field_birthday__year
+                  = f.select :birth_day_in_database, ２０２０: "2020",２０１９: "2019",２０１８: "2018",２０１７: "2017",２０１６: "2016",２０１５: "2015",２０１４: "2014",２０１３: "2013",２０１２: "2012",２０１１: "2011",２０１０: "2010",２００９: "2009",２００８: "2008",２００７: "2007",２００６: "2006",２００５: "2005",２００４: "2004",２００３: "2003",２００２: "2002",２００１: "2001",２０００: "2000",１９９９: "1999",１９９８: "",１９９７: "",１９９６: "",１９９５: "",１９９４: "",１９９３: "",１９９２: "",１９９１: "",１９９０: "",１９８９: "",１９８８: "",１９８７: "",１９８６: "",１９８５: "",１９８４: "",１９８３: "",１９８２: "",１９８１: "",１９８０: "",１９７９: "",１９７８: "",１９７７: "",１９７６: "",１９７５: "",１９７４: "",１９７３: "",１９７２: "",１９７１: "",１９７０: "",１９６９: "",１９６８: "",１９６７: "",１９６６: "",１９６５: "",１９６４: "",１９６３: "",１９６２: "",１９６１: "",１９６０: "",１９５９: "",１９５８: "",１９５７: "",１９５６: "",１９５５: "",１９５４: "",１９５３: "",１９５２: "",１９５１: "",１９５０: "",１９４９: "",１９４８: "",１９４７: "",１９４６: "",１９４５: "",１９４４: "",１９４３: "",１９４２: "",１９４１: "",１９４０: "",１９３９: "",１９３８: "",１９３７: "",１９３６: "",１９３５: "",１９３４: "",１９３３: "",１９３２: "",１９３１: "",１９３０: "",１９２９: "",１９２８: "",１９２７: "",１９２６: "",１９２５: "",１９２４: "",１９２３: "",１９２３: "",１９２１: "",１９２０: "",１９１９: "",１９１８: "",１９１７: "",１９１６: "",１９１５: "",１９１４: "",１９１３: "",１９１２: "",１９１１: "",１９１０: "",１９０９: "",１９０８: "",１９０７: "",１９０６: "",１９０５: "",１９０４: "",１９０３: "",１９０２: "",１９０１: "",１９００: ""
+                %span.birth_date 年
+                .member-info__field_birthday__month       
+                  = f.select :birth_day_in_database, ０１: "1", ０２: "2", ０３: "3", ０４: "4", ０５: "5", ０６: "6", ０７: "7", ０８: "8", ０９: "9", １０: "10", １１: "11", １２: "12"
+                %span.birth_date 月
+                .member-info__field_birthday__day
+                  = f.select :birth_day_in_database, ０１: "1", ０２: "2", ０３: "3", ０４: "4", ０５: "5", ０６: "6", ０７: "7", ０８: "8", ０９: "9", １０: "10", １１: "11", １２: "12", １３: "13", １４: "14", １５: "15", １６: "16", １７: "17", １８: "18", １９: "19", ２０: "20", ２１: "21", ２２: "22", ２３: "23", ２４: "24", ２５: "25", ２６: "26", ２７: "27", ２８: "28", ２９: "29", ３０: "30", ３１: "31"
+                %span.birth_date 日
           %p.member-info__text--gray
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         

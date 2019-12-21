@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_062958) do
     t.string "city", null: false
     t.string "address", null: false
     t.string "building_name"
+    t.integer "phone_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,15 +26,11 @@ ActiveRecord::Schema.define(version: 2019_12_14_062958) do
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "number", null: false
-    t.integer "month", null: false
-    t.integer "year", null: false
-    t.string "name", null: false
-    t.integer "cvc", null: false
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "indices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,12 +53,11 @@ ActiveRecord::Schema.define(version: 2019_12_14_062958) do
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "nickname", null: false
     t.text "profile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "delete_flg", null: false
     t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -71,5 +67,4 @@ ActiveRecord::Schema.define(version: 2019_12_14_062958) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "cards", "users"
 end

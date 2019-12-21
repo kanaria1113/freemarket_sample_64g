@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index] do
     get "profile"
   end
+  resources :items, only: [:index,:show]
   resources :logout, only: [:index]
   resources :items, only: [:index,:edit,:destroy]
   resources :sell, only: [:index]

@@ -34,7 +34,7 @@
     }
   }
 }
-.input-default {
+#card_number.number {
   width: 300px;
   height: 40px;
   border-radius: 4px;
@@ -89,7 +89,7 @@
   background-color: #fff;
   font-weight: lighter;
 }
-.payment-next_btn {
+#token_submit {
   width: 343px;
   font-size: 14px;
   color: #fff;

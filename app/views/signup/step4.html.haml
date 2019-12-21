@@ -1,5 +1,33 @@
+.registration
+  .registration-header
+    = link_to root_path do
+      = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "logo"
+  %nav.progress
+    %ul.progress-bar
+      %li.progress-status
+        会員情報
+        .progress-status__done
+        .progress-status_bar__done
+
+      %li.progress-status
+        電話番号認証
+        .progress-status__done
+        .progress-status_bar__long__done
+
+      %li.progress-status
+        お届け先住所入力
+        .progress-status__done
+        .progress-status_bar__long__done
+
+      %li.progress-status#done
+        支払い方法
+        .progress-status__done
+        .progress-status_bar
+
+      %li.progress-status
+        完了
+        .progress-status
 .payment-input
-  = render 'registration/registration_header_payment'
   .payment-input__container
     = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
       .payment-input__container__title
@@ -8,7 +36,7 @@
         カード番号
         %span.require 必須
       .payment-input__container__form
-        = text_field_tag "number", "", class: "input-default", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+        = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
       .payment-card-logo
         = image_tag "/assets/visa.svg", class: "card-logo-svg"
         = image_tag "/assets/mastercard.svg", class: "card-logo-svg"
@@ -61,5 +89,6 @@
         =link_to "#",class: "back-card" do
           カード裏面の番号とは？
         .payment-input__container__next-btn
-        = submit_tag :次へ進む, class: "payment-next_btn",id: "token_submit"
+        #card_token
+      = submit_tag "次へ進む", id: "token_submit"
   = render 'shared/user_footer'

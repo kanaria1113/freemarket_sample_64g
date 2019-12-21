@@ -80,19 +80,8 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "status", null: false
-    t.string "size"
-    t.integer "price", null: false
-    t.text "description", null: false
-    t.string "burden", null: false
-    t.string "send_method", null: false
-    t.string "region", null: false
-    t.string "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "buyer_id"
-    t.integer "seler_id", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -119,7 +108,6 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "cards", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"

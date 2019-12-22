@@ -9,7 +9,7 @@
         %tr
           %th.thcategory 出品者
           %td.tdcategory
-            = link_to '/' , class:'tdcategory-name' do
+            = link_to root_path , class:'tdcategory-name' do
               nickname
             %div
               .itembuy-user-evaluation-smile
@@ -24,20 +24,12 @@
         %tr
           %th.thcategory カテゴリー
           %td.tdcategory
-            = link_to  '/' do
+            = link_to  root_path ,class: "link_color"do
               = @category.name
-            -#   子要素が作成された場合使う
-            -#   .itembuy-table-sub
-            -#     %i.fa.fa-chevron-right
-
-            -# = link_to '/' do
-            -#   .itembuy-table-sub
-            -#     %i.fa.fa-chevron-right
-            -#     テスト
         %tr
           %th.thcategory  ブランド
           %td.tdcategory
-            = link_to '/' do
+            = link_to root_path,class: "link_color" do
               = @brand.name
         %tr
           %th.thcategory 商品の状態
@@ -54,7 +46,7 @@
         %tr
           %th.thcategory 配送元地域
           %td.tdcategory
-            = link_to '/' do
+            = link_to root_path ,class: "link_color"do
               = @item.region
         %tr
           %th.thcategory 発送日の目安
@@ -69,7 +61,7 @@
     %span.itembuy-content__taxfee
       送料込み
   .itembuy-price-box
-    = link_to '/' ,class: 'itembuy-price-box' do
+    = link_to root_path ,class: 'itembuy-price-box' do
       購入画面に進む
   .itembuy-detail
     %p.itembuy-detail__coments
@@ -79,11 +71,11 @@
     .itembuy-button__left
       %button{ type: 'button', name: 'iine', class: 'i fa fa-heart' }
         %span.itembuy-button-like いいね! 999
-      = link_to '/' do
+      = link_to root_path do
         %i.fa.fa-flag
           %span 不適切な商品の報告
     .itembuy-button__right
-      = link_to '/' do
+      = link_to root_path ,class: "link_color"do
         %i.fa.fa-shopping-bag
           %span あんしん・あんぜんへの取り組み
 .itembuy-content-box
@@ -96,32 +88,32 @@
           %span コメントする
 %ul.itembuy-nav
   %li.itembuy-nav__left
-    = link_to '/' do
+    = link_to root_path,class: "link_color" do
       %i.fa.fa-chevron-left
       左ブランド
   %li.itembuy-nav__right
-    = link_to '/' do
+    = link_to root_path,class: "link_color" do
       右ブランド
       %i.fa.fa-chevron-right
 .itembuy-media-box
   %ul.itembuy-media-box__list
     %li.itembuy-media-boxli
-      = link_to '/' do
+      = link_to root_path do
         %i.fa.fa-facebook-square
     %li.itembuy-media-boxli
-      = link_to '/' do
+      = link_to root_path do
         %i.fa.fa-twitter-square
     %li.itembuy-media-boxli
-      = link_to '/' do
+      = link_to root_path do
         %i.fa.fa-pinterest-square
 .itembuy-user-profile
   %h2.itembuy-user-profile__head
-    = link_to '/' do
+    = link_to root_path do
       g64さんのその他の出品
   .itembuy-user-profile__content
     .itembuy-user-profile__box
       %section.itembuy-user-profile__items
-        = link_to '/' do
+        = link_to root_path do
           = image_tag "testimage.jpg", size: '220x220'
           .itembuy-user-profile__body
             %h3.itembuy-user-profile__name
@@ -135,7 +127,7 @@
                   1
     .itembuy-user-profile__box
       %section.itembuy-user-profile__items
-        = link_to '/' do
+        = link_to root_path do
           = image_tag "testimage.jpg", size: '220x220'
           .itembuy-user-profile__body
             %h3.itembuy-user-profile__name
@@ -149,7 +141,7 @@
                   1
     .itembuy-user-profile__box
       %section.itembuy-user-profile__items
-        = link_to '/' do
+        = link_to root_path do
           = image_tag "testimage.jpg", size: '220x220'
           .itembuy-user-profile__body
             %h3.itembuy-user-profile__name
@@ -163,7 +155,7 @@
                   1
     .itembuy-user-profile__box
       %section.itembuy-user-profile__items
-        = link_to '/' do
+        = link_to root_path do
           = image_tag "testimage.jpg", size: '220x220'
           .itembuy-user-profile__body
             %h3.itembuy-user-profile__name

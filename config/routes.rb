@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'sessions/new'
 
   devise_for :users,
@@ -9,6 +10,11 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   resources :signup do
+
+  devise_for :users
+  root to: 'index#index'
+  
+  resources :registration, only: [:index] do
     collection do
       get 'step1'
       get 'step2'
@@ -17,6 +23,7 @@ Rails.application.routes.draw do
       get 'done' # 登録完了後のページ
     end
   end
+  
   resources :card, only: [:index, :new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -27,13 +34,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index,:show,:new]
 
-  root to: 'index#index'
   resources :mypage, only: [:index] do
     get "profile"
   end
-  resources :items, only: [:index,:show]
   resources :logout, only: [:index]
-  resources :items, only: [:index,:edit,:destroy]
+  resources :items, only: [:index,:show,:edit,:destroy]
   resources :sell, only: [:index]
   resources :profile, only: [:index]
   resources :card, only: [:index] do

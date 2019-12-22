@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   end
   def destroy
     if @item.user_id == current_user.id && @item.destroy
+      redirect_to mypage_index_path
     else
       redirect_to edit_item_path
     end

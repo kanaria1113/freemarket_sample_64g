@@ -1,15 +1,21 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only: [:index, :show, :edit, :destroy]
+  before_action :set_item, only: [:index, :show, :edit, :destroy, :buyscreen]
   def index
     @items = Item.find(set_item[:id]).limit(10).order('created_at DESC')
-    @images = Image.find.(set_item[:id])
+    @images = Image.where(set_item[:id])
     @image = Image.find(item_id: image_params)
   end
   def show
     @category = Category.find(params[:id])
     @images = Image.find(set_item[:id])
     @brand = Brand.find(params[:id])
+  end
+  def buyscreen
+    @images = Image.where(item_id:@item.id)
+    @image = @images[0]
+    @addresses = Address.where(user_id:1)
+    @address = @addresses[0]
   end
   def edit
     @item = Item.find(1)

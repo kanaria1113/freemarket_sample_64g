@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     get "profile"
   end
   resources :logout, only: [:index]
-  resources :items, only: [:index,:show,:edit,:destroy]
+  resources :items, only: [:index,:show,:edit,:destroy] do
+    member do
+      get 'buyscreen'
+    end
+  end
   resources :sell, only: [:index]
   resources :profile, only: [:index]
   resources :card, only: [:index] do

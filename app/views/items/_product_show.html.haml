@@ -61,7 +61,7 @@
     %span.itembuy-content__taxfee
       送料込み
   .itembuy-price-box
-    = link_to root_path ,class: 'itembuy-price-box' do
+    = link_to   buyscreen_item_path(@item),class: 'itembuy-price-box' do
       購入画面に進む
   .itembuy-detail
     %p.itembuy-detail__coments

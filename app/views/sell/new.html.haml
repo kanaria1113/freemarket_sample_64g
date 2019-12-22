@@ -8,14 +8,16 @@
           出品画像
           %span.require 必須
         .sell-drop
-          = f.fields_for @image, class: "sell-drop__box"  do |image|
+          = f.fields_for :image, class: "sell-drop__box"  do |image|
+            #image-box-1
+              .item-num-0#image-box__container
             = image.label :image, class: "sell-drop__box" do
               %i.fa.fa-camera.sell-drop__camera
               %p.sell-drop__box__text
               ドラッグアンドドロップ
               %br/
               またはクリックしてください
-              = image.file_field :image, class: "sell-drop__box__file",dropzone: true
+              = image.file_field :image, class: "sell-drop__box__file",name: "images[]", id: "post_image_last"
       .sell__file
         .sell-form-group
           .sell__label

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       get 'registration_complete'
     end
   end
-  root to: 'index#index'
   resources :mypage, only: [:index] do
     get "profile"
   end

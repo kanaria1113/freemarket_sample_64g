@@ -1,45 +1,47 @@
-$(document).on('turbolinks:load', function () { 
-  $("sell-drop__box__file").on('change', 'input[type="file"]', function(e) {
-    console.log("test")
+$(function(){
+  $('form').on('change', 'input[type="file"]', function(e) {
     var file = e.target.files[0],
         reader = new FileReader(),
-        $preview = $(".sell-drop__box");
+        $preview = $(".item-num-0");
         t = this;
 
     if(file.type.indexOf("image") < 0){
-
       return false;
     }
 
+    var input_area = $('.sell-drop__box');
+  
     reader.onload = (function(file) {
       return function(e) {
         $preview.empty();
         $preview.append($('<img>').attr({
                   src: e.target.result,
                   width: "150px",
+                  hight: "150px",
                   class: "preview",
                   title: file.name
               }));
+        var new_input = $(`<input class="sell-drop__box__file" name="images[]" id="post_image_last" type="file">`);
+        input_area.prepend(new_input);
+        var num = $('.item-image').length + 1 + i
+        fileReader.readAsDataURL(file);
+        $('#image-box__container').attr('class', `item-num-${num}`)
+
+        
+        // var new_preview = $preview.append($('<img>').attr({
+        //   src: e.target.result,
+        //   width: "150px",
+        //   hight: "150px",
+        //   class: "preview",
+        //   title: file.name
+        // }));
+        // $preview.prepend(new_preview);
       };
     })(file);
-    image_file.on('change', image_file.children('input[name="item[image][image][' + image_count + ']"]'), function (e) {
-      var file = e.target.files[0];
-      var file_reader = new FileReader();
 
-      file_reader.onload = (function () {
-        return function (e) {
-          image_tag = build_image_tag(image_count, e.target.result);
-          $('.image-preview').append(image_tag);
-          image_count += 1;
-          file_tag = build_file_tag(image_count);
-          image_file.append(file_tag);
-        };
-      })(file);
+    reader.readAsDataURL(file);
     
-        file_reader.readAsDataURL(file);
-    });
   });
-
   var item_price_field = $('.sell-right');
   var item_price;
   var item_fee;
@@ -59,5 +61,7 @@ $(document).on('turbolinks:load', function () {
     item_benefit = separate(item_price - item_fee);
     item_price_field.children('h9').text("¥" + item_fee);
     item_price_field.children('h10').text("¥" + item_benefit);
-  })
-})
+  });
+});
+
+

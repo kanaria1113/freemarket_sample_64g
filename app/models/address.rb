@@ -1,6 +1,8 @@
 class Address < ApplicationRecord
-  belongs_to :user, optional: true
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
+  delegate :name, to: :prefecture
 
-  validates :user_id,
-  presence: true
+  belongs_to :user, optional: true
+  VALID_PHONENUMBER = /\A\d{10}$|^\d{11}\z/
 end

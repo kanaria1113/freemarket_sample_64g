@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
     @category = Category.find(params[:id])
     @images = Image.find(set_item[:id])
     @brand = Brand.find(params[:id])
-    @items = Item.find(set_item[:id])
   end
   def edit
     @item = Item.find(1)
@@ -19,7 +18,7 @@ class ItemsController < ApplicationController
     if @item.user_id == current_user.id
       @item = Item.find(params[:id])
       @item.destroy
-        redirect_to mypage_index_path
+      redirect_to mypage_index_path
     else
       redirect_to edit_item_path
     end

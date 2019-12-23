@@ -4,15 +4,15 @@ class SellController < ApplicationController
 
   def new
     @item = Item.new
-    @image = Image.new
     @item.images.build
   end
 
   def create
     @item = Item.new(item_params)
-    @image = Image.new
     if @item.save!
-      item = Item.find(@item.id)
+      params[:images][:image].each do |image|
+        @item.images.create!(image: image, item_id: @item.id)
+      end
       redirect_to root_path, notice: "出品しました"
       else
     end

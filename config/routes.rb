@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  root to: 'index#index'
 
   devise_for :users,
   controllers: {
@@ -9,12 +9,9 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  resources :signup do
-
-  devise_for :users
-  root to: 'index#index'
   
-  resources :registration, only: [:index] do
+  
+    resources :signup do
     collection do
       get 'step1'
       get 'step2'
@@ -24,7 +21,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :card, only: [:index, :new, :show] do
+  resources :card, only: [:index, :new, :show, :delete] do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
@@ -32,7 +29,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index,:show,:new]
+  resources :users, only: [:index,:show,:new, :edit]
 
   resources :mypage, only: [:index] do
     get "profile"
@@ -48,5 +45,13 @@ Rails.application.routes.draw do
   end
   resources :pribate, only: [:index]
   resources :confomation, only: [:index]
+  
+  get '/mypage/notification', to: 'mypage#notification'
+  get '/mypage/todo', to: 'mypage#todo'
+  get '/mypage/card', to: 'mypage#card'
+  get '/mypage/deliver_address', to: 'mypage#deliver_address'
+  delete '/card/delete', to: 'card#delete'
+
+
 
 end

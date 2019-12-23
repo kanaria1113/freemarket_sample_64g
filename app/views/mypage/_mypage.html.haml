@@ -3,7 +3,7 @@
     %figure#figureimg
       = image_tag "member.png", class: "mypageicon"
     %div#mypageicon-name
-      name
+      = current_user.nickname
   .mypage__number
     %div#my-evaluate
       評価　0

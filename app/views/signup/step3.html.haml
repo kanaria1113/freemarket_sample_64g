@@ -42,7 +42,7 @@
             都道府県
             %span.require 必須
           .address-input__container__form
-            = a.collection_select :prefecture_id, Prefecture.all, :id, :name
+            = a.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "form__group__prefecture"}
           .address-input__container__form-name
             市区町村
             %span.require 必須

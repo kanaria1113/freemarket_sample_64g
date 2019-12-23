@@ -39,7 +39,15 @@
             .sell__label
               カテゴリー
               %span.require 必須
-            = f.select :category, {レディース: "レディース", メンズ: "", ベビー・キッズ: "", インテリア・住まい・小物: "", 本・音楽・ゲーム: "", おもちゃ・ホビー・グッズ: "", コスメ・香水・美容: "", 家電・スマホ・カメラ: "", スポーツ・レジャー: "", ハンドメイド: "", チケット: "", 自動車・オートバイ: "", その他: ""}
+            = f.fields_for :item_categories do |c|
+              = c.select :category_id, {レディース: 1, メンズ: 2, ベビー・キッズ: "", インテリア・住まい・小物: "", 本・音楽・ゲーム: "", おもちゃ・ホビー・グッズ: "", コスメ・香水・美容: "", 家電・スマホ・カメラ: "", スポーツ・レジャー: "", ハンドメイド: "", チケット: "", 自動車・オートバイ: "", その他: ""}
+          .sell-form-group
+            .sell__label
+              ブランド
+              %span.any 任意
+            = f.fields_for :brands do |b|
+              = b.text_field :name, class: 'select_default', placeholder: "（例）シャネル"
+
           .sell-form-group
             .sell__label
               商品の状態

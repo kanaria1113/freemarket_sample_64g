@@ -5,6 +5,8 @@ class SellController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    @item.item_categories.build
+    @item.brands.build
   end
 
   def create
@@ -29,6 +31,8 @@ class SellController < ApplicationController
       :burden,
       :send_method,
       :region,
+      item_categories_attributes: [:category_id],
+      brands_attributes: [:name],
       images_attributes: [:image]).merge(seler_id: current_user.id)
   end
 

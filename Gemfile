@@ -69,6 +69,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -86,8 +88,12 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 gem 'dotenv-rails'
+gem 'active_hash'
+gem 'payjp'
 gem 'pry-rails'
 gem 'dropzonejs-rails', '~> 0.7.3'
 gem "gretel"
 gem 'execjs'
+gem "pry-rails"
+gem 'ancestry'
 

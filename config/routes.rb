@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  root to: 'index#index'
 
   devise_for :users,
   controllers: {
@@ -9,12 +9,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  resources :signup do
-
-  devise_for :users
-  root to: 'index#index'
-  
-  resources :registration, only: [:index] do
+    
+    resources :signup do
     collection do
       get 'step1'
       get 'step2'

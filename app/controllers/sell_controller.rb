@@ -29,7 +29,7 @@ class SellController < ApplicationController
       :burden,
       :send_method,
       :region,
-      images_attributes: [:image])
+      images_attributes: [:image]).merge(seler_id: current_user.id)
   end
 
   def set_params

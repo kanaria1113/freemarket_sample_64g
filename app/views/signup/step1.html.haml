@@ -32,7 +32,7 @@
     %h2.member-info__title
       会員情報入力
     .member-info__form
-      = form_for @user, url: step2_signup_index_path, method: :get, html: {class: 'forth-main-wrapper__box'} do |f|
+      = form_for @user, url: step2_signup_index_path, method: :get do |f|
         .member-info__form--top
           .member-info__field--different
             .member-info__name
@@ -95,13 +95,13 @@
                   必須
               .member-info__field_birthday
                 .member-info__field_birthday__year
-                  = f.collection_select :birth_year, Birthyear.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
+                  = f.collection_select :birth_year, Birthyear.all, :id, :name, {prompt: "--"}
                 %span.birth_date 年
                 .member-info__field_birthday__month       
-                  = f.collection_select :birth_month, Birthmonth.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
+                  = f.collection_select :birth_month, Birthmonth.all, :id, :name, {prompt: "--"}
                 %span.birth_date 月
                 .member-info__field_birthday__day
-                  = f.collection_select :birth_day, Birthday.all, :id, :name, {prompt: "--"}, {class: 'select-default'}
+                  = f.collection_select :birth_day, Birthday.all, :id, :name, {prompt: "--"}
                 %span.birth_date 日          
           %p.member-info__text--gray
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。

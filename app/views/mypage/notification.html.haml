@@ -1,0 +1,24 @@
+.mypage-header
+  = render "index/loginheader"
+  - breadcrumb :mypage
+  = render "index/bread-crumbs"
+  .mypage
+    .mypage__left
+      = render "mypage/mypage_sidebar"
+    .mypage__right
+      .mypage-tab-container-notification-todo
+        %ul#mypage_tabs
+          %li#my_list
+            = link_to mypage_notification_path,class: "my-notice__active" do
+              お知らせ
+          %li#my_list
+            = link_to mypage_todo_path ,class: "my-notice" do
+              やることリスト
+
+        %ul.mypage-item-list
+          %li#mypage-item-none 
+            現在、お知らせはありません
+.mypage-footer
+  = render "index/download"
+  = render "index/footer"
+  = render "index/exhibit"

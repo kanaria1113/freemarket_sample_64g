@@ -1,0 +1,67 @@
+.mypage-header
+  = render "index/loginheader"
+  - breadcrumb :mypage
+  = render "index/bread-crumbs"
+  .mypage
+    .mypage__left
+      = render "mypage/mypage_sidebar"
+    .mypage__right
+    .pribate__right
+      = form_with(model: @user, local: true) do |f|
+        .pribate__title
+          発送元・お届け先住所変更
+        .member-info__name
+          .member-info__field--label
+            お名前
+            %span.member-info__field--required
+              必須
+        .member-info__field--placeholder
+          .member-info__box
+            = f.text_field :last_name, autofocus: true, placeholder: "例）山田",class: "member-info__field--input"
+          .member-info__box
+            = f.text_field :fast_name, autofocus: true, placeholder: "例）彩",class: "member-info__field--input"
+        .member-info__name
+          .member-info__field--label
+            お名前カナ
+            %span.member-info__field--required
+              必須
+        .member-info__field--placeholder
+          .member-info__box
+            = f.text_field :last_name, autofocus: true, placeholder: "例）山田",class: "member-info__field--input"
+          .member-info__box
+            = f.text_field :fast_name, autofocus: true, placeholder: "例）彩",class: "member-info__field--input"
+        .address-input__container__form-name
+          郵便番号
+          %span.require 必須
+          .address-input__container__form
+            = f.text_field :postal_code, placeholder: "例) 123-4567", type: "text", class: "member-info__field--input",required:"required"
+          .address-input__container__form-name
+            都道府県
+            %span.require 必須
+          .address-input__container__form
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: "member-info__field--input"}
+          .address-input__container__form-name
+            市区町村
+            %span.require 必須
+          .address-input__container__form
+            = f.text_field :city, placeholder: "例) 横浜市緑区", type: "text", class: "member-info__field--input",required:"required"
+          .address-input__container__form-name
+            番地
+            %span.require 必須
+          .address-input__container__form
+          = f.text_field :address, placeholder: "例) 青山1-1-1", type: "text", class: "member-info__field--input",required:"required"
+          .address-input__container__form-name
+            建物名
+            %span.any 任意
+          .address-input__container__form
+            = f.text_field :building_name, placeholder: "例) 柳ビル103", type: "text", class: "addres-input_form"
+          .address-input__container__form-name
+            電話
+            %span.any 任意
+          .address-input__container__form
+            = f.text_field :phone_number, placeholder: "例) 09012345678", type: "text", class: "addres-input_form"
+          = f.submit :次へ進む, class: "next_btn"
+.mypage-footer
+  = render "index/download"
+  = render "index/footer"
+  = render "index/exhibit"

@@ -1,9 +1,11 @@
 $(function(){
   $('form').on('change', 'input[type="file"]', function(e) {
+    console.log(this)
     var file = e.target.files[0],
-        reader = new FileReader(),
-        $preview = $(".item-num-0");
-        t = this;
+    reader = new FileReader(),
+    $preview = $(".item-num-0");
+    t = this;
+    console.log(file)
 
     if(file.type.indexOf("image") < 0){
       return false;
@@ -21,11 +23,22 @@ $(function(){
                   class: "preview",
                   title: file.name
               }));
-        var new_input = $(`<input class="sell-drop__box__file" name="images[]" id="post_image_last" type="file">`);
+      var i = 1;
+      var number = 1;
+      
+      number ++;
+        var new_input = $(`<input class="sell-drop__box__file" id="post_image_last" type="file" name="item[images_attributes][${number}][image]">`);
+        console.log(number, new_input[0]);
         input_area.prepend(new_input);
         var num = $('.item-image').length + 1 + i
         fileReader.readAsDataURL(file);
         $('#image-box__container').attr('class', `item-num-${num}`)
+        $(document).on('change', '#post__img,#post__img__last',function(event) {
+          // 一番上のインプットだけ押せるように表示。
+          $(sell-drop__box).children(":first").css({'display':'block'});
+          // 選択したインプットは消す。
+          $(this).css({'display':'none'});
+        });
 
         
         // var new_preview = $preview.append($('<img>').attr({

@@ -14,10 +14,11 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
-    t.string "prefectures", null: false
+    t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "building_name"
+    t.integer "phone_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,20 +27,18 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_brands_on_item_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "number", null: false
-    t.integer "month", null: false
-    t.integer "year", null: false
-    t.string "name", null: false
-    t.integer "cvc", null: false
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -84,17 +83,18 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "status", null: false
+    t.string "status", null: false
     t.string "size"
     t.integer "price", null: false
     t.text "description", null: false
     t.string "burden", null: false
     t.string "send_method", null: false
-    t.string "region", null: false
-    t.string "date"
+    t.integer "region", null: false
+    t.string "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "buyer_id"
+    t.integer "seler_id", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -107,12 +107,11 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "nickname", null: false
     t.text "profile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "delete_flg", null: false
     t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -122,7 +121,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "cards", "users"
+  add_foreign_key "brands", "items"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"

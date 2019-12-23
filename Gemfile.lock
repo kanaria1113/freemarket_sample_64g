@@ -401,6 +401,7 @@ DEPENDENCIES
   dotenv-rails
   dropzonejs-rails (~> 0.7.3)
   erb2haml
+  execjs
   factory_bot_rails
   fog-aws
   font-awesome-rails

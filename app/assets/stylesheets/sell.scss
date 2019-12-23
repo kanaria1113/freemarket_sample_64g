@@ -86,12 +86,18 @@
     border-image: initial;
     transition: all 0.5s ease-out 0s;
     text-align: center;
+    &__file{
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+  
     &__text{
       font-size: 12px;
       line-height: 1.4em;
-    }
-    &__file{
-      display: none;
     }
   }
   &__camera{
@@ -111,7 +117,7 @@
   padding: initial;
   border: initial;
 }
-#select_default{
+.select_default, #item_categories_category, #item_status, #item_burden, #item_region, #item_date, #item_send_method{
   -moz-appearance: none;
   appearance: none;
   background-color: #fff;
@@ -127,11 +133,12 @@
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
+  max-width: 100%;
 }
 .sell-form-group{
   margin-top: 32px;
 }
-#sell_detail{
+#item_detail{
   border: 1px solid #ccc;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
@@ -183,4 +190,75 @@
   font-size: 20px;
   margin-top: 10px;
   margin-right: 10px;
+}
+
+#item_description{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+.input-area{
+  align-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  cursor: pointer;
+  height: 150px;
+  display: block;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+  transition: all 0.5s ease-out 0s;
+  text-align: center;
+
+}
+
+
+.item-num-0{
+  width: 100%;
+}
+.item-num-1{
+  width: 491px;
+}
+.item-num-2{
+  width: 363px;
+}
+.item-num-3{
+  width: 234px;
+}
+.item-num-4{
+  width: 106px;
+}
+//下段のfile_field
+.item-num-5{
+  width: 100%;
+}
+.item-num-6{
+  width: 491px;
+}
+.item-num-7{
+  width: 363px;
+}
+.item-num-8{
+  width: 234px;
+}
+.item-num-9{
+  width: 106px;
+}
+
+#image-box-1{
+  display: flex;
 }

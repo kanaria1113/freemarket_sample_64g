@@ -1,0 +1,56 @@
+.sell{
+  background-color: whitesmoke;
+  &__head{
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+    margin-bottom: 24px;
+  }
+  &__body{
+    background-color: #FFF;
+    vertical-align: baseline;
+    width: 700px;
+    margin: 0 auto;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    font: inherit;
+  }
+  &__label{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #000;
+  }
+  box-sizing: border-box;
+  &__title{
+    padding: 40px;
+  }
+  &__file{
+    padding: 40px;
+    border-bottom: 1px solid #efefef;
+    &__text{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+    }
+  }
+  &__price{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__fee{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  &__exhibit{
+    padding-left: 120px;
+  }
+  &__back{
+    margin: 24px 0;
+    padding-left: 250px;
+  }
+}

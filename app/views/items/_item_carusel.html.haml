@@ -1,17 +1,15 @@
-- @images.each do |img|
-
+- @images.each do |image|
   %div.thumb-item
     %div
-      = image_tag @image.image.url, class: 'owl-stage-outer', size: '300x300'
+      = image_tag image.image, class: 'owl-stage-outer', size: '300x300'
     %div
       = image_tag "member.png", class: 'owl-stage-outer', size: '300x300'
     %div
       = image_tag "testimage.jpg", class: 'owl-stage-outer', size: '300x300'
   %div.thumb-item-nav
     %div.item_carusel
-      = image_tag img.image.url, class: 'owl-stage-outer-sub', size: '60x60'
+      = image_tag image.image, class: 'owl-stage-outer-sub', size: '60x60'
     %div.item_carusel
       = image_tag "member.png", class: 'owl-stage-outer-sub', size: '60x60'
     %div.item_carusel
       = image_tag "testimage.jpg", class: 'owl-stage-outer-sub', size: '60x60'
-

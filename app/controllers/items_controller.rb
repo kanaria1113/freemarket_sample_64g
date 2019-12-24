@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(1)
     @image = Image.find(params[:id])
-    # @item.build_images
+    @item.images.build
   end
   def show
     @category = Category.find(params[:id])
@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.update(item_params)
     # binding.pry
-    @image.update(image_params)
       redirect_to chenge_item_items_path
   end
   def destroy
@@ -34,13 +33,7 @@ class ItemsController < ApplicationController
   end
   private
   def item_params
-    params.require(:item).permit(:name,:price,:description,:status,:region,:burden,:date,:send_method)
+    params.require(:item).permit(:name,:price,:description,:status,:region,:burden,:date,:send_method,images_attributes: [:id,:image])
   end
-  def image_params
-    params.require(:image).permit(:image,:item_id)
-  end
-  # def item_params
-  #   @item = Item.find(1)
-  # end
 end
 

@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   def buyscreen
     @images = Image.where(item_id:@item.id)
     @image = @images[0]
-    @addresses = Address.where(user_id:1)
+    @addresses = Address.where(user_id: current_user.id)
     @address = @addresses[0]
     @item.buyer_id = current_user.id
     @item.save

@@ -50,12 +50,12 @@
               = "#{@address.prefecture_id} #{@address.city} #{@address.address}"
             .buy-item-bottom__purchase__main__name 
               = current_user.nickname
-        .item-bottom__submit
+        .item-bottom__buy-btn
           = form_with url: buyscreenitem_item_path(@item) , method: :post,local:true do |f|
             = f.hidden_field :user_id,value:current_user.id
             = f.hidden_field :item_id,value:@item.id
             - if @default_card_information != nil
-              = f.submit value:"購入する"
+              = f.submit value:"購入する", class: "buy-btn"
             - else  
               .not 購入できません
   .buy-item-footer

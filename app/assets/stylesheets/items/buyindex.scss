@@ -135,22 +135,6 @@
             font-size: 14px;
           }
         }
-        &__submit{
-          input{
-            display: block;
-            margin: 0 auto;
-            background-color:red;
-            width:343px;
-            font-size: 14px;
-            font-weight: 600;
-            color:white;
-            padding:13px 0;
-            margin-top:30px;
-            margin-bottom:20px ;
-            border: none;
-          }
-          
-        }
       }
     }
     
@@ -178,6 +162,21 @@
       width:auto;
     }
   }
+}
+
+.buy-btn{
+
+  display: block;
+  margin: 0 auto;
+  background-color:red;
+  width:343px;
+  font-size: 14px;
+  font-weight: 600;
+  color:white;
+  padding:13px 0;
+  margin-top:30px;
+  margin-bottom:20px ;
+  border: none;
 }
 
 

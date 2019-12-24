@@ -10,7 +10,7 @@
           %th.thcategory 出品者
           %td.tdcategory
             = link_to root_path , class:'tdcategory-name' do
-              nickname
+              = @user.nickname
             %div
               .itembuy-user-evaluation-smile
                 %i.fa.fa-smile-o

@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id:@item.id)
     @image = @images
     @brand = Brand.find(params[:id])
+    @user = User.find(params[:id])
   end
   def edit
     @item = Item.find(1)

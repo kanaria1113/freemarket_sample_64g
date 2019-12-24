@@ -24,7 +24,7 @@
                 = link_to item_path(item.id), class:"main-items-all", method: :get do
                   %figure.main-items-all-figure
                     .img-main-item1
-                      = image_tag item.images[0].image,class: "img-main-item"
+                      = image_tag item.images[0].image.url ,class: "img-main-item"
                       %span.aria-label
                         = "¥#{item.price}"
                     %figcaption.main-items-all-figure-i

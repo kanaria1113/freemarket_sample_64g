@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     @seler = current_user
     @item = Item.find(params[:id])
     @item.update(item_params)
-    # binding.pry
+    binding.pry
       redirect_to chenge_item_items_path
   end
   def destroy

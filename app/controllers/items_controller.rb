@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only: [:index, :show, :edit, :destroy, :buyscreen,]
+  before_action :set_item, only: [:index, :show, :edit, :destroy, :buyscreen, :buyscreenitem]
   def index
     @items = Item.find(set_item[:id]).limit(10).order('created_at DESC')
     @images = Image.find(set_item[:id])
@@ -31,8 +31,6 @@ class ItemsController < ApplicationController
     end
   end
   def buyscreenitem
-    @item = Item.find(set_item[:id])
-    @item.update( buyer_id: current_user.id)
   end
   def edit
     @item = Item.find(1)

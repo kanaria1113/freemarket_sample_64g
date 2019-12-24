@@ -1,5 +1,12 @@
-= link_to new_sell_path, class: "footer-exhibit" do
-  %div#exhibit-text
-    出品
-  %i.fa.fa-camera
-  
+
+- if user_signed_in?
+  = link_to sell_index_path, class: "footer-exhibit" do
+    %div#exhibit-text
+      出品
+    %i.fa.fa-camera
+- else
+  = link_to signup_index_path, class: "footer-exhibit" do
+    %div#exhibit-text
+      出品
+    %i.fa.fa-camera
+

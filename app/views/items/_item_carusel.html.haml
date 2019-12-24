@@ -1,8 +1,8 @@
 %div.thumb-item
-  %div
-    = image_tag @images.image, class: 'owl-stage-outer', size: '300x300'
+  - @images.each do |image|
+    %div
+      = image_tag image.image.url, class: 'owl-stage-outer', size: '300x300'
 %div.thumb-item-nav
-  %div.item_carusel
-    = image_tag @images.image, class: 'owl-stage-outer-sub', size: '60x60'
-
-
+  - @images.each do |image|
+    %div.item_carusel
+      = image_tag image.image.url, class: 'owl-stage-outer-sub', size: '60x60'

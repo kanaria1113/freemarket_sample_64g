@@ -13,7 +13,6 @@ $(document).on('turbolinks:load', function(){
   });
 
   $(function() {
-    console.log("aa")
     $('.thumb-item').slick({
         infinite: true,
         slidesToShow: 1,

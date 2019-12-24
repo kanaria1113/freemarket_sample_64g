@@ -93,5 +93,7 @@ gem 'payjp'
 gem 'pry-rails'
 gem 'dropzonejs-rails', '~> 0.7.3'
 gem "gretel"
+gem 'execjs'
 gem "pry-rails"
 gem 'ancestry'
+

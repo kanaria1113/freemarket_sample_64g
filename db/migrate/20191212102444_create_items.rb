@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.text :description,           null: false
       t.string :burden,              null: false
       t.string :send_method,         null: false        
-      t.string :region,              null: false
+      t.integer :region,              null: false
       t.string :date,                null: false
       t.datetime :created_at,        null: false
       t.datetime :updated_at,       null: false

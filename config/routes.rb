@@ -34,8 +34,9 @@ Rails.application.routes.draw do
     get "profile"
   end
   resources :logout, only: [:index]
+
+  resources :sell, only: [:index,:new, :create, :destroy]
   resources :items, only: [:index,:show,:edit,:destroy]
-  resources :sell, only: [:index]
   resources :profile, only: [:index]
   resources :card, only: [:index] do
     collection do

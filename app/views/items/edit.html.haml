@@ -12,7 +12,7 @@
             %p 最大10枚までアップロードできます
             #image-box-1
               .item-num-0#image-box__container
-                = f.fields_for :images, placeholder: "" do |image|
+                = f.fields_for :images do |image|
                   .input-area
                     = image.file_field :image,class: "sell-drop__box__file", type: 'file', id:"img-file", name: "images[image][]"
                     %label{for: "img-file"}

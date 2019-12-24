@@ -64,7 +64,7 @@
   margin-top: 8px;
   height: 44px;
   display: flex;
-  justify-content: space-between;
+
   &__left {
     background-color: #fff;
     width: 308.45px;
@@ -93,12 +93,14 @@
   }
   &__right1 {
     display: flex;
+    justify-content: flex-end;
     &__right1-signup {
       text-align: center;
     }
-    .main-header-bottom__right1-login {
+    .main-header-bottom-new__right1-login {
       text-align: center;
       margin-left: 11px;
+
       
     }
   }
@@ -139,6 +141,7 @@
   border-image: initial;
   border-radius: 4px;
   padding: 8px 10px;
+  margin-right: 20px;
   &:visited {
     color: #fff;
   }

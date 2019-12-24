@@ -12,15 +12,17 @@
             %p 最大10枚までアップロードできます
             #image-box-1
               .item-num-0#image-box__container
+                .input-area
+                  - @item.images.each do |image|
+                    = image_tag image.image.to_s, class: '', size: '60x60'
+                  %i.fa.fa-camera.sell-drop__camera
+                  %br/
+                  ドラッグアンドドロップ
+                  %br/
+                  またはクリックしてください
                 = f.fields_for :images do |image|
-                  .input-area
-                    = image.file_field :image,class: "sell-drop__box__file", type: 'file', id:"img-file", name: "images[image][]"
-                    %label{for: "img-file"}
-                    %i.fa.fa-camera.sell-drop__camera
-                    %br/
-                    ドラッグアンドドロップ
-                    %br/
-                    またはクリックしてください
+                  = image.file_field :image,class: "sell-drop__box__file", type: 'file', id:"img-file", name: "images[image][]"
+                  %label{for: "img-file"}
       .sell__file
         .sell-form-group
           .sell__label
@@ -47,7 +49,6 @@
               %span.any 任意
             = f.fields_for :brands do |b|
               = b.text_field :name, class: 'select_default', placeholder: "（例）シャネル"
-
           .sell-form-group
             .sell__label
               商品の状態

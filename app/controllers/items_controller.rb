@@ -5,8 +5,8 @@ class ItemsController < ApplicationController
   end
   def edit
     @item = Item.find(1)
-    @image = Image.find(params[:id])
-    @item.images.build
+    @image = @item.images.build
+    @image = Image.find(1)
   end
   def show
     @category = Category.find(params[:id])
@@ -15,10 +15,8 @@ class ItemsController < ApplicationController
     @item = Item.find(item_params[:id])
   end
   def update
-    @seler = current_user
     @item = Item.find(params[:id])
     @item.update(item_params)
-    # binding.pry
       redirect_to chenge_item_items_path
   end
   def destroy

@@ -4,9 +4,9 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
   def edit
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
     @image = Image.find(params[:id])
-    @item.build_images
+    # @item.build_images
   end
   def show
     @category = Category.find(params[:id])
@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
   end
   def chenge_item
     @item = Item.find(1)
+    @image = Image.find(1)
     @images = @item.images
   end
   private
@@ -34,10 +35,10 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name,:description,:status,:region,:burden,:date,:price,:send_method)
   end
   def image_params
-    params.require(:image).permit(:title, images_attributes: [:content, :_destroy, :id])
+    params.require(:image).permit(:image,:item_id)
   end
-  # def item_params
-  #   @item = Item.find(1)
-  # end
+  def item_params
+    @item = Item.find(1)
+  end
 end
 

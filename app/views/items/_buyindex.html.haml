@@ -1,0 +1,70 @@
+.buy-item-wrapper
+  .buy-item-header
+    = link_to root_path do
+      .buyitem-header__logo
+        = image_tag "fmarket_logo_white"
+  .buy-item-contents
+    .buy-detail 
+      %h1.buy-detail-data 購入内容の確認
+    .buy-item
+      .buy-item-contents
+        .buy-item-contents__content
+          .buy-item-contents__content__image
+            = image_tag @image.image.url
+          .buy-item-contents__content__main
+            .buy-item-contents__content__main__name
+              = @item.name  
+            .buy-item-contents__content__main__price
+              = "¥#{@item.price}"
+              %span.buy-item-burden
+                = @item.burden
+      .buy-item-bottom
+        .buy-item-bottom__price
+          .buy-item-bottom__price__top
+            .buy-item-bottom__price__top__name
+              支払い金額
+            .buy-item-bottom__price__top__price
+              = "¥#{@item.price}"
+          .buy-item-bottom__price__bottom
+        .buy-item-bottom__pay
+          %h2.buy-item-pay 支払い方法
+          - if @default_card_information != nil
+            = image_tag "/assets/visa.svg", class: "card-logo-svg"
+            .card__nam
+              = "**** **** **** " + @default_card_information.last4
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            .item-bottom__pay__month
+              = exp_month + " / " + exp_year
+          - else
+        .buy-item-bottom__purchase
+          .buy-item-bottom__purchase__title
+            .buy-item-bottom__purchase__title__delivery
+              %h3.buy-delivery 配送先
+            .buy-item-bottom__purchase__title__change
+              %span 変更する
+          .buy-item-bottom__purchase__main  
+            .buy-item-bottom__purchase__main__post
+              = "〒#{@address.postal_code}"
+            .buy-item-bottom__purchase__main__address
+              = "#{@address.prefecture_id} #{@address.city} #{@address.address}"
+            .buy-item-bottom__purchase__main__name 
+              = current_user.nickname
+        .item-bottom__submit
+          = form_with url: buyscreenitem_item_path(@item) , method: :post,local:true do |f|
+            = f.hidden_field :user_id,value:current_user.id
+            = f.hidden_field :item_id,value:@item.id
+            - if @default_card_information != nil
+              = f.submit value:"購入する"
+            - else  
+              .not 購入できません
+  .buy-item-footer
+    %ul.buy-item-footer__ul
+      %li.buy-item-footer__ul__li
+        = link_to "プライバシーポリシー", root_path
+      %li.buy-item-footer__ul__li
+        = link_to "メルカリ利用規約", root_path
+      %li.buy-item-footer__ul__li
+        = link_to "特定商取引に関する表記", root_path
+    = image_tag "logo_gray.svg"
+

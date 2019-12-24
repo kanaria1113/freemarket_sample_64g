@@ -36,7 +36,12 @@ Rails.application.routes.draw do
   resources :logout, only: [:index]
 
   resources :sell, only: [:index,:new, :create, :destroy]
-  resources :items, only: [:index,:show,:edit,:destroy]
+  resources :items, only: [:index,:show,:edit,:destroy] do
+    member do
+      get 'buyscreen'
+      post 'buyscreenitem'
+    end
+  end
   resources :profile, only: [:index]
   resources :card, only: [:index] do
     collection do

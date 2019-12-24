@@ -1,0 +1,42 @@
+.registration-complete {
+  width: 100vw;
+  background: whitesmoke;
+  margin: 0;
+  text-align: center;
+  &__title {
+    width: 700px;
+    background-color: white;
+    margin: auto;
+    font-size: 22px;
+    font-weight: bold;
+    height: 50px;
+    border-bottom: whitesmoke solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &__container {
+    width: 700px;
+    background-color: white;
+    margin: auto ;
+    padding-bottom: 30px;
+    &__text {
+      padding-top: 30px;
+    }
+  }
+}
+.start-btn {
+  width: 343px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ea352d;
+  border-radius: 4px;
+  margin: 40px auto 0;
+  line-height: 50px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

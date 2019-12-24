@@ -60,9 +60,13 @@
     %span.itembuy-content__tax (税込)
     %span.itembuy-content__taxfee
       送料込み
-  .itembuy-price-box
-    = link_to root_path ,class: 'itembuy-price-box' do
-      購入画面に進む
+    - if @item.buyer_id.present? 
+      .itembuy-price-box-sold
+        売り切れました
+    - else
+      .itembuy-price-box
+        = link_to buyscreen_item_path ,class: 'itembuy-price-box' do
+          購入画面に進む
   .itembuy-detail
     %p.itembuy-detail__coments
       = @item.description

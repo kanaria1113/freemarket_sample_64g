@@ -24,7 +24,13 @@
                 = link_to item_path(item.id), class:"main-items-all", method: :get do
                   %figure.main-items-all-figure
                     .img-main-item1
-                      = image_tag item.images[0].image.url ,class: "img-main-item"
+                      = image_tag item.images[0].image.url ,class: "img-main-item",size:"188x188"
+                      -if item.buyer_id.present?
+                        .items-box_photo__all
+                          .items-box_photo__sold
+                            .items-box_photo__sold__inner
+                              SOLD
+                      - else
                       %span.aria-label
                         = "¥#{item.price}"
                     %figcaption.main-items-all-figure-i

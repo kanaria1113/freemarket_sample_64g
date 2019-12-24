@@ -1,0 +1,188 @@
+.buy-item-wrapper{
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  background-color: rgb(245, 245, 245);
+
+  .buy-item-header{
+    display: flex;
+    margin: 0 auto;
+    height:128px;
+    justify-content: center;
+    text-align: center;
+    .buyitem-header__logo{
+      img{
+        padding-top:30px;
+        display: block;
+        height:50px;
+        width:auto;
+      }
+    }
+  }
+  .buy-item-contents{
+    .buy-detail{
+    margin: 0 auto;
+    background-color: white;
+    width:636px;
+    border-bottom: 1px solid gray;
+    padding:32px;
+      .buy-detail-data{
+      text-align: center;
+      font-weight: 700;
+      font-size: 22px;
+      }
+    }
+    .buy-item{
+      background-color: #fff;
+      margin: 0 auto;
+      border-bottom: 1px solid gray;
+      width:calc(700px);
+      .buy-item-contents{
+        width:100%;
+        margin: 0 auto;
+        border-bottom: 1px solid gray;
+        padding:32px 0px 20px 0px;
+        display: flex;
+        justify-content: center;
+        height: calc(145px - 64px);
+        
+        &__content{
+          width:343px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: left;
+        &__image{
+          img{
+            height: 80px;
+            width:80px;
+            object-fit: contain;
+          }
+        }
+        &__main{
+          margin-left:30px;
+          &__name{
+            font-size:14px;
+          }
+          &__price{
+            margin-top:10px;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+      }
+      }
+      .buy-item-bottom{
+        padding:32px;
+        width:calc(700px - 64px);
+        margin: 0 auto; 
+        &__price{
+          padding:0 16px;
+          margin: 0 auto;
+          border-bottom: 1px solid gray;
+          height: 134px;
+          width:calc(343px - 32px);  
+          font-size:12px;
+          font-weight: 600;
+          line-height: 120px;
+            &__top{
+              display:flex;
+              justify-content: space-between;
+              &__name{
+                font-size: 17px;
+              }
+              &__price{
+                font-size: 30px;
+              }
+            }
+        }
+        &__pay{
+          padding:16px 16px;
+          border-bottom: 1px solid gray;
+          height: calc(106px- 32px);
+          width:calc(343px - 32px);
+          margin: 0 auto;
+          .buy-item-pay{
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom:20px;
+          }
+          img{
+            height:20px;
+            width:auto;
+            display: block;
+            margin-bottom:20px;
+          }
+        }
+        &__purchase{
+          padding:32px 16px;
+          border-bottom: 1px solid gray;
+          width:calc(343px - 32px);
+          height: calc(156px - 70px);
+          margin: 0 auto;
+          &__title {
+            display: flex;
+            justify-content: space-between;
+            &__delivery{
+              .buy-delivery{
+                font-weight: 600;
+                font-size:14px;
+              }
+            }
+            &__change{
+              font-size: 14px;
+              color:#fff;
+            }
+          }
+          &__main{
+            font-size: 14px;
+          }
+        }
+        &__submit{
+          input{
+            display: block;
+            margin: 0 auto;
+            background-color:red;
+            width:343px;
+            font-size: 14px;
+            font-weight: 600;
+            color:white;
+            padding:13px 0;
+            margin-top:30px;
+            margin-bottom:20px ;
+            border: none;
+          }
+          
+        }
+      }
+    }
+    
+  }
+  .buy-item-footer{
+    padding:40px 0;
+    width:450px;
+    margin:0 auto;
+    height: 180px;
+    text-align: center;
+    &__ul{
+      display: flex;
+      justify-content: space-between;
+      &__li{
+      display: block;
+      font-size:12px;
+      color: black;
+      }
+    }
+    img{
+      display: block;
+      margin:0 auto;
+      margin-top:40px;
+      height:100px;
+      width:auto;
+    }
+  }
+}
+
+
+
+
+
+
+

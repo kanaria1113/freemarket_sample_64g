@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id:@item.id)
     @image = @images
     @brand = Brand.find(params[:id])
+    @user = User.find(@item.seler_id)
   end
   def buyscreen
     @images = Image.where(item_id:@item.id)
@@ -22,7 +23,8 @@ class ItemsController < ApplicationController
     if @item.buyer_id = current_user.id && @item.save
     else
       redirect_to edit_item_path
-      
+    end
+
     card = Card.find_by(user_id: current_user.id)
     if card.blank?
       redirect_to action: "new" 

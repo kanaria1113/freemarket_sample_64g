@@ -1,10 +1,10 @@
 .mypage-tab-container-notification-todo
   %ul#mypage_tabs
     %li#my_list
-      = link_to "#",class: "my-notice" do
+      = link_to mypage_notification_path,class: "my-notice" do
         お知らせ
     %li#my_list
-      = link_to "#",class: "my-notice__active" do
+      = link_to mypage_todo_path,class: "my-notice__active" do
         やることリスト
 
   %ul.mypage-item-list

@@ -10,9 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(set_item[:id])
     @image = @item.images.build
-
   end
 
   def show
@@ -50,7 +48,6 @@ class ItemsController < ApplicationController
   def update
     if @item.seler_id == current_user.id && @item.update
       chenge_item_items_path
-    else
     end
   end
 
@@ -72,7 +69,6 @@ class ItemsController < ApplicationController
 
   def chenge_item
     @item = Item.find(params[:id])
-    @image = Image.find(params[:id])
     @images = @item.images
   end
 

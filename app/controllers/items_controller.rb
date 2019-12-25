@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
-  # before_action :item_params, only: [:index,:show, :edit, :update,:destroy]
   def index
     @items = Item.all
   end
   def edit
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
     @image = @item.images.build
-    @image = Image.find(1)
+    @image = Image.find(params[:id])
   end
   def show
     @category = Category.find(params[:id])
@@ -15,9 +14,10 @@ class ItemsController < ApplicationController
     @item = Item.find(item_params[:id])
   end
   def update
-    @item = Item.find(params[:id])
-    @item.update(item_params)
+    if @item = Item.find(params[:id])
+      @item.update(item_params)
       redirect_to chenge_item_items_path
+    else 
   end
   def destroy
     @item = Item.find(params[:id])
@@ -25,8 +25,8 @@ class ItemsController < ApplicationController
       redirect_to mypage_index_path
   end
   def chenge_item
-    @item = Item.find(1)
-    @image = Image.find(1)
+    @item = Item.find(params[:id])
+    @image = Image.find(params[:id])
     @images = @item.images
   end
   private

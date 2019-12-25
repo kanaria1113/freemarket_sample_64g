@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
     end
   end
   def buyscreenitem
+
   end
   def edit
     @item = Item.find(1)

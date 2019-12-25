@@ -25,9 +25,10 @@ class ItemsController < ApplicationController
     @image = @images[0]
     @addresses = Address.where(user_id: current_user.id)
     @address = @addresses[0]
-    if @item.buyer_id = current_user.id && @item.save
+    if @item.seler_id == current_user.id
+      # redirect_to edit_item_path
     else
-      redirect_to edit_item_path
+      @item.save
     end
 
     card = Card.find_by(user_id: current_user.id)
@@ -42,6 +43,7 @@ class ItemsController < ApplicationController
   def buyscreenitem
 
   end
+
   def update
     if @item.user_id == current_user.id && @item.update
       chenge_item_items_path

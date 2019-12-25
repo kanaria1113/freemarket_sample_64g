@@ -19,12 +19,23 @@
             .pribate__label
               お名前
             %p.pribate__done
-              田中　太郎
+              = current_user.last_name
+              = current_user.fast_name
           .pribate__group
             .pribate__label
               お名前カナ
             %p.pribate__done
-              タナカ　タロウ
+              = current_user.last_name_kana
+              = current_user.fast_name_kana
+          .pribate__group
+            .pribate__label
+              生年月日
+            %p.pribate__done
+              = current_user.birth_year
+              ／
+              = current_user.birth_month
+              ／
+              = current_user.birth_day
           .pribate__group
             .pribate__label
               郵便番号

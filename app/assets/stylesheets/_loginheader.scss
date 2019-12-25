@@ -66,12 +66,14 @@
   height: 44px;
   display: flex;
   justify-content: space-between;
+
   &__left {
     background-color: #fff;
     width: 308.45px;
     .main-header-bottom-leftbox {
       display: flex;
       margin-left: -3px;
+      justify-content: space-between;
       .main-header-bottom-category {
         display: flex;
         margin-left: -3px;
@@ -94,6 +96,9 @@
   }
   &__right2 {
     display:flex;
+    width: 600px;
+    text-align: right;
+    justify-content: space-between;
     }
     .headerlike1, .headernotice1, .headerlist1, .headermypage1{
       display: flex;
@@ -153,7 +158,6 @@
 .headericon {
   color:red;
 }
-
 
 .a-category {
   display: inline-block;

@@ -1,0 +1,94 @@
+.registration
+  .registration-header
+    = link_to root_path do
+      = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "logo"
+  %nav.progress
+    %ul.progress-bar
+      %li.progress-status
+        会員情報
+        .progress-status__done
+        .progress-status_bar__done
+
+      %li.progress-status
+        電話番号認証
+        .progress-status__done
+        .progress-status_bar__long__done
+
+      %li.progress-status
+        お届け先住所入力
+        .progress-status__done
+        .progress-status_bar__long__done
+
+      %li.progress-status#done
+        支払い方法
+        .progress-status__done
+        .progress-status_bar
+
+      %li.progress-status
+        完了
+        .progress-status
+.payment-input
+  .payment-input__container
+    = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+      .payment-input__container__title
+        支払い方法
+      .payment-input__container__form-name
+        カード番号
+        %span.require 必須
+      .payment-input__container__form
+        = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+      .payment-card-logo
+        = image_tag "/assets/visa.svg", class: "card-logo-svg"
+        = image_tag "/assets/mastercard.svg", class: "card-logo-svg"
+        = image_tag "/assets/saison.svg", class: "card-logo-svg"
+        = image_tag "/assets/jcb.svg", class: "card-logo-svg"
+        = image_tag "/assets/american-express.svg", class: "card-logo-svg"
+        = image_tag "/assets/diners-club.svg", class: "card-logo-svg"
+        = image_tag "/assets/discover.svg", class: "card-logo-svg"
+      .payment-input__container__form-name
+        有効期限
+        %span.require 必須
+      .payment-input__container__form-select
+        .payment-input__container__form-select__month       
+          %select#exp_month{name: "exp_month", type: "text"}
+            %option{value: ""} --
+            %option{value: "1"}01
+            %option{value: "2"}02
+            %option{value: "3"}03
+            %option{value: "4"}04
+            %option{value: "5"}05
+            %option{value: "6"}06
+            %option{value: "7"}07
+            %option{value: "8"}08
+            %option{value: "9"}09
+            %option{value: "10"}10
+            %option{value: "11"}11
+            %option{value: "12"}12
+          %span 月
+        .payment-input__container__form-select__year
+          %select#exp_year{name: "exp_year", type: "text"}
+            %option{value: ""} --
+            %option{value: "2019"}19
+            %option{value: "2020"}20
+            %option{value: "2021"}21
+            %option{value: "2022"}22
+            %option{value: "2023"}23
+            %option{value: "2024"}24
+            %option{value: "2025"}25
+            %option{value: "2026"}26
+            %option{value: "2027"}27
+            %option{value: "2028"}28
+            %option{value: "2029"}29
+          %span 年
+      .payment-input__container__form-name
+        セキュリティーコード
+        %span.require 必須
+      .payment-input__container__form
+        = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+      .payment-input__containe__back-card
+        =link_to "#",class: "back-card" do
+          カード裏面の番号とは？
+        .payment-input__container__next-btn
+        #card_token
+      = submit_tag "次へ進む", id: "token_submit"
+  = render 'shared/user_footer'

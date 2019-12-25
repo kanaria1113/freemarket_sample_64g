@@ -2,13 +2,11 @@ class UsersController < ApplicationController
   def index
   end
 
-  def create
-    @user = User.new
+  def show
   end
 
-  def registration_index
-  end
-
-  def login
+  def edit
+    @user = User.find(params[:id])
   end
 end
+

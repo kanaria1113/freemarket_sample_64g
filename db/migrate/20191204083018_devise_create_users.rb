@@ -13,12 +13,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :birth_year,	        null: false
       t.integer :birth_month,	      null: false
       t.integer :birth_day,	        null: false
-      t.integer :phone_number,       null: false
+      t.string :phone_number,       null: false
       t.string :nickname,		        null: false,unique: true
       t.text :profile
       t.datetime :created_at,	      null: false
       t.timestamp :updated_at,	    null: false
-      t.boolean :delete_flg,     null: false
       t.string :image
 
 

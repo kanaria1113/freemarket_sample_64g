@@ -23,8 +23,10 @@ class ItemsController < ApplicationController
     if @item.seler_id == current_user.id
       # redirect_to edit_item_path
     else
-      @item.save
     end
+    @item.buyer_id = current_user.id
+    @item.save
+
 
     card = Card.find_by(user_id: current_user.id)
     if card.blank?

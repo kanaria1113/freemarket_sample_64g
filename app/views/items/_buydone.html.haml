@@ -1,0 +1,16 @@
+.registration
+  .registration-header
+    = link_to root_path do
+      = image_tag "fmarket_logo_red.svg", size: "185x49", alt: "logo"
+.registration-complete
+  .registration-complete__title
+    購入完了
+  .registration-complete__container
+    .registration-complete__container__text
+    ありがとうございます。
+    %br
+    購入が完了しました。
+    .registration-complete__container__start-btn
+    =link_to root_path,class: "start-btn" do
+      トップページに戻る
+  = render 'shared/user_footer'

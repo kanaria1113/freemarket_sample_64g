@@ -19,8 +19,10 @@ class ItemsController < ApplicationController
     @image = @images[0]
     @addresses = Address.where(user_id: current_user.id)
     @address = @addresses[0]
-    @item.buyer_id = current_user.id
-    @item.save
+    if @item.buyer_id = current_user.id && @item.save
+    else
+      redirect_to edit_item_path
+      
     card = Card.find_by(user_id: current_user.id)
     if card.blank?
       redirect_to action: "new" 

@@ -17,8 +17,9 @@ class MypageController < ApplicationController
   def deliver_address
   end
 
-  def exhibiting
-    # @items = Item.find(params[:seler_id current_user.id])
-  end
+  # def exhibiting
+
+  #   :mypage_id curent_user.id
+  # end
 
 end

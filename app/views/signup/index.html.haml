@@ -1,0 +1,22 @@
+.select
+  = render 'shared/user_header'
+  .select-content
+    .select-content__tilte
+      新規会員登録
+    .select-content__contenter
+      .select-content__contenter__btn1
+        =link_to step1_signup_index_path, class: "mail_btn" do
+          %i.far.fa-envelope
+          %div#btn1
+            メールアドレスで登録する
+      .select-content__contenter__btn2
+        =link_to "#",class: "facebook_btn" do
+          %i.fab.fa-facebook-square
+          %div#btn2
+            Facebookで登録する
+      .select-content__contenter__btn3
+        =link_to "#",class: "google_btn" do
+          = image_tag "google-search.svg", class: "google_svg"
+          %div#btn3
+            googleで登録する
+  = render 'shared/user_footer'

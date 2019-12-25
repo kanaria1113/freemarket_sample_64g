@@ -4,15 +4,15 @@
 @import "./user_header";
 @import "registration_header";
 @import "./registration_hrough";
-@import "./registration_active.scss";
-@import "./registration_addres.scss";
-@import "./registration_payment";
-@import "./registration_complete";
+@import "./signup/step1";
+@import "./signup/step2";
+@import "./signup/step3";
+@import "./signup/step4";
+@import "./signup/done";
 @import "./download";
 @import "./user_footer";
 @import "./login";
 @import "./login_forget";
-@import "./registration_information";
 @import "./headerimage";
 @import "./headerimage2";
 @import "./slick-theme.scss"; 
@@ -22,7 +22,7 @@
 @import "./exhibit";
 @import "./footer";
 @import "./header";
-@import "items/mainindex";
+@import "items/mainindex.scss";
 @import "./confomation";
 @import "./notconfomation";
 @import "./loginheader";
@@ -38,6 +38,7 @@
 @import "mypage/notification";
 @import "mypage/todo";
 @import "mypage/mypage.scss";
+@import "mypage/deliver_address.scss";
 @import "mypage/mypage_card_add.scss";
 @import "shared/user_header.scss";
 @import "shared/user_footer.scss";
@@ -46,6 +47,7 @@
 @import "mypage/pribate.scss";
 @import "bread-crumbs";
 @import "items/product_show.scss";
+@import "dropzone/basic";
 @import "items/delete_item.scss";
 @import "items/edit.scss";
 ::-webkit-scrollbar {

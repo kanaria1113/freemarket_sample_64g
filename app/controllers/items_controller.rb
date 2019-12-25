@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
 
   def edit
     @image = @item.images.build
+    @brand
   end
 
   def show
@@ -68,7 +69,7 @@ class ItemsController < ApplicationController
   end
 
   def chenge_item
-    @item = Item.find(params[:id])
+    @item = Item.find(1)
     @images = @item.images
   end
 

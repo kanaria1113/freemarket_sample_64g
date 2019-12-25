@@ -50,7 +50,7 @@ Rails.application.routes.draw do
       get 'buyscreen'
       post 'buyscreenitem'
     end
-
+  end
   resources :profile, only: [:index]
   resources :card, only: [:index] do
     collection do
@@ -58,7 +58,7 @@ Rails.application.routes.draw do
     end
   end
   resources :pribate, only: [:index]
-  resources :confomation, only: [:index]
+  resources :confomation, only: [:index] 
   
   get '/mypage/notification', to: 'mypage#notification'
   get '/mypage/todo', to: 'mypage#todo'

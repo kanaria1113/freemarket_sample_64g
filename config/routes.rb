@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   resources :logout, only: [:index]
 
   resources :sell, only: [:index,:new, :create, :destroy]
-  resources :items, only: [:index,:show,:edit,:destroy] do
+  resources :items, only: [:index,:new,:show,:edit,:update,:destroy] do
     member do
       get 'buyscreen'
       post 'buyscreenitem'

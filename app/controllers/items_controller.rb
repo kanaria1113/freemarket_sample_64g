@@ -8,6 +8,14 @@ class ItemsController < ApplicationController
     @item = Item.find(set_item[:id])
     @item.update( buyer_id: current_user.id)
   end
+
+  def new
+    @item = Item.new
+    @item.images.build
+    @item.item_categories.build
+    @item.brands.build
+  end
+
   def show
     @category = Category.find(params[:id])
     @images = Image.where(item_id:@item.id)
@@ -21,12 +29,11 @@ class ItemsController < ApplicationController
     @addresses = Address.where(user_id: current_user.id)
     @address = @addresses[0]
     if @item.seler_id == current_user.id
-      # redirect_to edit_item_path
+      redirect_to edit_item_path
     else
     end
     @item.buyer_id = current_user.id
     @item.save
-
 
     card = Card.find_by(user_id: current_user.id)
     if card.blank?
@@ -37,26 +44,41 @@ class ItemsController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
+
+
   def buyscreenitem
 
   end
-  def edit
-    @item = Item.edit(item_params)
-    if @item.save!
+
+  def update
+    @item = Item.find(params[:id])
+    @item.images.build
+    @item.item_categories.build
+    @item.brands.build
+    if @item.update!(item_params)
       params[:images][:image].each do |image|
         @item.images.create!(image: image, item_id: @item.id)
       end
-      redirect_to root_path, notice: "出品しました"
+      redirect_to before_edit_item_path(params[:id]), notice: "編集しました"
       else
     end
+
+  end
+  def edit
+    @item = Item.find(params[:id])
   end
 
   def before_edit
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
     @images = Image.where(item_id:@item.id)
+    @image = @images
+    @brand = Brand.find(params[:id])
+    @user = User.find(@item.seler_id)
+    @category = Category.find(params[:id])
   end
+
   def destroy
-    if @item.user_id == current_user.id && @item.destroy
+    if @item.seler_id == current_user.id &&@item.destroy
       redirect_to mypage_index_path
     else
       redirect_to edit_item_path
@@ -78,8 +100,7 @@ class ItemsController < ApplicationController
       :send_method,
       :region,
       item_categories_attributes: [:category_id],
-      brands_attributes: [:name],
-      images_attributes: [:image]).merge(seler_id: current_user.id)
+      brands_attributes: [:name]).merge(seler_id: current_user.id)
   end
 
   def image_params

@@ -2,7 +2,7 @@
   .sel__header
     = render "shared/user_header"
   .sell__body
-    = form_with(model: @item,url: sell_index_path, method: :post, local: true) do |f|
+    = form_with(model: @item,url: item_path, method: :PUT, local: true) do |f|
       .sell__file
         .sell-form-group
           .sell__label
@@ -10,16 +10,16 @@
               出品画像
               %span.require 必須
             %p 最大10枚までアップロードできます
-            #image-box-1
-              .item-num-0#image-box__container
-                = f.fields_for :images do |image|
-                  .input-area
-                    = image.file_field :image,class: "sell-drop__box__file", type: 'file', id:"img-file", name: "images[image][]"
-                    %label{for: "img-file"}
-                    %i.fa.fa-camera.sell-drop__camera
-                    %br/
-                    ドラッグアンドドロップ
-                    %br/
+            -# #image-box-1
+            -#   .item-num-0#image-box__container
+            -#     = f.fields_for :images do |image|
+            -#       .input-area
+            -#         = image.file_field :image,class: "sell-drop__box__file", type: 'file', id:"img-file", name: "images[image][]"
+            -#         %label{for: "img-file"}
+            -#         %i.fa.fa-camera.sell-drop__camera
+            -#         %br/
+            -#         ドラッグアンドドロップ
+            -#         %br/
                     またはクリックしてください
       .sell__file
         .sell-form-group
@@ -60,7 +60,7 @@
             .sell__label
               配送料の負担
               %span.require 必須
-            = f.select :burden, 送料込み（出品者負担）: "送料込み（出品者負担）", 着払い（購入者負担）: ""
+            = f.select :burden, 送料込み（出品者負担）: "送料込み（出品者負担）", 着払い（購入者負担）: "着払い（購入者負担）"
         .sell-form-group
           .sell__label
             発送方法
@@ -102,7 +102,7 @@
                 .sell-left--bold 販売利益
                 %h10 ー
             .sell__exhibit
-              = f.submit :出品する, class: "sell-btn__red"
+              = f.submit :更新する, class: "sell-btn__red"
             .sell__back
               = link_to root_path, class: "sell-btn__grey" do
                 戻る

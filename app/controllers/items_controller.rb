@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
       redirect_to edit_item_path
     end
   end
+
   private
   def set_item
     @item = Item.find(params[:id])

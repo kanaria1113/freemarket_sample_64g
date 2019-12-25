@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :mypage, only: [:index] do
     get "profile"
+    get "exhibiting"
   end
   resources :logout, only: [:index]
 

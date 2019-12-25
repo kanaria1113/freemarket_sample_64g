@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     member do
       get 'buyscreen'
       post 'buyscreenitem'
+      get "before_edit"
     end
   end
   resources :profile, only: [:index]

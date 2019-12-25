@@ -41,8 +41,19 @@ class ItemsController < ApplicationController
 
   end
   def edit
+    @item = Item.edit(item_params)
+    if @item.save!
+      params[:images][:image].each do |image|
+        @item.images.create!(image: image, item_id: @item.id)
+      end
+      redirect_to root_path, notice: "出品しました"
+      else
+    end
+  end
+
+  def before_edit
     @item = Item.find(1)
-    
+    @images = Image.where(item_id:@item.id)
   end
   def destroy
     if @item.user_id == current_user.id && @item.destroy
@@ -54,6 +65,21 @@ class ItemsController < ApplicationController
   private
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def item_params
+    params.require(:item).permit(
+      :name,
+      :price,
+      :description,
+      :date,
+      :status,
+      :burden,
+      :send_method,
+      :region,
+      item_categories_attributes: [:category_id],
+      brands_attributes: [:name],
+      images_attributes: [:image]).merge(seler_id: current_user.id)
   end
 
   def image_params

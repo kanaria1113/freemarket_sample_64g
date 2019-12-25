@@ -70,7 +70,7 @@
       = @item.description
 .itembuy-content__button
   .itembuy-content__push
-    = link_to edit_item_path(1), class:"item-edit" do
+    = link_to edit_item_path(item.id), class:"item-edit" do
       商品の編集
     %p.itembuy-content__Separator
       or

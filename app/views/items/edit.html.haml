@@ -2,7 +2,7 @@
   .sel__header
     = render "shared/user_header"
   .sell__body
-    = form_with(model: @item,url: item_path, method: :PUT, local: true) do |f|
+    = form_with(model: @item,url: item_path, method: :PATCH , local: true) do |f|
       .sell__file
         .sell-form-group
           .sell__label
@@ -10,16 +10,17 @@
               出品画像
               %span.require 必須
             %p 最大10枚までアップロードできます
-            -# #image-box-1
-            -#   .item-num-0#image-box__container
-            -#     = f.fields_for :images do |image|
-            -#       .input-area
-            -#         = image.file_field :image,class: "sell-drop__box__file", type: 'file', id:"img-file", name: "images[image][]"
-            -#         %label{for: "img-file"}
-            -#         %i.fa.fa-camera.sell-drop__camera
-            -#         %br/
-            -#         ドラッグアンドドロップ
-            -#         %br/
+            #image-box-1
+              .item-num-0#image-box__container
+                = f.fields_for :images do |image|
+                  .input-area
+                    = image.file_field :image,class: "sell-drop__box__file", type: 'file', id:"img-file", name: "images[image][]"
+                    = image.hidden_field :id, value: image.object.id
+                    %label{for: "img-file"}
+                    %i.fa.fa-camera.sell-drop__camera
+                    %br/
+                    ドラッグアンドドロップ
+                    %br/
                     またはクリックしてください
       .sell__file
         .sell-form-group
@@ -40,14 +41,16 @@
               カテゴリー
               %span.require 必須
             = f.fields_for :item_categories do |c|
-              = c.select :category_id, {レディース: 1, メンズ: 2, ベビー・キッズ: "", インテリア・住まい・小物: "", 本・音楽・ゲーム: "", おもちゃ・ホビー・グッズ: "", コスメ・香水・美容: "", 家電・スマホ・カメラ: "", スポーツ・レジャー: "", ハンドメイド: "", チケット: "", 自動車・オートバイ: "", その他: ""}
+              = c.select :category_id, {レディース: 1, メンズ: 2, ベビー・キッズ: 3, インテリア・住まい・小物: "", 本・音楽・ゲーム: "", おもちゃ・ホビー・グッズ: "", コスメ・香水・美容: "", 家電・スマホ・カメラ: "", スポーツ・レジャー: "", ハンドメイド: "", チケット: "", 自動車・オートバイ: "", その他: ""}
+              = c.hidden_field :id, value: c.object.id
+
           .sell-form-group
             .sell__label
               ブランド
               %span.any 任意
             = f.fields_for :brands do |b|
               = b.text_field :name, class: 'select_default', placeholder: "（例）シャネル"
-
+              = b.hidden_field :id, value: b.object.id
           .sell-form-group
             .sell__label
               商品の状態

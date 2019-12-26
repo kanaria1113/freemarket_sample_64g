@@ -35,7 +35,6 @@ class SellController < ApplicationController
       brands_attributes: [:name],
       images_attributes: [:image]).merge(seler_id: current_user.id)
   end
-
   def set_params
     @item = Item.find(params[:id])
   end

@@ -52,13 +52,10 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.images.build
-    @item.item_categories.build
-    @item.brands.build
-    if @item.update!(item_params)
-      params[:images][:image].each do |image|
-        @item.images.create!(image: image, item_id: @item.id)
-      end
+    if @item.update!(update_item_params)
+      # params[:images][:image].each do |image|
+      #   @item.images.create!(image: image, item_id: @item.id)
+      # end
       redirect_to before_edit_item_path(params[:id]), notice: "編集しました"
       else
     end
@@ -102,6 +99,23 @@ class ItemsController < ApplicationController
       item_categories_attributes: [:category_id],
       brands_attributes: [:name]).merge(seler_id: current_user.id)
   end
+
+  def update_item_params
+    params.require(:item).permit(
+      :name,
+      :price,
+      :description,
+      :date,
+      :status,
+      :burden,
+      :send_method,
+      :region,
+      item_categories_attributes: [:category_id, :_destroy],
+      brands_attributes: [:name, :_destroy],
+      images_attributes: [:image, :_destroy]).merge(seler_id: current_user.id)
+  end
+
+
 
   def image_params
     @image = Image.find(params[:id])

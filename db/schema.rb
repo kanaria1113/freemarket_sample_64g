@@ -27,10 +27,8 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_brands_on_item_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,7 +87,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
     t.text "description", null: false
     t.string "burden", null: false
     t.string "send_method", null: false
-    t.integer "region", null: false
+    t.string "region", null: false
     t.string "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -121,7 +119,6 @@ ActiveRecord::Schema.define(version: 2019_12_20_102555) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "brands", "items"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"

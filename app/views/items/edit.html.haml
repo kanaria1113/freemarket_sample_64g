@@ -14,14 +14,10 @@
               .item-num-0#image-box__container
                 = f.fields_for :images do |image|
                   .input-area
-                    = image.file_field :image,class: "sell-drop__box__file", type: 'file', id:"img-file", name: "images[image][]"
-                    = image.hidden_field :id, value: image.object.id
-                    %label{for: "img-file"}
-                    %i.fa.fa-camera.sell-drop__camera
-                    %br/
-                    ドラッグアンドドロップ
-                    %br/
-                    またはクリックしてください
+                    =image.label :image, class: "image" do
+                      #img_field{:onclick => "$('#file').click()"}
+                        = image_tag image.object.image.url, class: "image_now"
+                        =image.file_field :image, class: "image", style: "display:none", id: "file"
       .sell__file
         .sell-form-group
           .sell__label

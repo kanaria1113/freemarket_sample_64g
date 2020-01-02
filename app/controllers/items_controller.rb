@@ -20,12 +20,8 @@ class ItemsController < ApplicationController
     @category = Category.find(params[:id])
     @images = Image.where(item_id:@item.id)
     @image = @images
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find_by(item_id:@item.id)
     @user = User.find(@item.seler_id)
-    if @item.seler_id == current_user.id
-      redirect_to before_edit_item_path
-    else
-    end
   end
 
   def buyscreen
@@ -34,6 +30,10 @@ class ItemsController < ApplicationController
     @addresses = Address.where(user_id: current_user.id)
     @address = @addresses[0]
     @item.buyer_id = current_user.id
+    if @item.seler_id == current_user.id
+      redirect_to before_edit_item_path
+      else
+    end
     @item.save
     card = Card.find_by(user_id: current_user.id)
     if card.blank?
@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    @images = @item.images
     if @item.update!(update_item_params)
       # params[:images][:image].each do |image|
       #   @item.images.create!(image: image, item_id: @item.id)
@@ -69,7 +70,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = Image.where(item_id:@item.id)
     @image = @images
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find_by(item_id:@item.id)
     @user = User.find(@item.seler_id)
     @category = Category.find(params[:id])
   end

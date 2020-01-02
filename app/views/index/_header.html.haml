@@ -26,14 +26,14 @@
           = link_to "/",class: "headerlike" do
             %i.fa.fa-heart-o
             %span.header-bottom-icon いいね一覧
-          = link_to "/",class: "headerlike" do
+          = link_to mypage_notification_path,class: "headerlike" do
             %i.fa.fa-bell-o
             %span.header-bottom-icon お知らせ
-          = link_to "/",class: "headerlike" do
+          = link_to mypage_todo_path,class: "headerlike" do
             %i.fa.fa-check
             %span.header-bottom-icon やることリスト
           = link_to mypage_index_path , class: "header-bottom-icon" do
-            = image_tag "/assets/member", class: "header-mypageicon"
+            = image_tag "member.png", class: "header-mypageicon"
             マイページ
       - else
 

@@ -12,7 +12,7 @@
             クレジットカード一覧
             - if @card.blank?
               .card-company-logos
-                = image_tag "/assets/visa.svg", class: "card-logo-svg" 
+                = image_tag "visa.svg", class: "card-logo-svg" 
                 .mypage_payment__title__container
                   .mypage_payment_text
                   = "**** **** **** " + @default_card_information.last4
@@ -23,7 +23,7 @@
                 .card_delete_btn
                   = form_tag(card_delete_path, method: :post, id: 'charge-form',  name: "inputForm") do
                     %input{ type: "hidden", name: "card_id", value: "" }
-                    %button 削除する
+                    %span 削除する
               .mypage_payment__content__about
                 =link_to "#" ,class: "payment_method_about" do
                   支払い方法について>

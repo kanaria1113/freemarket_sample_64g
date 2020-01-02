@@ -27,11 +27,11 @@
             %i.fa.fa-heart-o
             %span.header-bottom-icon いいね一覧
         .headernotice1
-          = link_to "/",class: "headerlike" do
+          = link_to mypage_notification_path,class: "headerlike" do
             %i.fa.fa-bell-o
             %span.header-bottom-icon お知らせ
         .headerlist1
-          = link_to "/",class: "headerlike" do
+          = link_to mypage_todo_path,class: "headerlike" do
             %i.fa.fa-check
             %span.header-bottom-icon やることリスト
         .headermypage1

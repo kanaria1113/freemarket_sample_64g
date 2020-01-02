@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   //DataTransferオブジェクトで、データを格納する箱を作る
   var dataBox = new DataTransfer();
   //querySelectorでfile_fieldを取得
@@ -77,19 +77,19 @@ $(function(){
   //loadイベント発生時に発火するイベント
   window.onload = function(e){
   //ドラッグした要素がドロップターゲットの上にある時にイベントが発火
-  dropArea.addEventListener("dragover", function(e){
-    e.preventDefault();
-    //ドロップエリアに影がつく
-    $(this).children('#image-box__container').css({'border': '1px solid rgb(204, 204, 204)','box-shadow': '0px 0px 4px'})
-  },false);
-  //ドラッグした要素がドロップターゲットから離れた時に発火するイベント
-  dropArea.addEventListener("dragleave", function(e){
-    e.preventDefault();
-    //ドロップエリアの影が消える
-    $(this).children('#image-box__container').css({'border': '1px dashed rgb(204, 204, 204)','box-shadow': '0px 0px 0px'})      
-  },false);
-  //ドラッグした要素をドロップした時に発火するイベント
-  dropArea.addEventListener("drop", function(e) {
+    dropArea.addEventListener("dragover", function(e){
+      e.preventDefault();
+      //ドロップエリアに影がつく
+      $(this).children('#image-box__container').css({'border': '1px solid rgb(204, 204, 204)','box-shadow': '0px 0px 4px'})
+    },false);
+    //ドラッグした要素がドロップターゲットから離れた時に発火するイベント
+    dropArea.addEventListener("dragleave", function(e){
+      e.preventDefault();
+      //ドロップエリアの影が消える
+      $(this).children('#image-box__container').css({'border': '1px dashed rgb(204, 204, 204)','box-shadow': '0px 0px 0px'})      
+    },false);
+    //ドラッグした要素をドロップした時に発火するイベント
+    dropArea.addEventListener("drop", function(e) {
     e.preventDefault();
     $(this).children('#image-box__container').css({'border': '1px dashed rgb(204, 204, 204)','box-shadow': '0px 0px 0px'});
     var files = e.dataTransfer.files;

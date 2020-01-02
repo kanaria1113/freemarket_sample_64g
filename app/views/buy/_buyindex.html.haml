@@ -29,7 +29,7 @@
         .buy-item-bottom__pay
           %h2.buy-item-pay 支払い方法
           - if @default_card_information != nil
-            = image_tag "/assets/visa.svg", class: "card-logo-svg"
+            = image_tag "visa.svg", class: "card-logo-svg"
             .card__nam
               = "**** **** **** " + @default_card_information.last4
               - exp_month = @default_card_information.exp_month.to_s

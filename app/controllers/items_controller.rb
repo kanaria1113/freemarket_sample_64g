@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @category = Category.find(params[:id])
     @images = Image.where(item_id:@item.id)
     @image = @images
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find_by(item_id:@item.id)
     @user = User.find(@item.seler_id)
   end
   def buyscreen

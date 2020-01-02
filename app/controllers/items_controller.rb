@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     @user = User.find(@item.seler_id)
   end
 
-  def buyscreen
+  def a
     @images = Image.where(item_id:@item.id)
     @image = @images[0]
     @addresses = Address.where(user_id: current_user.id)

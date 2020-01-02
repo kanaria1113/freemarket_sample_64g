@@ -51,6 +51,13 @@ Rails.application.routes.draw do
   end
   resources :pribate, only: [:index]
   resources :confomation, only: [:index]
+  resources :buy, only: [:index] do
+    member do
+      get 'buyscreen'
+      post 'buyscreenitem'
+    end
+  end
+
   
   get "/mypage/exhibiting", to: "mypage#exhibiting"
   get '/mypage/notification', to: 'mypage#notification'

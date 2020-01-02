@@ -19,8 +19,13 @@
             売却済み
       .like_list
         %ul.mypage-item-list
-          %li.mypage-item
-            = @item.name
+          - @items.each do |item|
+            %li.mypage-items
+              .mypage-item
+                = link_to before_edit_item_path(item.id), class: "exhibitting-item-list" do
+                  = image_tag item.images[0].image.url ,class: "img-main-item",size:"188x188"
+                  .exhibitting__name
+                    = item.name
           -# %li#mypage-item-none 
           -#   出品中の商品がありません
   = render "index/download"

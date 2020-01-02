@@ -18,7 +18,8 @@ class MypageController < ApplicationController
   end
 
   def exhibiting
-    @item = Item.find_by(seler_id: current_user.id)
+    @items = Item.where(seler_id: current_user.id)
+    
   end
   private
   def set_item

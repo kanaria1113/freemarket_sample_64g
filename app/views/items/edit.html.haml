@@ -43,7 +43,7 @@
           .sell-form-group
             .sell__label
               ブランド
-              %span.any 任意
+              %span.anys 任意
             = f.fields_for :brands do |b|
               = b.text_field :name, class: 'select_default', placeholder: "（例）シャネル"
               = b.hidden_field :id, value: b.object.id

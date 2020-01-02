@@ -29,10 +29,10 @@ class ItemsController < ApplicationController
     @image = @images[0]
     @addresses = Address.where(user_id: current_user.id)
     @address = @addresses[0]
-    @item.buyer_id = current_user.id
     if @item.seler_id == current_user.id
       redirect_to before_edit_item_path
-      else
+    else
+      @item.buyer_id = current_user.id
     end
     @item.save
     card = Card.find_by(user_id: current_user.id)
@@ -81,6 +81,8 @@ class ItemsController < ApplicationController
     else
     end
   end
+
+
   private
   def set_item
     @item = Item.find(params[:id])

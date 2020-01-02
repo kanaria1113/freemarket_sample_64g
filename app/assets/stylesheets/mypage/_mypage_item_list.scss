@@ -1,6 +1,27 @@
 .mypage-item-list{
   width: 700px;
   margin: 0 auto;
-  text-align:center
+  text-align:center;
+  background-color: #fff;
+  display: flex;
 }
 
+.mypage-items{
+  margin: 0 auto;
+  text-align:center;
+  background-color: #fff;
+  list-style: none;
+  &__name{
+    font-size: 17px;
+  }
+
+}
+
+.mypage-item{
+  display: flex;
+}
+
+.exhibitting-item-list:hover{
+  color: grey;
+  border-color: blue;
+}

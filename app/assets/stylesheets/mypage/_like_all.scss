@@ -27,3 +27,8 @@
   -ms-filter: grayscale(100%);
   filter: grayscale(100%);
 }
+
+.like_list{
+  display: flex;
+  justify-content: flex-start;
+}

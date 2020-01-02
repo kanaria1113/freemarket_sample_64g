@@ -10,7 +10,7 @@
           %th.thcategory 出品者
           %td.tdcategory
             = link_to '/' , class:'tdcategory-name' do
-              nickname
+              = @user.nickname
             %div
               .itembuy-user-evaluation-smile
                 %i.fa.fa-smile-o
@@ -69,23 +69,23 @@
   .itembuy-detail
     %p.itembuy-detail__coments
       
-.itembuy-content__button
-  .itembuy-content__push
-    = link_to '/', class:"item-edit" do
-      商品の編集
-    %p.itembuy-content__Separator
-      or
-    = link_to '/', class:"item-resume" do
-      出品を再開する
-    %p.item-delete
-      = link_to item_path(1), method: :delete, class:"item-delete" do
-        この商品を削除する
+  .itembuy-content__button
+    .itembuy-content__push
+      = link_to edit_item_path, class:"item-edit" do
+        商品の編集
+      %p.itembuy-content__Separator
+        or
+      = link_to '/', class:"item-resume" do
+        出品を再開する
+      %p.item-btn
+        = link_to item_path, method: :delete, class:"item-delete" do
+          この商品を削除する
 
-.itembuy-content-box
-  .itembuy-detail-message
-    .itembuy-content__comment
-      %form.itembuy-message__form
-        %p.form-messeage-coments 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        %textarea.form-messeage-textarea
-        %button.form-messeage-button
-          %span コメントする
+  .itembuy-content-box
+    .itembuy-detail-message
+      .itembuy-content__comment
+        %form.itembuy-message__form
+          %p.form-messeage-coments 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %textarea.form-messeage-textarea
+          %button.form-messeage-button
+            %span コメントする

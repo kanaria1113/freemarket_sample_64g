@@ -36,10 +36,11 @@ Rails.application.routes.draw do
   resources :logout, only: [:index]
 
   resources :sell, only: [:index,:new, :create, :destroy]
-  resources :items, only: [:index,:show,:edit,:destroy] do
+  resources :items, only: [:index,:new,:show,:edit,:update,:destroy] do
     member do
       get 'buyscreen'
       post 'buyscreenitem'
+      get "before_edit"
     end
   end
   resources :profile, only: [:index]
@@ -50,7 +51,15 @@ Rails.application.routes.draw do
   end
   resources :pribate, only: [:index]
   resources :confomation, only: [:index]
+  resources :buy, only: [:index] do
+    member do
+      get 'buyscreen'
+      post 'buyscreenitem'
+    end
+  end
+
   
+  get "/mypage/exhibiting", to: "mypage#exhibiting"
   get '/mypage/notification', to: 'mypage#notification'
   get '/mypage/todo', to: 'mypage#todo'
   get '/mypage/card', to: 'mypage#card'

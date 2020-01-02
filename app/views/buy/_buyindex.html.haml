@@ -51,7 +51,7 @@
             .buy-item-bottom__purchase__main__name 
               = current_user.nickname
         .item-bottom__buy-btn
-          = form_with url: buyscreenitem_item_path(@item) , method: :post,local:true do |f|
+          = form_with url: buyscreenitem_buy_path(@item) , method: :post,local:true do |f|
             = f.hidden_field :user_id,value:current_user.id
             = f.hidden_field :item_id,value:@item.id
             - if @default_card_information != nil

@@ -2,10 +2,10 @@ class Item < ApplicationRecord
   
   belongs_to :seler, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
-  has_many :images
-  has_many :brands
+  has_many :images, dependent: :destroy
+  has_many :brands, dependent: :destroy
   has_many :category,through: :item_categories
-  has_many :item_categories
+  has_many :item_categories, dependent: :destroy
   accepts_nested_attributes_for :images,allow_destroy: true
   accepts_nested_attributes_for :brands,allow_destroy: true
   accepts_nested_attributes_for :item_categories,allow_destroy: true

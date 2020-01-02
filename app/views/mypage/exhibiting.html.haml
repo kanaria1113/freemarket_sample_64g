@@ -1,0 +1,33 @@
+.wrapper
+  = render "index/loginheader"
+  = render "index/bread-crumbs"
+  .mypage
+    .mypage__left
+      = render "mypage_sidebar"
+    .exhibing-all
+      .exhibing-all__title
+        出品した商品
+      %ul.list-tabs
+        %li.list-tab__active
+          = link_to "#",class: "exhibt-list" do
+            出品中
+        %li.list-tab
+          = link_to "#",class: "exhibt-list" do
+            取引中
+        %li.list-tab
+          = link_to "#",class: "exhibt-list" do
+            売却済み
+      .like_list
+        %ul.mypage-item-list
+          - @items.each do |item|
+            %li.mypage-items
+              .mypage-item
+                = link_to before_edit_item_path(item.id), class: "exhibitting-item-list" do
+                  = image_tag item.images[0].image.url ,class: "img-main-item",size:"188x188"
+                  .exhibitting__name
+                    = item.name
+          -# %li#mypage-item-none 
+          -#   出品中の商品がありません
+  = render "index/download"
+  = render "index/footer"
+  = render "index/exhibit"

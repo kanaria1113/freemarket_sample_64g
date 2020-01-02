@@ -22,19 +22,19 @@ class ItemsController < ApplicationController
     @image = @images
     @brand = Brand.find(params[:id])
     @user = User.find(@item.seler_id)
+    if @item.seler_id == current_user.id
+      redirect_to before_edit_item_path
+    else
+    end
   end
+
   def buyscreen
     @images = Image.where(item_id:@item.id)
     @image = @images[0]
     @addresses = Address.where(user_id: current_user.id)
     @address = @addresses[0]
-    if @item.seler_id == current_user.id
-      redirect_to edit_item_path
-    else
-    end
     @item.buyer_id = current_user.id
     @item.save
-
     card = Card.find_by(user_id: current_user.id)
     if card.blank?
       redirect_to action: "new" 
@@ -76,9 +76,8 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.seler_id == current_user.id &&@item.destroy
-      redirect_to mypage_index_path
+      redirect_to root_path
     else
-      redirect_to edit_item_path
     end
   end
   private

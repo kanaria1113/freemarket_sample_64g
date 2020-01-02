@@ -44,7 +44,7 @@
           .sell-form-group
             .sell__label
               ブランド
-              %span.any 任意
+              %span.require 必須
             = f.fields_for :brands do |b|
               = b.text_field :name, class: 'select_default', placeholder: "（例）シャネル"
 

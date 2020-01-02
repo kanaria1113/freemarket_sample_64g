@@ -1,0 +1,28 @@
+.wrapper
+  = render "index/loginheader"
+  = render "index/bread-crumbs"
+  .mypage
+    .mypage__left
+      = render "mypage_sidebar"
+    .exhibing-all
+      .exhibing-all__title
+        出品した商品
+      %ul.list-tabs
+        %li.list-tab__active
+          = link_to "#",class: "exhibt-list" do
+            出品中
+        %li.list-tab
+          = link_to "#",class: "exhibt-list" do
+            取引中
+        %li.list-tab
+          = link_to "#",class: "exhibt-list" do
+            売却済み
+      .like_list
+        %ul.mypage-item-list
+          %li.mypage-item
+            = @item.name
+          -# %li#mypage-item-none 
+          -#   出品中の商品がありません
+  = render "index/download"
+  = render "index/footer"
+  = render "index/exhibit"

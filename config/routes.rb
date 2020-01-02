@@ -52,6 +52,7 @@ Rails.application.routes.draw do
   resources :pribate, only: [:index]
   resources :confomation, only: [:index]
   
+  get "/mypage/exhibiting", to: "mypage#exhibiting"
   get '/mypage/notification', to: 'mypage#notification'
   get '/mypage/todo', to: 'mypage#todo'
   get '/mypage/card', to: 'mypage#card'
